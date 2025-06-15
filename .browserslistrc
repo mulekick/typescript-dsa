@@ -1,0 +1,5 @@
+# browserslist queries targeting recent node.js versions
+# automatically detected by :
+#  - @babel/preset-env for transpilation of the typescript code before running tests
+
+Node >= 22

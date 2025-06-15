@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "debug main script",
+            "skipFiles": [ "<node_internals>/**" ],
+            // log output in current terminal instead of debug console
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            // run using tsx
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/tsx",
+            // debug main file
+            "program": "${workspaceFolder}/src/main.ts"
+        }
+    ]
+}

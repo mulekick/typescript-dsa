@@ -1,0 +1,16 @@
+{
+    "sourceType": "module",
+    "sourceMaps": false,
+    "presets": [
+        [ "@babel/preset-typescript", {
+            "isTSX": false,
+            "allExtensions": true,
+            "disallowAmbiguousJSXLike": false
+        } ],
+        [ "@babel/preset-env", {
+            "useBuiltIns": "usage",
+            "corejs": "3.37.1"
+        } ]
+    ],
+    "plugins": [ "babel-plugin-transform-import-meta" ]
+}
