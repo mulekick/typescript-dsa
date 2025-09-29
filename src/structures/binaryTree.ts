@@ -26,11 +26,16 @@ export class BinarySearchTree<T> {
         this.compare = c;
     }
 
-    // ==== TREE MANAGEMENT ======
+    // ##############################################################
+    // #                     TREE MANAGEMENT                        #
+    // ##############################################################
+
     private isLessThanOrEqual(a: T, b: T): boolean {return [ -1, 0 ].includes(this.compare(a, b));}
     private isGreaterThan(a: T, b: T): boolean {return this.compare(a, b) === 1;}
 
-    // ===== TREE TRAVERSALS =====
+    // ##############################################################
+    // #                     TREE TRAVERSALS                        #
+    // ##############################################################
 
     // depth first traversal O(n) - visit each node and run a function on the node
     public traverseDepth(visitNode: visitNodeSignature<T>, type: depthTraversalType): void {
@@ -112,7 +117,9 @@ export class BinarySearchTree<T> {
         return this.verifyTree(currentNode.left) && this.verifyTree(currentNode.right);
     }
 
-    // ====== APPEND NODES =======
+    // ##############################################################
+    // #                       APPEND NODES                         #
+    // ##############################################################
 
     // insert new node O(log n)
     public insert(value: T): void {
@@ -166,7 +173,9 @@ export class BinarySearchTree<T> {
         }
     }
 
-    // ====== REMOVE NODES =======
+    // ##############################################################
+    // #                       REMOVE NODES                         #
+    // ##############################################################
 
     // remove node if found O(log n)
     public remove(value: T): T | undefined {
@@ -333,7 +342,9 @@ export class BinarySearchTree<T> {
         return returnValue;
     }
 
-    // ====== ACCESS NODES =======
+    // ##############################################################
+    // #                       ACCESS NODES                         #
+    // ##############################################################
 
     // find node by value O(log n)
     private findNodeByValue(value: T): BinaryNode<T> | undefined {
@@ -370,7 +381,9 @@ export class BinarySearchTree<T> {
         return typeof this.findNodeByValue(value) !== `undefined`;
     }
 
-    // ========= UTILS ===========
+    // ##############################################################
+    // #                           UTILS                            #
+    // ##############################################################
 
     // print tree using DFS and recursion
     public dump(currentNode: BinaryNode<T> | null = this.tree, left: boolean | null = null, spacing: string = ``): void {

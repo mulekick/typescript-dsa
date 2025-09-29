@@ -7,7 +7,9 @@ import {ObjectStack} from "./structures/arrayList.ts";
 import {ObjectQueue} from "./structures/ringBuffer.ts";
 import {OtherObjectQueue} from "./structures/deque.ts";
 
-// ===== ASYNC QUEUE =====
+// ##############################################################
+// #                        ASYNC QUEUE                         #
+// ##############################################################
 
 export interface NetworkRequest {
     // url to request
@@ -18,7 +20,9 @@ export interface NetworkRequest {
     num: number;
 }
 
-// ===== OBJECT SIGNATURES =====
+// ##############################################################
+// #                     OBJECT SIGNATURES                      #
+// ##############################################################
 
 // sample object signature for object storage in data structures
 export interface SampleObject {
@@ -31,7 +35,9 @@ export interface coords {
     x: number;
 }
 
-// ==== FUNCTION SIGNATURES ====
+// ##############################################################
+// #                    FUNCTION SIGNATURES                     #
+// ##############################################################
 
 // max length allowed for storage is use case specific and must be consistent
 // across background array constructor and formatter functions ...
@@ -44,13 +50,17 @@ export type comparatorSignature<T> = (a: T, b: T)=> 1 | -1 | 0;
 // function signature for node value matching for update and deletion
 export type matcherSignature<T> = (a: T, b: T)=> boolean;
 
-// === NODE BASED STRUCTURES ===
+// ##############################################################
+// #                   NODE BASED STRUCTURES                    #
+// ##############################################################
 
 // composing types for linked lists based structures benchmarks
 export type StackType = StringStack | ObjectStack;
 export type QueueType = StringQueue | ObjectQueue | OtherObjectQueue;
 
-// ===== TREE STRUCTURES =======
+// ##############################################################
+// #                      TREE STRUCTURES                       #
+// ##############################################################
 
 // depth first traversal types
 export type depthTraversalType = `PRE` | `IN` | `POST`;
@@ -79,7 +89,9 @@ export interface TrieNode {
     isWord: boolean;
 }
 
-// ==== GRAPHS STRUCTURES ======
+// ##############################################################
+// #                     GRAPHS STRUCTURES                      #
+// ##############################################################
 
 // for clarity's sake ...
 export type Vertices<T> = Array<T>;

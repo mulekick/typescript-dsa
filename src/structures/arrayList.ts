@@ -39,7 +39,9 @@ export class ArrayList<T> {
         this.match = m;
     }
 
-    // ==== ARRAY INTERNALS ======
+    // ##############################################################
+    // #                      ARRAY INTERNALS                       #
+    // ##############################################################
 
     // resize background array O(n) -> copy a variable number of bytes
     private resize() {
@@ -53,7 +55,9 @@ export class ArrayList<T> {
         this.size *= 2;
     }
 
-    // ==== APPEND ELEMENTS ======
+    // ##############################################################
+    // #                      APPEND ELEMENTS                       #
+    // ##############################################################
 
     // append item to array O(1) -> copy a constant number of bytes
     public append(item: T): void {this.insertAt(item, this.length);}
@@ -84,7 +88,9 @@ export class ArrayList<T> {
         this.length += 1;
     }
 
-    // ==== REMOVE ELEMENTS ======
+    // ##############################################################
+    // #                      REMOVE ELEMENTS                       #
+    // ##############################################################
 
     // remove element at idx O(n) -> copy a variable number of bytes
     // O(1) when popping last element (tests confirmed ...)
@@ -122,7 +128,9 @@ export class ArrayList<T> {
         return undefined;
     }
 
-    // ==== ACCESS ELEMENTS ======
+    // ##############################################################
+    // #                      ACCESS ELEMENTS                       #
+    // ##############################################################
 
     // get element value O(1) -> read only
     public get(idx: number): T | undefined {

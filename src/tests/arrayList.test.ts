@@ -7,8 +7,8 @@ import console from "node:console";
 
 // import modules
 import {describe, it, expect} from "@jest/globals";
-import {ObjectStack} from "../structures/arrayList.ts";
-import {rnd, timeExecution, benchmarkStack} from "../helpers.ts";
+// modules dependency graph requires this for jest transpilation ...
+import {ObjectStack, rnd, timeExecution, benchmarkStack} from "../helpers.ts";
 
 try {
 

@@ -50,7 +50,9 @@ export class Deque<T> {
         this.tail = 0;
     }
 
-    // ==== ARRAY INTERNALS ======
+    // ##############################################################
+    // #                      ARRAY INTERNALS                       #
+    // ##############################################################
 
     // read actual head and tail indices
     private ends(): [number, number] {
@@ -108,7 +110,9 @@ export class Deque<T> {
         this.tail = 0;
     }
 
-    // ==== APPEND ELEMENTS ======
+    // ##############################################################
+    // #                      APPEND ELEMENTS                       #
+    // ##############################################################
 
     // append
     public append(item: T): void {this.insertAt(item, this.length);}
@@ -169,7 +173,9 @@ export class Deque<T> {
         this.length += 1;
     }
 
-    // ==== REMOVE ELEMENTS ======
+    // ##############################################################
+    // #                      REMOVE ELEMENTS                       #
+    // ##############################################################
 
     // remove element at idx O(n) -> copy a variable number of bytes
     // O(1) if popping from tail or head ...
@@ -243,7 +249,9 @@ export class Deque<T> {
         return undefined;
     }
 
-    // ==== ACCESS ELEMENTS ======
+    // ##############################################################
+    // #                      ACCESS ELEMENTS                       #
+    // ##############################################################
 
     // get
     public get(index: number): T | undefined {

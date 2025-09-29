@@ -26,14 +26,18 @@ import type {
 
 export class Graph<T> {
 
-    // ===== GRAPH CONSTANTS =======
+    // ##############################################################
+    // #                       GRAPH CONSTANTS                      #
+    // ##############################################################
 
     // define vertices maximum index - max value that fits in 2 bytes
     public static MAX_VERTICES: number = 65535;
     // define infinite distance (absence of edge) - max value that fits in 4 bytes since
     public static INFINITY: number = 4294967295;
 
-    // ===== GRAPH VARIABLES =======
+    // ##############################################################
+    // #                       GRAPH VARIABLES                      #
+    // ##############################################################
 
     // store graph vertices values
     private vertices: Vertices<T>;
@@ -60,7 +64,9 @@ export class Graph<T> {
         this.match = m;
     }
 
-    // ===== GRAPH PROPERTIES =====
+    // ##############################################################
+    // #                       GRAPH PROPERTIES                     #
+    // ##############################################################
 
     // extract strongly connected components from a directed graph
     public get components(): Array<Array<T>> {
@@ -210,7 +216,9 @@ export class Graph<T> {
         return new Graph(edges, lineg, objectsMatch);
     }
 
-    // ======= PATH FINDING =======
+    // ##############################################################
+    // #                         PATH FINDING                       #
+    // ##############################################################
 
     // perform DFS on adjacency list
     public depthFirstSearch(from: T, to: T): Array<GraphEdge> | undefined {

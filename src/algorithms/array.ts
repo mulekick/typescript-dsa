@@ -13,7 +13,9 @@ export const sampleLinearfunction = (i: string): void => {
     console.log(`The Big O notation for this function is 2 * O(n)`);
 };
 
-// ===== ARRAY SEARCH =====
+// ##############################################################
+// #                       ARRAY SEARCH                         #
+// ##############################################################
 
 // linear search O(n)
 export const linearSearch = (haystack: Array<number>, needle: number): boolean => {
@@ -82,7 +84,9 @@ export const twoCrystalBalls = (breaks: Array<boolean>): number => {
     return -1;
 };
 
-// ===== ARRAY SORT =====
+// ##############################################################
+// #                        ARRAY SORT                          #
+// ##############################################################
 
 // bubble sort O(n²)
 export const bubbleSort = (a: Array<number>): Array<number> => {

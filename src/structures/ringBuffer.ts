@@ -46,7 +46,9 @@ export class RingBuffer<T> {
         this.tail = 0;
     }
 
-    // ==== ARRAY INTERNALS ======
+    // ##############################################################
+    // #                      ARRAY INTERNALS                       #
+    // ##############################################################
 
     // resize background array O(n) -> copy a variable number of bytes
     private resize() {
@@ -77,7 +79,9 @@ export class RingBuffer<T> {
         this.size *= 2;
     }
 
-    // ==== APPEND ELEMENTS ======
+    // ##############################################################
+    // #                      APPEND ELEMENTS                       #
+    // ##############################################################
 
     // use js array aliases to not conflict with subclass methods ...
     public push(item: T): void {
@@ -96,7 +100,9 @@ export class RingBuffer<T> {
         this.length += 1;
     }
 
-    // ==== REMOVE ELEMENTS ======
+    // ##############################################################
+    // #                      REMOVE ELEMENTS                       #
+    // ##############################################################
 
     // use js array aliases to not conflict with subclass methods ...
     public shift(): T | undefined {
@@ -117,7 +123,9 @@ export class RingBuffer<T> {
         return value;
     }
 
-    // ==== ACCESS ELEMENTS ======
+    // ##############################################################
+    // #                      ACCESS ELEMENTS                       #
+    // ##############################################################
 
     // get element value O(1) -> read only
     public get(idx: number): T | undefined {

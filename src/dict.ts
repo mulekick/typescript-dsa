@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 
-const dict: Array<string> = [
+export const dict: Array<string> = [
     `a`,
     `aardvark`,
     `aardvarks`,
@@ -63995,5 +63995,3 @@ const dict: Array<string> = [
     `zygote`,
     `zygotes`
 ];
-
-export {dict};

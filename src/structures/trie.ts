@@ -3,7 +3,7 @@ import type {TrieNode} from "../interfaces.ts";
 
 // every method is O(1) since the tree height is limited by the longest word length
 // this class was not made generic since autocomplete is the only use case identified ...
-class Trie {
+export class Trie {
 
     // root node (stores no character nor isWord flag)
     private root: Partial<TrieNode>;
@@ -234,5 +234,3 @@ class Trie {
     }
 
 }
-
-export {Trie};

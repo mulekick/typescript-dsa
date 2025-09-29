@@ -28,7 +28,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
         this.compare = c;
     }
 
-    // ==== HEAP MANAGEMENT ======
+    // ##############################################################
+    // #                        HEAP MANAGEMENT                     #
+    // ##############################################################
 
     // nodes index getters O(1)
     private getParentNode(index: number): number {return Math.floor((index - 1) / 2);}
@@ -108,7 +110,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
 
     }
 
-    // ===== HEAP TRAVERSALS =====
+    // ##############################################################
+    // #                     HEAP TRAVERSALS                        #
+    // ##############################################################
 
     // verify heap integrity using depth first traversal O(n)
     public verifyHeap(currentNode: number = 0): boolean {
@@ -127,7 +131,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
         return this.verifyHeap(this.getLeftChildNode(currentNode)) && this.verifyHeap(this.getRightChildNode(currentNode));
     }
 
-    // ====== APPEND NODES =======
+    // ##############################################################
+    // #                       APPEND NODES                         #
+    // ##############################################################
 
     // insert node O(log n)
     public insert(value: T): void {
@@ -141,7 +147,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
         this.heapifyUp(this.length - 1);
     }
 
-    // ====== REMOVE NODES =======
+    // ##############################################################
+    // #                       REMOVE NODES                         #
+    // ##############################################################
 
     // pop head node O(log n)
     public delete(): T | undefined {
@@ -161,7 +169,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
         return returnValue;
     }
 
-    // ====== ACCESS NODES =======
+    // ##############################################################
+    // #                       ACCESS NODES                         #
+    // ##############################################################
 
     // find node index from value O(n) or O(1) for head node
     public find(value: T): number | undefined {

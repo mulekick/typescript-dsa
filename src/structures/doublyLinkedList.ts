@@ -32,7 +32,9 @@ export class DoublyLinkedList<T> {
         this.match = m;
     }
 
-    // ====== APPEND NODES =======
+    // ##############################################################
+    // #                       APPEND NODES                         #
+    // ##############################################################
 
     // append node as head node O(1)
     public prepend(item: T): void {
@@ -126,7 +128,9 @@ export class DoublyLinkedList<T> {
         this.length++;
     }
 
-    // ====== REMOVE NODES =======
+    // ##############################################################
+    // #                       REMOVE NODES                         #
+    // ##############################################################
 
     // remove node at index idx O(n)
     public removeAt(idx: number): T | undefined {
@@ -206,7 +210,9 @@ export class DoublyLinkedList<T> {
         this.tail = undefined;
     }
 
-    // ====== ACCESS NODES =======
+    // ##############################################################
+    // #                       ACCESS NODES                         #
+    // ##############################################################
 
     // read node at index idx O(n)
     private getNodeAt(idx: number): Node<T> | undefined {

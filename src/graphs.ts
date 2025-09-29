@@ -13,7 +13,9 @@ import type {
     matcherSignature
 } from "./interfaces.ts";
 
-// ===== GRAPH HELPERS =======
+// ##############################################################
+// #                       GRAPH HELPERS                        #
+// ##############################################################
 
 // translate adjacency matrix to adjacency list
 export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList => {
@@ -90,7 +92,9 @@ export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.
     return r;
 }, 0);
 
-// ===== MAZES AS GRAPHS =====
+// ##############################################################
+// #                        MAZES AS GRAPHS                     #
+// ##############################################################
 
 // coords match
 export const coordsMatch: matcherSignature<coords> = (a: coords, b: coords): boolean => a.x === b.x && a.y === b.y;
@@ -186,7 +190,9 @@ export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string)
     return [ vertices, matrix ];
 };
 
-// ===== SAMPLE DATA =========
+// ##############################################################
+// #                        SAMPLE DATA                         #
+// ##############################################################
 
 // cities in Nepal (40)
 export const cities: Vertices<string> = [

@@ -19,7 +19,9 @@ import type {
     unformatterSignature
 } from "./interfaces.ts";
 
-// ========= UTILS ===========
+// ##############################################################
+// #                           UTILS                            #
+// ##############################################################
 
 // shuffle array elements
 export const shuffle = (a: Array<unknown>): Array<unknown> => {
@@ -44,7 +46,9 @@ export const rnd = (lb: number, ub: number): number => lb + Math.round(Math.rand
 // output a single random character (unicode basic latin)
 export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
 
-// ====== FORMATTERS =========
+// ##############################################################
+// #                         FORMATTERS                         #
+// ##############################################################
 
 // store objects w/ number prop between 0 and 65535
 export const formatSampleObject: formatterSignature<SampleObject> = (v: SampleObject | undefined): Buffer => {
@@ -128,7 +132,9 @@ export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistanc
     return {index, distance};
 };
 
-// ===== COMPARATORS =========
+// ##############################################################
+// #                        COMPARATORS                         #
+// ##############################################################
 
 // comparator returns 1 if a is greater, -1 if b is greater and 0 if a and b are equal
 
@@ -145,7 +151,7 @@ export const compareSampleObjects: comparatorSignature<SampleObject> = (a: Sampl
 };
 
 // compare numbers
-export const compareNumbers = (a: number, b: number): 0 | 1 | -1 => (Number(a) > Number(b) ? 1 : Number(a) < Number(b) ? -1 : 0);
+export const compareNumbers = (a: number, b: number): 0 | 1 | -1 => (a > b ? 1 : a < b ? -1 : 0);
 
 // compare vertices by distance and not by adjacence ...
 export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: GraphVertexByDistance): 0 | 1 | -1 => {
@@ -161,7 +167,9 @@ export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: Gra
     return 0;
 };
 
-// ====== MATCHERS ===========
+// ##############################################################
+// #                          MATCHERS                          #
+// ##############################################################
 
 // sample objects matcher function, return true if stringified values are equal
 export const objectsMatch: matcherSignature<unknown> = (a: unknown, b: unknown): boolean => JSON.stringify(a) === JSON.stringify(b);
@@ -170,9 +178,11 @@ export const objectsMatch: matcherSignature<unknown> = (a: unknown, b: unknown):
 export const stringsMatch: matcherSignature<string> = (a: string, b: string): boolean => a === b;
 
 // numbers match
-export const numbersMatch: matcherSignature<number> = (a: number, b: number): boolean => Number(a) === Number(b);
+export const numbersMatch: matcherSignature<number> = (a: number, b: number): boolean => a === b;
 
-// ====== BENCHMARKS =========
+// ##############################################################
+// #                         BENCHMARKS                         #
+// ##############################################################
 
 // measure function execution time
 export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: number; result: unknown} => {
@@ -241,3 +251,5 @@ export {
     hugeMazeStartingCoords,
     hugeMazeExitCoords
 } from "./maze.ts";
+// modules dependency graph requires this for jest transpilation ...
+export {ObjectStack};
