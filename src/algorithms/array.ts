@@ -1,3 +1,8 @@
+/**
+ * Array search and sort algorithms.
+ * @module
+ */
+
 /* eslint-disable no-warning-comments */
 
 // import primitives
@@ -17,7 +22,11 @@ export const sampleLinearfunction = (i: string): void => {
 // #                       ARRAY SEARCH                         #
 // ##############################################################
 
-// linear search O(n)
+/**
+ * linear search.
+ * @remarks
+ * - Time complexity O(n)
+ */
 export const linearSearch = (haystack: Array<number>, needle: number): boolean => {
     // loop over haystack values O(n)
     for (let i = 0; i < haystack.length; i++) {
@@ -29,7 +38,12 @@ export const linearSearch = (haystack: Array<number>, needle: number): boolean =
     return false;
 };
 
-// binary search O(log n) - it is assessed that haystack is sorted
+/**
+ * binary search.
+ * @remarks
+ * - Time complexity O(log n)
+ * - It is assessed that haystack is sorted
+ */
 export const binarySearch = (haystack: Array<number>, needle: number): boolean => {
     // init haystack subarray start and end index (start inclusive, end exclusive)
     // !!! never use recursion here, loop based version runs 18 times faster !!!
@@ -58,7 +72,12 @@ export const binarySearch = (haystack: Array<number>, needle: number): boolean =
     return false;
 };
 
-// two crystal balls O(sqrt(n)) - it is assessed that breaks is sorted
+/**
+ * two crystal balls search.
+ * @remarks
+ * - Time complexity O(sqrt(n))
+ * - It is assessed that breaks is sorted
+ */
 export const twoCrystalBalls = (breaks: Array<boolean>): number => {
     // searched value
     const searchedValue = true;
@@ -88,7 +107,11 @@ export const twoCrystalBalls = (breaks: Array<boolean>): number => {
 // #                        ARRAY SORT                          #
 // ##############################################################
 
-// bubble sort O(n²)
+/**
+ * bubble sort.
+ * @remarks
+ * - Time complexity O(n²)
+ */
 export const bubbleSort = (a: Array<number>): Array<number> => {
     // use i to loop from 0 to arr.length exclusive
     for (let i = 0; i < a.length; i++) {
@@ -108,7 +131,11 @@ export const bubbleSort = (a: Array<number>): Array<number> => {
     return a;
 };
 
-// perform weak sorting, mutate array, return final pivot index
+/**
+ * perform weak sorting, mutate array, return final pivot index.
+ * @remarks
+ * - Time complexity ?
+ */
 export const weakSortSubarray = (arr: Array<number>, start: number, end: number): number => {
     // init pivot = arr[end - 1]
     const pivot = arr[end - 1];
@@ -139,7 +166,11 @@ export const weakSortSubarray = (arr: Array<number>, start: number, end: number)
     return index;
 };
 
-// weak sort array recursively
+/**
+ * weak sort array recursively.
+ * @remarks
+ * - Time complexity ?
+ */
 export const weakSort = (arr: Array<number>, start: number, end: number): Array<number> => {
 
     // 1. BASE CASE
@@ -170,5 +201,10 @@ export const weakSort = (arr: Array<number>, start: number, end: number): Array<
     return arr;
 };
 
-// quick sort O(n * log(n)) - weak sort array from 0 to array length
+/**
+ * quick sort.
+ * @remarks
+ * - Time complexity O(n * log(n))
+ * - Weak sort array from 0 to array length
+ */
 export const quickSort = (arr: Array<number>): Array<number> => weakSort(arr, 0, arr.length);

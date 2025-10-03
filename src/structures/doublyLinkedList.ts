@@ -1,6 +1,16 @@
+/**
+ * Doubly linked list data structure.
+ * @module
+ */
+
 // import types
 import type {matcherSignature} from "../interfaces.ts";
 
+/**
+ * list node (doubly linked).
+ * @typeParam T data type stored in the node.
+ * @interface
+ */
 interface Node<T> {
     // pointer to previous node
     prev: Node<T> | undefined;
@@ -10,6 +20,13 @@ interface Node<T> {
     value: T;
 }
 
+/**
+ * Doubly linked list implementation over generic type.
+ * @class
+ * @typeParam T data type stored in list nodes.
+ * @remarks
+ * - Lists are node based structures and are completely generic (no limitation on node values size).
+ */
 export class DoublyLinkedList<T> {
     // pointer to head node
     private head: Node<T> | undefined;

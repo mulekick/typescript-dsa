@@ -1,3 +1,8 @@
+/**
+ * ArrayList based data structures.
+ * @module
+ */
+
 // import modules
 import {BarebonesArray} from "./array.ts";
 import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers.ts";
@@ -5,6 +10,12 @@ import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers
 // import types
 import type {SampleObject, formatterSignature, matcherSignature, unformatterSignature} from "../interfaces.ts";
 
+/**
+ * ArrayList implementation over generic type.
+ * @class
+ * @typeParam T data type stored in ArrayList elements.
+ * - ArrayLists are array based structures and can't be made truly generic.
+ */
 export class ArrayList<T> {
 
     // store current size (total capacity)
@@ -153,6 +164,10 @@ export class ArrayList<T> {
     }
 }
 
+/**
+ * ArrayList based object stack.
+ * @class
+ */
 export class ObjectStack extends ArrayList<SampleObject> {
     // constructor
     constructor() {

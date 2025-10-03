@@ -1,7 +1,16 @@
+/**
+ * Recursion algorithms.
+ * @module
+ */
+
 // import types
 import type {coords} from "../interfaces.ts";
 
-// use dynamic programming trick to progress from O(n) to O(1) AT EACH RECURSIVE CALL
+/**
+ * find the path from entrance to exit in a maze.
+ * @remarks
+ * - Use a dynamic programming trick to progress from O(n) to O(1) AT EACH RECURSIVE CALL.
+ */
 export const mazeSolver = (maze: Array<string>, wall: string, start: coords, exit: string): Array<coords> => {
     // solution
     const solution: Array<coords> = [];

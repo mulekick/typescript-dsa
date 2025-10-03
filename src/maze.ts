@@ -1,3 +1,8 @@
+/**
+ * Mazes examples (represented as string arrays).
+ * @module
+ */
+
 // import types
 import type {coords} from "./interfaces.ts";
 

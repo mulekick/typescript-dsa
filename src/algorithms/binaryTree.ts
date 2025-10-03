@@ -1,3 +1,8 @@
+/**
+ * Binary tree comparison function.
+ * @module
+ */
+
 // import types
 import type {BinaryNode} from "../interfaces.ts";
 
@@ -5,8 +10,13 @@ import type {BinaryNode} from "../interfaces.ts";
 // #                     TREE COMPARISON                        #
 // ##############################################################
 
-// compare binary trees using DFS O(n)
-// trees must be identical in shape and values ...
+/**
+ * compare binary trees using DFS.
+ * @remarks
+ * - Time complexity O(n)
+ * - Returns true if both trees are identical in shape and values, false otherwise.
+ * - The other tree algoritms are in the implementation.
+ */
 export const compareBinaryTrees = (tree1: BinaryNode<number>, tree2: BinaryNode<number>): boolean => {
     // node visit
     const visit = (current1: BinaryNode<number> | null, current2: BinaryNode<number> | null): boolean => {
@@ -40,5 +50,3 @@ export const compareBinaryTrees = (tree1: BinaryNode<number>, tree2: BinaryNode<
     // start recursion from root node
     return visit(tree1, tree2);
 };
-
-// other tree algoritms are in the implementation ...

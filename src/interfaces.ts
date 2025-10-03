@@ -1,3 +1,21 @@
+/**
+ * Shared types and interfaces.
+ * @module
+ * @showCategories
+ * @categoryDescription Async queue
+ * - Types used for the rate-limited async queue implementation.
+ * @categoryDescription Object signatures
+ * - Types used with data structures that handle objects.
+ * @categoryDescription Function signatures
+ * - Generic signatures types for data structures related functions.
+ * @categoryDescription Node based structures
+ * - Types used by node based data structures (stacks and queues).
+ * @categoryDescription Tree structures
+ * - Types used by tree data structures.
+ * @categoryDescription Graph structures
+ * - Types used by graphs data structures.
+*/
+
 // import primitives
 import {Buffer} from "node:buffer";
 
@@ -11,6 +29,11 @@ import {OtherObjectQueue} from "./structures/deque.ts";
 // #                        ASYNC QUEUE                         #
 // ##############################################################
 
+/**
+ * Network request object.
+ * @category Async queue
+ * @interface
+ */
 export interface NetworkRequest {
     // url to request
     url: string;
@@ -24,12 +47,20 @@ export interface NetworkRequest {
 // #                     OBJECT SIGNATURES                      #
 // ##############################################################
 
-// sample object signature for object storage in data structures
+/**
+ * sample object signature for object storage in data structures.
+ * @category Object signatures
+ * @interface
+ */
 export interface SampleObject {
     prop: number;
 }
 
-// cell coords for recursion algorithm
+/**
+ * cell coords for recursion algorithm.
+ * @category Object signatures
+ * @interface
+ */
 export interface coords {
     y: number;
     x: number;
@@ -39,22 +70,55 @@ export interface coords {
 // #                    FUNCTION SIGNATURES                     #
 // ##############################################################
 
-// max length allowed for storage is use case specific and must be consistent
-// across background array constructor and formatter functions ...
+/**
+ * formatting function signature.
+ * @category Function signatures
+ * @typeParam T data type to format into a buffer.
+ * @useDeclaredType
+ * @remarks
+ * - Max length allowed for storage is use case specific and must be consistent across background array constructor and formatter functions.
+ */
 export type formatterSignature<T> = (v: T | undefined)=> Buffer;
+
+/**
+ * unformatting function signature.
+ * @category Function signatures
+ * @typeParam T data type to read from a buffer.
+ * @useDeclaredType
+ * @remarks
+ * - Max length allowed for storage is use case specific and must be consistent across background array constructor and formatter functions.
+ */
 export type unformatterSignature<T> = (b: Buffer)=> T;
 
-// function signature for node comparison for ordering
+/**
+ * node comparison function signature.
+ * @category Function signatures
+ * @typeParam T data type stored in the nodes.
+ * @useDeclaredType
+ * @remarks
+ * - Used to compare nodes for ordering.
+ */
 export type comparatorSignature<T> = (a: T, b: T)=> 1 | -1 | 0;
 
-// function signature for node value matching for update and deletion
+/**
+ * node matching function signature.
+ * @category Function signatures
+ * @typeParam T data type stored in the nodes.
+ * @useDeclaredType
+ * @remarks
+ * - Used to match nodes values for update and deletion.
+ */
 export type matcherSignature<T> = (a: T, b: T)=> boolean;
 
 // ##############################################################
 // #                   NODE BASED STRUCTURES                    #
 // ##############################################################
 
-// composing types for linked lists based structures benchmarks
+/**
+ * Composing types for linked lists based structures benchmarks.
+ * @category Node based structures
+ * @useDeclaredType
+ */
 export type StackType = StringStack | ObjectStack;
 export type QueueType = StringQueue | ObjectQueue | OtherObjectQueue;
 
@@ -62,10 +126,19 @@ export type QueueType = StringQueue | ObjectQueue | OtherObjectQueue;
 // #                      TREE STRUCTURES                       #
 // ##############################################################
 
-// depth first traversal types
+/**
+ * depth first traversal types.
+ * @category Tree structures
+ * @useDeclaredType
+ */
 export type depthTraversalType = `PRE` | `IN` | `POST`;
 
-// binary node (doubly linked)
+/**
+ * binary node (doubly linked).
+ * @category Tree structures
+ * @typeParam T data type stored in the node.
+ * @interface
+ */
 export interface BinaryNode<T> {
     value: T;
     left: BinaryNode<T> | null;
@@ -74,10 +147,19 @@ export interface BinaryNode<T> {
     parent: BinaryNode<T> | null;
 }
 
-// function signatures for node visit
+/**
+ * function signatures for node visit.
+ * @category Tree structures
+ * @typeParam T data type stored in the node.
+ * @useDeclaredType
+ */
 export type visitNodeSignature<T> = (node: BinaryNode<T>)=> unknown;
 
-// trie node
+/**
+ * trie node.
+ * @category Tree structures
+ * @interface
+ */
 export interface TrieNode {
     // current character
     value: string;
@@ -93,10 +175,19 @@ export interface TrieNode {
 // #                     GRAPHS STRUCTURES                      #
 // ##############################################################
 
-// for clarity's sake ...
+/**
+ * rename for clarity's sake.
+ * @category Graph structures
+ * @typeParam T data type stored in the vertex.
+ * @useDeclaredType
+ */
 export type Vertices<T> = Array<T>;
 
-// graph edge in an adjacency list
+/**
+ * graph edge in an adjacency list.
+ * @category Graph structures
+ * @interface
+ */
 export interface GraphEdge {
     // connected vertex
     edge: number;
@@ -104,19 +195,44 @@ export interface GraphEdge {
     weight: number;
 }
 
-// we'll assess that all the graphs are weighted - if needed, unweighted graphs
-// will be represented as weighted graphs with all edges weights equal to 1 ...
+/**
+ * Adjacency matrix.
+ * @category Graph structures
+ * @useDeclaredType
+ * @remarks
+ * - It is assessed that all the graphs are weighted.
+ * - Unweighted graphs are represented as weighted graphs with all edges weights equal to 1.
+ */
 export type AdjacencyMatrix = Array<Array<number>>;
+
+/**
+ * Adjacency list.
+ * @category Graph structures
+ * @useDeclaredType
+ * @remarks
+ * - It is assessed that all the graphs are weighted.
+ * - Unweighted graphs are represented as weighted graphs with all edges weights equal to 1.
+ */
 export type AdjacencyList = Array<Array<GraphEdge>>;
 
-// vertex in a line graph
+/**
+ * vertex in a line graph.
+ * @category Graph structures
+ * @interface
+ */
 export interface LineGraphVertex {
     from: number;
     to: number;
     weight: number;
 }
 
-// store vertices distance to origin in a min heap for Dijkstra's shortest path
+/**
+ * vertex by distance.
+ * @category Graph structures
+ * @interface
+ * @remarks
+ * - Used to store vertices distance to origin in a min heap for Dijkstra's shortest path
+ */
 export interface GraphVertexByDistance {
     index: number;
     distance: number;

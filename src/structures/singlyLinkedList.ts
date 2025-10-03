@@ -1,9 +1,19 @@
+/**
+ * Singly linked list data structure.
+ * @module
+ */
+
 // import modules
 import {stringsMatch} from "../helpers.ts";
 
 // import types
 import type {matcherSignature} from "../interfaces.ts";
 
+/**
+ * list node (singly linked).
+ * @typeParam T data type stored in the node.
+ * @interface
+ */
 interface Node<T> {
     // pointer to next node
     next: Node<T> | undefined;
@@ -11,6 +21,13 @@ interface Node<T> {
     value: T;
 }
 
+/**
+ * Singly linked list implementation over generic type.
+ * @class
+ * @typeParam T data type stored in list nodes.
+ * @remarks
+ * - Lists are node based structures and are completely generic (no limitation on node values size).
+ */
 export class SinglyLinkedList<T> {
     // singly linked list length
     public length: number;
@@ -276,6 +293,14 @@ export class Stack<T> extends SinglyLinkedList<T> {
     }
 }
 
-// create stack and queue for a specific type
+/**
+ * List-based string values queue.
+ * @class
+ */
 export class StringQueue extends Queue<string> { constructor() {super(stringsMatch);} }
+
+/**
+ * List-based string values stack.
+ * @class
+ */
 export class StringStack extends Stack<string> { constructor() {super(stringsMatch);} }

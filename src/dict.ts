@@ -1,3 +1,8 @@
+/**
+ * Dictionary example.
+ * @module
+ */
+
 /* eslint-disable max-lines */
 
 export const dict: Array<string> = [

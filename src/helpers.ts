@@ -1,3 +1,22 @@
+/**
+ * Shared helper functions.
+ * @module
+ * @showCategories
+ * @categoryDescription Utils
+ * - Generic utilities functions.
+ * @categoryDescription Formatters
+ * - Format values for in-memory storage.
+ * @categoryDescription Comparators
+ * - Custome comparison functions for values ordering.
+ * @categoryDescription Matchers
+ * - Custom equality functions for values matching.
+ * @categoryDescription Benchmarks
+ * - Generic benchmarking related functions.
+ * @remarks
+ * - Comparators return 1 if a is greater, -1 if b is greater and 0 if a and b are equal.
+ * - Matchers return true if values match, false otherwise.
+ */
+
 // import primitives
 import {endianness} from "node:os";
 import {Buffer} from "node:buffer";
@@ -23,7 +42,10 @@ import type {
 // #                           UTILS                            #
 // ##############################################################
 
-// shuffle array elements
+/**
+ * shuffle array elements.
+ * @category Utils
+ */
 export const shuffle = (a: Array<unknown>): Array<unknown> => {
     // array length
     let len: number = a.length;
@@ -40,17 +62,26 @@ export const shuffle = (a: Array<unknown>): Array<unknown> => {
     return a;
 };
 
-// pick a random number between 2 indices
+/**
+ * pick a random number between 2 values.
+ * @category Utils
+ */
 export const rnd = (lb: number, ub: number): number => lb + Math.round(Math.random() * (ub - lb));
 
-// output a single random character (unicode basic latin)
+/**
+ * output a single random character (unicode basic latin).
+ * @category Utils
+ */
 export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
 
 // ##############################################################
 // #                         FORMATTERS                         #
 // ##############################################################
 
-// store objects w/ number prop between 0 and 65535
+/**
+ * store object w/ number prop between 0 and 65535.
+ * @category Formatters
+ */
 export const formatSampleObject: formatterSignature<SampleObject> = (v: SampleObject | undefined): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(2);
@@ -68,7 +99,10 @@ export const formatSampleObject: formatterSignature<SampleObject> = (v: SampleOb
     return formatted;
 };
 
-// store objects w/ number prop between 0 and 2 ** length - 1
+/**
+ * read object w/ number prop between 0 and 65535.
+ * @category Formatters
+ */
 export const unformatSampleObject: unformatterSignature<SampleObject> = (b: Buffer): SampleObject => {
     // read system endianness and value
     const value = endianness() === `LE` ? b.readUInt16LE(0) : b.readUInt16BE(0);
@@ -76,7 +110,10 @@ export const unformatSampleObject: unformatterSignature<SampleObject> = (b: Buff
     return {prop: value};
 };
 
-// store a number between 0 and 65535
+/**
+ * store a number between 0 and 65535.
+ * @category Formatters
+ */
 export const formatNumber: formatterSignature<number> = (v: number | undefined): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(2);
@@ -95,7 +132,10 @@ export const formatNumber: formatterSignature<number> = (v: number | undefined):
 
 };
 
-// read a number between 0 and 65535 on 2 bytes
+/**
+ * read a number between 0 and 65535.
+ * @category Formatters
+ */
 export const unformatNumber: unformatterSignature<number> = (b: Buffer): number => {
     // read system endianness and value
     const value = endianness() === `LE` ? b.readUInt16LE(0) : b.readUInt16BE(0);
@@ -103,7 +143,10 @@ export const unformatNumber: unformatterSignature<number> = (b: Buffer): number 
     return value;
 };
 
-// store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max)
+/**
+ * store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
+ * @category Formatters
+ */
 export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> = (v: GraphVertexByDistance | undefined): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(6);
@@ -125,6 +168,10 @@ export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> =
     return formatted;
 };
 
+/**
+ * read vertex index and distance.
+ * @category Formatters
+ */
 export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistance> = (b: Buffer): GraphVertexByDistance => {
     // read system endianness and value
     const [ index, distance ] = endianness() === `LE` ? [ b.readUInt16LE(0), b.readUInt32LE(2) ] : [ b.readUInt16BE(0), b.readUInt32BE(2) ];
@@ -136,9 +183,10 @@ export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistanc
 // #                        COMPARATORS                         #
 // ##############################################################
 
-// comparator returns 1 if a is greater, -1 if b is greater and 0 if a and b are equal
-
-// sample objects comparator function
+/**
+ * sample objects comparator function.
+ * @category Comparators
+ */
 export const compareSampleObjects: comparatorSignature<SampleObject> = (a: SampleObject, b: SampleObject): 0 | 1 | -1 => {
     // a greater than b
     if (a.prop > b.prop)
@@ -150,10 +198,16 @@ export const compareSampleObjects: comparatorSignature<SampleObject> = (a: Sampl
     return 0;
 };
 
-// compare numbers
+/**
+ * numbers comparator function.
+ * @category Comparators
+ */
 export const compareNumbers = (a: number, b: number): 0 | 1 | -1 => (a > b ? 1 : a < b ? -1 : 0);
 
-// compare vertices by distance and not by adjacence ...
+/**
+ * compare vertices by distance and not by adjacency.
+ * @category Comparators
+ */
 export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: GraphVertexByDistance): 0 | 1 | -1 => {
     // distance origin to a > distance origin to b
     if (a.distance > b.distance)
@@ -171,20 +225,34 @@ export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: Gra
 // #                          MATCHERS                          #
 // ##############################################################
 
-// sample objects matcher function, return true if stringified values are equal
+/**
+ * sample objects matcher function.
+ * @category Matchers
+ * @remarks
+ * - return true if stringified values are equal.
+ */
 export const objectsMatch: matcherSignature<unknown> = (a: unknown, b: unknown): boolean => JSON.stringify(a) === JSON.stringify(b);
 
-// values match
+/**
+ * string values matcher function.
+ * @category Matchers
+ */
 export const stringsMatch: matcherSignature<string> = (a: string, b: string): boolean => a === b;
 
-// numbers match
+/**
+ * numeric values matcher function.
+ * @category Matchers
+ */
 export const numbersMatch: matcherSignature<number> = (a: number, b: number): boolean => a === b;
 
 // ##############################################################
 // #                         BENCHMARKS                         #
 // ##############################################################
 
-// measure function execution time
+/**
+ * measure function execution time.
+ * @category Benchmarks
+ */
 export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: number; result: unknown} => {
     // init start time
     const st = new Date().getTime();
@@ -194,7 +262,10 @@ export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: nu
     return {time: new Date().getTime() - st, result};
 };
 
-// enqueue / dequeue benchmarking function
+/**
+ * enqueue / dequeue values.
+ * @category Benchmarks
+ */
 export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<SampleObject>): void => {
     arr.forEach((x: string | SampleObject, i: number) => {
         // enqueue
@@ -208,7 +279,10 @@ export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<SampleOb
     });
 };
 
-// push / pop benchmarking function
+/**
+ * push / pop values.
+ * @category Benchmarks
+ */
 export const benchmarkStack = (q: StackType, arr: Array<string> | Array<SampleObject>): void => {
     arr.forEach((x: string | SampleObject, i: number) => {
         // push

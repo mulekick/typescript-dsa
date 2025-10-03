@@ -1,3 +1,8 @@
+/**
+ * Graph data structure.
+ * @module
+ */
+
 // import modules
 import {Queue} from "./singlyLinkedList.ts";
 import {BinaryHeap} from "./binaryHeap.ts";
@@ -24,6 +29,13 @@ import type {
     LineGraphVertex
 } from "../interfaces.ts";
 
+/**
+ * Graph implementation over generic type.
+ * @class
+ * @typeParam T data type stored in graph vertices.
+ * @remarks
+ * - Graphs are node based structures and are completely generic (no limitation on node values size).
+ */
 export class Graph<T> {
 
     // ##############################################################

@@ -1,3 +1,8 @@
+/**
+ * Heap based data structures.
+ * @module
+ */
+
 /* eslint-disable @typescript-eslint/class-methods-use-this */
 
 // import modules
@@ -7,9 +12,13 @@ import {compareSampleObjects, formatSampleObject, objectsMatch, unformatSampleOb
 // import types
 import type {comparatorSignature, formatterSignature, matcherSignature, SampleObject, unformatterSignature} from "../interfaces.ts";
 
-// heap is an array based data structure and can't be made truly generic
-// it relies on an arraylist, thus the T type has to have a max size ...
-
+/**
+ * Binary heap implementation over generic type.
+ * @class
+ * @typeParam T data type stored in heap elements.
+ * @remarks
+ * - Heaps rely on arraylists, thus the T type has to have a max size.
+ */
 export class BinaryHeap<T> extends ArrayList<T> {
 
     // min / max heap indicator
@@ -207,5 +216,14 @@ export class BinaryHeap<T> extends ArrayList<T> {
     }
 }
 
+/**
+ * Min heap implementation.
+ * @class
+ */
 export class MinHeap extends BinaryHeap<SampleObject> { constructor() {super(false, 2, formatSampleObject, unformatSampleObject, objectsMatch, compareSampleObjects);} }
+
+/**
+ * Max heap implementation.
+ * @class
+ */
 export class MaxHeap extends BinaryHeap<SampleObject> { constructor() {super(true, 2, formatSampleObject, unformatSampleObject, objectsMatch, compareSampleObjects);} }

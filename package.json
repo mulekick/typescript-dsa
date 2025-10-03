@@ -1,8 +1,8 @@
 {
-    "name": "my-awesome-typescript-project",
-    "version": "1.0.1",
+    "name": "story-structure",
+    "version": "1.0.0",
     "private": true,
-    "description": "Ready to use environment for running typescript code, no transpilation or bundling.",
+    "description": "Data structures & algorithms implementations with jest unit tests for benchmarking.",
     "type": "module",
     "scripts": {
         "list": "npx tsc --project tsconfig.json --listFilesOnly | sort",
@@ -40,5 +40,5 @@
     "license": "MIT",
     "repository": {},
     "bugs": {},
-    "homepage": "https://github.com/mulekick/typescript-setup"
+    "homepage": "https://github.com/mulekick/story-structure"
 }

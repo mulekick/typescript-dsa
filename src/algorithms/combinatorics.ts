@@ -1,7 +1,19 @@
+/**
+ * Combinatorics algorithms.
+ * @module
+ * @remarks
+ * - Try to design a backpack optimization algorithm where each iteam has a volume and a value ?
+ * - Try to design a coin change algorithm where each coin quantity is limited ?
+ */
+
 /* eslint-disable no-param-reassign */
 
-// use a backtracking algorithm to find all possible unique combinations of N elements from a set
-// of course, if desired length equals set length, the entire set will be returned ...
+/**
+ * find unique combinations.
+ * @remarks
+ * - Use a backtracking algorithm to find all possible unique combinations of N elements from a set
+ * - Of course, if desired combination length N equals set length, the entire set will be returned.
+ */
 export const combine = <T>(current: number | undefined, combination: Array<T>, combinations: Array<Array<T>>, set: Array<T>, desired: number): Array<Array<T>> => {
     // no value index is passed during the initial call
     const isValue = typeof current === `number`;
@@ -36,8 +48,12 @@ export const combine = <T>(current: number | undefined, combination: Array<T>, c
     return combinations;
 };
 
-// use a backtracking algorithm to solve the coin change problem - this function can
-// be made generic as long as there is a way to sum the values of the elements ...
+/**
+ * coin change problem.
+ * @remarks
+ * - Use a backtracking algorithm to solve the coin change problem.
+ * - This function can be made generic as long as there is a way to sum the values of the elements.
+ */
 export const coinChange = (coins: Array<number>, value: number): Array<number> => {
     // find the minimum number of coins that amount for the desired value
     const change = (current: number | undefined, combination: Array<number>, solution: Array<number>, set: Array<number>, desired: number): Array<number> => {
@@ -91,6 +107,3 @@ export const coinChange = (coins: Array<number>, value: number): Array<number> =
     // sort coins array (descending so greatest values are processed first) and start recursing ...
     return change(undefined, [], [], coins.sort((a, b) => (a < b ? 1 : a > b ? -1 : 0)), value);
 };
-
-// try to design a backpack optimization algorithm where each iteam has a volume and a value ?
-// try to design a coin change algorithm where each coin quantity is limited ?

@@ -1,7 +1,15 @@
+/**
+ * In-memory array implementation.
+ * @module
+ */
+
 // import primitives
 import {Buffer} from "node:buffer";
 
-// actual implementation of an array as a javascript class ...
+/**
+ * actual implementation of an array as a javascript class.
+ * @class
+ */
 export class BarebonesArray {
     // declare memory, number of bytes per element and offset
     private memory: Buffer;

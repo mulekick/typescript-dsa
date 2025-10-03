@@ -1,3 +1,10 @@
+/**
+ * Deque based data structures.
+ * @module
+ * @remarks
+ * - Deque is a ringbuffer based double ended queue.
+ */
+
 // import modules
 import {BarebonesArray} from "./array.ts";
 import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers.ts";
@@ -6,6 +13,14 @@ import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers
 import type {formatterSignature, unformatterSignature, matcherSignature, SampleObject} from "../interfaces.ts";
 
 // ringbuffer based double ended queue
+
+/**
+ * Deque implementation over generic type.
+ * @class
+ * @typeParam T data type stored in Deque elements.
+ * @remarks
+ * - Deques are array based structures and can't be made truly generic.
+ */
 export class Deque<T> {
 
     // store current size (total capacity)
@@ -277,6 +292,10 @@ export class Deque<T> {
     }
 }
 
+/**
+ * Deque based object queue.
+ * @class
+ */
 export class OtherObjectQueue extends Deque<SampleObject> {
     // constructor
     constructor() {
@@ -302,7 +321,12 @@ export class OtherObjectQueue extends Deque<SampleObject> {
     }
 }
 
-// map native JS array methods to deque
+/**
+ * Deque based JS array-like implementation.
+ * @class
+ * @remarks
+ * - Maps native JS array methods to deque methods.
+ */
 export class OtherArray<T> extends Deque<T> {
     public push(item: T): void {this.append(item);}
     public pop(): T | undefined {return this.removeAt(this.length - 1);}

@@ -1,3 +1,8 @@
+/**
+ * Ringbuffer based data structures.
+ * @module
+ */
+
 // import modules
 import {BarebonesArray} from "./array.ts";
 import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers.ts";
@@ -5,6 +10,12 @@ import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers
 // import types
 import type {SampleObject, formatterSignature, matcherSignature, unformatterSignature} from "../interfaces.ts";
 
+/**
+ * Ringbuffer implementation over generic type.
+ * @class
+ * @typeParam T data type stored in ArrayList elements.
+ * - Ringbuffers are array based structures and can't be made truly generic.
+ */
 export class RingBuffer<T> {
 
     // store current size (total capacity)
@@ -139,6 +150,10 @@ export class RingBuffer<T> {
 
 }
 
+/**
+ * Ringbuffer based object queue.
+ * @class
+ */
 export class ObjectQueue extends RingBuffer<SampleObject> {
     // constructor
     constructor() {

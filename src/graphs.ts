@@ -1,3 +1,15 @@
+/**
+ * Graph-specific helper functions.
+ * @module
+ * @showCategories
+ * @categoryDescription Helpers
+ * - Generic helper functions.
+ * @categoryDescription Mazes
+ * - Functions used to represent mazes as graphs.
+ * @categoryDescription Data
+ * - Sample data used to initialize a graph.
+ */
+
 /* eslint-disable no-continue, @stylistic/no-multi-spaces */
 
 // import modules
@@ -17,7 +29,10 @@ import type {
 // #                       GRAPH HELPERS                        #
 // ##############################################################
 
-// translate adjacency matrix to adjacency list
+/**
+ * translate adjacency matrix to adjacency list.
+ * @category Helpers
+ */
 export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList => {
     // init result = adjacency list of length matrix.length, fill with empty arrays
     const result: AdjacencyList = new Array(matrix.length).fill(null)
@@ -37,14 +52,22 @@ export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList =>
     return result;
 };
 
-// inverse operation
+/**
+ * translate adjacency list to adjacency matrix.
+ * @category Helpers
+ */
 export const translateListToMatrix = (list: AdjacencyList): AdjacencyMatrix => new Array(list.length).fill(null)
     .map((_, vertex) => list[vertex].reduce((r, x) => {
         r[x.edge] = x.weight;
         return r;
     }, new Array<number>(list.length).fill(Graph.INFINITY)));
 
-// reconstruct path to vertex v from previous array - pass array and vertices start and v indexes
+/**
+ * reconstruct path to vertex v from previous array.
+ * @category Helpers
+ * @remarks
+ * - Pass array and vertices <start> and <v> indices
+ */
 export const reorder = (previous: Array<number | undefined>, initial: number, final: number): Array<number> => {
     // init result = []
     const result = [];
@@ -63,7 +86,10 @@ export const reorder = (previous: Array<number | undefined>, initial: number, fi
     return result.reverse();
 };
 
-// return vertices sequence from edges path
+/**
+ * return vertices sequence from edges path.
+ * @category Helpers
+ */
 export const sequence = (path: Array<number>, edges: AdjacencyList): Array<GraphEdge> => {
     // init result
     const result = [ {edge: path[0], weight: 0} ];
@@ -81,10 +107,16 @@ export const sequence = (path: Array<number>, edges: AdjacencyList): Array<Graph
     return result;
 };
 
-// reduce edge sequence to vertices sequence
+/**
+ * reduce edge sequence to vertices sequence.
+ * @category Helpers
+ */
 export const reduceToVerticesList = (vertices: Vertices<string>, edges: Array<GraphEdge>): Array<string> => edges.map(x => vertices[x.edge]);
 
-// reduce edge sequence to sum of edges weights
+/**
+ * reduce edge sequence to sum of edges weights.
+ * @category Helpers
+ */
 export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.reduce((r, x) => {
     // add current edge weight and return
     // eslint-disable-next-line no-param-reassign
@@ -96,10 +128,16 @@ export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.
 // #                        MAZES AS GRAPHS                     #
 // ##############################################################
 
-// coords match
+/**
+ * cell coords matcher function.
+ * @category Mazes
+ */
 export const coordsMatch: matcherSignature<coords> = (a: coords, b: coords): boolean => a.x === b.x && a.y === b.y;
 
-// visit the 4 adjacent cells top, left, bottom, right
+/**
+ * visit the 4 adjacent cells top, left, bottom, right.
+ * @category Mazes
+ */
 export const readDirections = (cell: coords): [coords, coords, coords, coords] => [
     {x: cell.x, y: cell.y - 1},
     {x: cell.x - 1, y: cell.y},
@@ -107,6 +145,10 @@ export const readDirections = (cell: coords): [coords, coords, coords, coords] =
     {x: cell.x + 1, y: cell.y}
 ];
 
+/**
+ * create unweighted graph from maze string representation.
+ * @category Mazes
+ */
 export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string): [Array<coords>, AdjacencyMatrix] => {
 
     // --- KEEP TRACK OF CREATED VERTICES ---
@@ -194,7 +236,10 @@ export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string)
 // #                        SAMPLE DATA                         #
 // ##############################################################
 
-// cities in Nepal (40)
+/**
+ * cities in Nepal (40).
+ * @category Data
+ */
 export const cities: Vertices<string> = [
     `Baglung`,
     `Baitadi`,
@@ -238,7 +283,10 @@ export const cities: Vertices<string> = [
     `Tulsipur`
 ];
 
-// traveling distances (40 * 40)
+/**
+ * traveling distances between cities (40 * 40).
+ * @category Data
+ */
 export const distances: AdjacencyMatrix = [
     [ 0,    893,  454,  334,  604,  630,  331,  312,  679,  353,  660,  705,  650,  600,  303,  388,  871,  507,  181,  276,  740,  433,  480,  673,  271,  409,  389,  356,  739,  199,  554,  73,   511,  558,  442,  199,  890,  709,  341,  496 ],
     [ 893,  0,    820,  924,  603,  1099, 445,  826,  581,  1174, 920,  475,  218,  1145, 1095, 870,  955,  150,  1000, 762,  771,  1235, 928,  1050, 1168, 1036, 544,  591,  252,  694,  369,  820,  1006, 519,  937,  620,  1385, 1228, 908,  457 ],

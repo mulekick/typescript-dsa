@@ -1,3 +1,14 @@
+/**
+ * Rate-limited async calls queue.
+ * @module
+ * @remarks
+ * - Use case of a queue maintaining references to objects :
+ *   1. Create a queue and enqueue promises (one time or on a regular basis).
+ *   2. Dequeue promises by batches of 5 and asynchronously execute them.
+ *   3. Store the results in a map to access responses after execution.
+ *   4. Proper solution involves recursion as well.
+ */
+
 // import primitives
 import console from "node:console";
 import {randomUUID} from "node:crypto";
@@ -9,16 +20,14 @@ import {rnd} from "./helpers.ts";
 // import types
 import type {matcherSignature, NetworkRequest} from "./interfaces.ts";
 
-// use case of a queue maintaining references to objects :
-// create a queue and enqueue promises (one time or on a regular basis)
-// dequeue promises by batches of 5 and asynchronously execute them
-// store the results in a map for access to responses post execution
-// proper solution involves recursion as well
-
-// create queue for a specific type
+/**
+ * create queue for a specific type.
+ */
 class RequestQueue extends Queue<NetworkRequest> {}
 
-// create relevant matcher function
+/**
+ * create the relevant matcher function.
+ */
 const requestsMatch: matcherSignature<NetworkRequest> = (a: NetworkRequest, b: NetworkRequest): boolean => a.uuid === b.uuid;
 
 try {

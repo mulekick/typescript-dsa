@@ -1,8 +1,19 @@
+/**
+ * Trie (retrieval tree) data structure.
+ * @module
+ */
+
 // import types
 import type {TrieNode} from "../interfaces.ts";
 
-// every method is O(1) since the tree height is limited by the longest word length
-// this class was not made generic since autocomplete is the only use case identified ...
+/**
+ * Trie implementation.
+ * @class
+ * @typeParam T data type stored in heap elements.
+ * @remarks
+ * - Every method is O(1) since the tree height is limited by the longest word length.
+ * - This class was not made generic since autocomplete is the only use case identified.
+ */
 export class Trie {
 
     // root node (stores no character nor isWord flag)

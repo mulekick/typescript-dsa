@@ -1,3 +1,8 @@
+/**
+ * Binary tree data structure.
+ * @module
+ */
+
 // import primitives
 import console from "node:console";
 
@@ -7,6 +12,13 @@ import {Queue} from "./singlyLinkedList.ts";
 // import types
 import type {BinaryNode, comparatorSignature, visitNodeSignature, depthTraversalType, matcherSignature} from "../interfaces.ts";
 
+/**
+ * Binary search tree implementation over generic type.
+ * @class
+ * @typeParam T data type stored in tree nodes.
+ * @remarks
+ * - Trees are node based structures and are completely generic (no limitation on node values size).
+ */
 export class BinarySearchTree<T> {
 
     // declare internal tree structure
