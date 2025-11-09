@@ -15,7 +15,7 @@ import type {BinaryNode, comparatorSignature, visitNodeSignature, depthTraversal
 /**
  * Binary search tree implementation over generic type.
  * @class
- * @typeParam T data type stored in tree nodes.
+ * @typeParam T Data type stored in tree nodes.
  * @remarks
  * - Trees are node based structures and are completely generic (no limitation on node values size).
  */

@@ -21,12 +21,12 @@ import {rnd} from "./helpers.ts";
 import type {matcherSignature, NetworkRequest} from "./interfaces.ts";
 
 /**
- * create queue for a specific type.
+ * Create queue for a specific type.
  */
 class RequestQueue extends Queue<NetworkRequest> {}
 
 /**
- * create the relevant matcher function.
+ * Create the relevant matcher function.
  */
 const requestsMatch: matcherSignature<NetworkRequest> = (a: NetworkRequest, b: NetworkRequest): boolean => a.uuid === b.uuid;
 
@@ -42,7 +42,7 @@ try {
     const resultsMap = new Map<string, string>();
 
     // requests dequeuing / processing ...
-    const f = (request: NetworkRequest | undefined, index: number, promisesArray: Array<Promise<void> | undefined>): Promise<void> => new Promise((resolve, reject) => {
+    const f = (index: number, promisesArray: Array<Promise<void> | undefined>, request?: NetworkRequest): Promise<void> => new Promise((resolve, reject) => {
 
         // log
         console.log(`assign request ${ String(request?.uuid) } to slot ${ String(index) } ...`);
@@ -68,7 +68,7 @@ try {
             // resolve
             resolve();
             // the promise is resolved at this stage, dequeue a new request
-            promisesArray[index] = f(requestQueue.dequeue(), index, promisesArray);
+            promisesArray[index] = f(index, promisesArray, requestQueue.dequeue());
         };
 
         // - perform request
@@ -98,7 +98,7 @@ try {
     // declare promises array
     const concurrentRequests: Array<Promise<void> | null> = new Array(MAX_CONCURRENT_REQUESTS).fill(null)
         // queue the first batch of requests
-        .map((_, i, a) => f(requestQueue.dequeue(), i, a));
+        .map((_, i, a) => f(i, a, requestQueue.dequeue()));
 
     // start requests execution ...
     void Promise.all(concurrentRequests);

@@ -13,7 +13,7 @@ import type {SampleObject, formatterSignature, matcherSignature, unformatterSign
 /**
  * ArrayList implementation over generic type.
  * @class
- * @typeParam T data type stored in ArrayList elements.
+ * @typeParam T Data type stored in ArrayList elements.
  * - ArrayLists are array based structures and can't be made truly generic.
  */
 export class ArrayList<T> {

@@ -7,7 +7,7 @@
 import type {coords} from "../interfaces.ts";
 
 /**
- * find the path from entrance to exit in a maze.
+ * Find the path from entrance to exit in a maze.
  * @remarks
  * - Use a dynamic programming trick to progress from O(n) to O(1) AT EACH RECURSIVE CALL.
  */

@@ -9,12 +9,12 @@
 /* eslint-disable no-param-reassign */
 
 /**
- * find unique combinations.
+ * Find unique combinations.
  * @remarks
  * - Use a backtracking algorithm to find all possible unique combinations of N elements from a set
  * - Of course, if desired combination length N equals set length, the entire set will be returned.
  */
-export const combine = <T>(current: number | undefined, combination: Array<T>, combinations: Array<Array<T>>, set: Array<T>, desired: number): Array<Array<T>> => {
+export const combine = <T>(combination: Array<T>, combinations: Array<Array<T>>, set: Array<T>, desired: number, current?: number): Array<Array<T>> => {
     // no value index is passed during the initial call
     const isValue = typeof current === `number`;
 
@@ -36,7 +36,7 @@ export const combine = <T>(current: number | undefined, combination: Array<T>, c
     // at this stage, all combinations with values of lower indices have already been added
     // combinations will aggregate the solutions during the course of successive recursions
     for (let i = isValue ? current + 1 : 0; i < set.length; i++)
-        combine(i, combination, combinations, set, desired);
+        combine(combination, combinations, set, desired, i);
 
     // 4. POST
     // pop value from combination (backtrack)
@@ -49,14 +49,14 @@ export const combine = <T>(current: number | undefined, combination: Array<T>, c
 };
 
 /**
- * coin change problem.
+ * Coin change problem.
  * @remarks
  * - Use a backtracking algorithm to solve the coin change problem.
  * - This function can be made generic as long as there is a way to sum the values of the elements.
  */
 export const coinChange = (coins: Array<number>, value: number): Array<number> => {
     // find the minimum number of coins that amount for the desired value
-    const change = (current: number | undefined, combination: Array<number>, solution: Array<number>, set: Array<number>, desired: number): Array<number> => {
+    const change = (combination: Array<number>, solution: Array<number>, set: Array<number>, desired: number, current?: number): Array<number> => {
         // no value index is passed during the initial call
         const isValue = typeof current === `number`;
         // sum of values for current combination
@@ -92,7 +92,7 @@ export const coinChange = (coins: Array<number>, value: number): Array<number> =
         // at this stage, all combinations with values of lower indices have already been explored
         // solution will be mutated if needed during the course of successive recursions
         for (let i = isValue ? current : 0; i < set.length; i++)
-            solution = change(i, combination, solution, set, desired);
+            solution = change(combination, solution, set, desired, i);
 
         // 4. POST
         // pop value from combination (backtrack)
@@ -105,5 +105,5 @@ export const coinChange = (coins: Array<number>, value: number): Array<number> =
     };
 
     // sort coins array (descending so greatest values are processed first) and start recursing ...
-    return change(undefined, [], [], coins.sort((a, b) => (a < b ? 1 : a > b ? -1 : 0)), value);
+    return change([], [], coins.sort((a, b) => (a < b ? 1 : a > b ? -1 : 0)), value);
 };

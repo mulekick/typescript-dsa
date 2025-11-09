@@ -10,13 +10,13 @@ import {stringsMatch} from "../helpers.ts";
 import type {matcherSignature} from "../interfaces.ts";
 
 /**
- * list node (singly linked).
- * @typeParam T data type stored in the node.
+ * List node (singly linked).
+ * @typeParam T Data type stored in the node.
  * @interface
  */
 interface Node<T> {
     // pointer to next node
-    next: Node<T> | undefined;
+    next?: Node<T>;
     // store value
     value: T;
 }
@@ -24,7 +24,7 @@ interface Node<T> {
 /**
  * Singly linked list implementation over generic type.
  * @class
- * @typeParam T data type stored in list nodes.
+ * @typeParam T Data type stored in list nodes.
  * @remarks
  * - Lists are node based structures and are completely generic (no limitation on node values size).
  */
@@ -32,9 +32,9 @@ export class SinglyLinkedList<T> {
     // singly linked list length
     public length: number;
     // reference to head node
-    private head: Node<T> | undefined;
+    private head?: Node<T>;
     // reference to tail node
-    private tail: Node<T> | undefined;
+    private tail?: Node<T>;
     // declare internal node matcher function as public for combined use with other data structures
     public match: matcherSignature<T>;
 

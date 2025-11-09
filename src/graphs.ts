@@ -30,7 +30,7 @@ import type {
 // ##############################################################
 
 /**
- * translate adjacency matrix to adjacency list.
+ * Translate adjacency matrix to adjacency list.
  * @category Helpers
  */
 export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList => {
@@ -53,7 +53,7 @@ export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList =>
 };
 
 /**
- * translate adjacency list to adjacency matrix.
+ * Translate adjacency list to adjacency matrix.
  * @category Helpers
  */
 export const translateListToMatrix = (list: AdjacencyList): AdjacencyMatrix => new Array(list.length).fill(null)
@@ -63,7 +63,7 @@ export const translateListToMatrix = (list: AdjacencyList): AdjacencyMatrix => n
     }, new Array<number>(list.length).fill(Graph.INFINITY)));
 
 /**
- * reconstruct path to vertex v from previous array.
+ * Reconstruct path to vertex v from previous array.
  * @category Helpers
  * @remarks
  * - Pass array and vertices <start> and <v> indices
@@ -87,7 +87,7 @@ export const reorder = (previous: Array<number | undefined>, initial: number, fi
 };
 
 /**
- * return vertices sequence from edges path.
+ * Return vertices sequence from edges path.
  * @category Helpers
  */
 export const sequence = (path: Array<number>, edges: AdjacencyList): Array<GraphEdge> => {
@@ -108,13 +108,13 @@ export const sequence = (path: Array<number>, edges: AdjacencyList): Array<Graph
 };
 
 /**
- * reduce edge sequence to vertices sequence.
+ * Reduce edge sequence to vertices sequence.
  * @category Helpers
  */
 export const reduceToVerticesList = (vertices: Vertices<string>, edges: Array<GraphEdge>): Array<string> => edges.map(x => vertices[x.edge]);
 
 /**
- * reduce edge sequence to sum of edges weights.
+ * Reduce edge sequence to sum of edges weights.
  * @category Helpers
  */
 export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.reduce((r, x) => {
@@ -129,13 +129,13 @@ export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.
 // ##############################################################
 
 /**
- * cell coords matcher function.
+ * Cell coords matcher function.
  * @category Mazes
  */
 export const coordsMatch: matcherSignature<coords> = (a: coords, b: coords): boolean => a.x === b.x && a.y === b.y;
 
 /**
- * visit the 4 adjacent cells top, left, bottom, right.
+ * Visit the 4 adjacent cells top, left, bottom, right.
  * @category Mazes
  */
 export const readDirections = (cell: coords): [coords, coords, coords, coords] => [
@@ -146,7 +146,7 @@ export const readDirections = (cell: coords): [coords, coords, coords, coords] =
 ];
 
 /**
- * create unweighted graph from maze string representation.
+ * Create unweighted graph from maze string representation.
  * @category Mazes
  */
 export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string): [Array<coords>, AdjacencyMatrix] => {
@@ -237,7 +237,7 @@ export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string)
 // ##############################################################
 
 /**
- * cities in Nepal (40).
+ * Cities in Nepal (40).
  * @category Data
  */
 export const cities: Vertices<string> = [
@@ -284,7 +284,7 @@ export const cities: Vertices<string> = [
 ];
 
 /**
- * traveling distances between cities (40 * 40).
+ * Traveling distances between cities (40 * 40).
  * @category Data
  */
 export const distances: AdjacencyMatrix = [

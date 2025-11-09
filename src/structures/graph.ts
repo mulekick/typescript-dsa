@@ -32,7 +32,7 @@ import type {
 /**
  * Graph implementation over generic type.
  * @class
- * @typeParam T data type stored in graph vertices.
+ * @typeParam T Data type stored in graph vertices.
  * @remarks
  * - Graphs are node based structures and are completely generic (no limitation on node values size).
  */

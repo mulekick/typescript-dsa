@@ -17,7 +17,7 @@ import type {formatterSignature, unformatterSignature, matcherSignature, SampleO
 /**
  * Deque implementation over generic type.
  * @class
- * @typeParam T data type stored in Deque elements.
+ * @typeParam T Data type stored in Deque elements.
  * @remarks
  * - Deques are array based structures and can't be made truly generic.
  */
@@ -183,7 +183,7 @@ export class Deque<T> {
             }
         }
         // set element at index
-        this.set(item, index);
+        this.set(index, item);
         // increase length
         this.length += 1;
     }
@@ -208,17 +208,17 @@ export class Deque<T> {
         // if length === 1
         if (this.length === 1) {
             // zero out head element
-            this.set(undefined, 0);
+            this.set(0, undefined);
         // else if index === 0
         } else if (index === 0) {
             // zero out head element
-            this.set(undefined, 0);
+            this.set(0, undefined);
             // increment head
             this.head += 1;
         // else if idx === length - 1
         } else if (index === this.length - 1) {
             // zero out tail element
-            this.set(undefined, this.length - 1);
+            this.set(this.length - 1, undefined);
             // decrement tail
             this.tail = tail === 0 ? this.tail + this.size - 1 : this.tail - 1;
         // else
@@ -232,7 +232,7 @@ export class Deque<T> {
                 // right shift elements from head to pos
                 this.array.write(this.array.read(head, pos - head), head + 1);
                 // zero out head element
-                this.set(undefined, 0);
+                this.set(0, undefined);
                 // increment head
                 this.head += 1;
             // else
@@ -240,7 +240,7 @@ export class Deque<T> {
                 // left shift elements from pos to tail
                 this.array.write(this.array.read(pos + 1, tail - pos), pos);
                 // zero out tail element
-                this.set(undefined, this.length - 1);
+                this.set(this.length - 1, undefined);
                 // decrement tail
                 this.tail = tail === 0 ? this.tail + this.size - 1 : this.tail - 1;
             }
@@ -281,7 +281,7 @@ export class Deque<T> {
     }
 
     // set element value O(1) -> overwrite
-    public set(item: T | undefined, index: number): void {
+    public set(index: number, item?: T): void {
         // throw if idx > length or negative
         if (index < 0 || index > this.length)
             throw new RangeError(`write index exceeds current array length`);

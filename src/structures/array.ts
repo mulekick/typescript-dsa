@@ -7,7 +7,7 @@
 import {Buffer} from "node:buffer";
 
 /**
- * actual implementation of an array as a javascript class.
+ * Actual implementation of an array as a javascript class.
  * @class
  */
 export class BarebonesArray {

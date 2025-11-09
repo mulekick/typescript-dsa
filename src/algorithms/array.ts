@@ -8,7 +8,9 @@
 // import primitives
 import console from "node:console";
 
-// a function with a linear time complexity
+/**
+ * A function with a linear time complexity.
+ */
 export const sampleLinearfunction = (i: string): void => {
     // first iteration, time consumption grows linearly with input
     i.split(``).forEach((c: string): void => {console.log(`one: ${ c }`);});
@@ -23,7 +25,7 @@ export const sampleLinearfunction = (i: string): void => {
 // ##############################################################
 
 /**
- * linear search.
+ * Linear search.
  * @remarks
  * - Time complexity O(n)
  */
@@ -39,7 +41,7 @@ export const linearSearch = (haystack: Array<number>, needle: number): boolean =
 };
 
 /**
- * binary search.
+ * Binary search.
  * @remarks
  * - Time complexity O(log n)
  * - It is assessed that haystack is sorted
@@ -73,7 +75,7 @@ export const binarySearch = (haystack: Array<number>, needle: number): boolean =
 };
 
 /**
- * two crystal balls search.
+ * Two crystal balls search.
  * @remarks
  * - Time complexity O(sqrt(n))
  * - It is assessed that breaks is sorted
@@ -108,7 +110,7 @@ export const twoCrystalBalls = (breaks: Array<boolean>): number => {
 // ##############################################################
 
 /**
- * bubble sort.
+ * Bubble sort.
  * @remarks
  * - Time complexity O(n²)
  */
@@ -132,7 +134,7 @@ export const bubbleSort = (a: Array<number>): Array<number> => {
 };
 
 /**
- * perform weak sorting, mutate array, return final pivot index.
+ * Perform weak sorting, mutate array, return final pivot index.
  * @remarks
  * - Time complexity ?
  */
@@ -167,7 +169,7 @@ export const weakSortSubarray = (arr: Array<number>, start: number, end: number)
 };
 
 /**
- * weak sort array recursively.
+ * Weak sort array recursively.
  * @remarks
  * - Time complexity ?
  */
@@ -202,7 +204,7 @@ export const weakSort = (arr: Array<number>, start: number, end: number): Array<
 };
 
 /**
- * quick sort.
+ * Quick sort.
  * @remarks
  * - Time complexity O(n * log(n))
  * - Weak sort array from 0 to array length

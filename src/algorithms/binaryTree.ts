@@ -11,7 +11,7 @@ import type {BinaryNode} from "../interfaces.ts";
 // ##############################################################
 
 /**
- * compare binary trees using DFS.
+ * Compare binary trees using DFS.
  * @remarks
  * - Time complexity O(n)
  * - Returns true if both trees are identical in shape and values, false otherwise.

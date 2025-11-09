@@ -13,7 +13,7 @@ import type {SampleObject, formatterSignature, matcherSignature, unformatterSign
 /**
  * Ringbuffer implementation over generic type.
  * @class
- * @typeParam T data type stored in ArrayList elements.
+ * @typeParam T Data type stored in ArrayList elements.
  * - Ringbuffers are array based structures and can't be made truly generic.
  */
 export class RingBuffer<T> {

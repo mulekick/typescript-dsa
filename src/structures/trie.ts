@@ -9,7 +9,7 @@ import type {TrieNode} from "../interfaces.ts";
 /**
  * Trie implementation.
  * @class
- * @typeParam T data type stored in heap elements.
+ * @typeParam T Data type stored in heap elements.
  * @remarks
  * - Every method is O(1) since the tree height is limited by the longest word length.
  * - This class was not made generic since autocomplete is the only use case identified.
@@ -38,7 +38,7 @@ export class Trie {
     }
 
     // read child node value for character O(1)
-    private static retrieveChildNode(word: string, index: number, node: TrieNode): {chr: string; position: number; childNode: TrieNode | undefined} {
+    private static retrieveChildNode(word: string, index: number, node: TrieNode): {chr: string; position: number; childNode?: TrieNode} {
         // read character at position index in word
         const chr = word[index];
         // retrieve character position in current node next
@@ -174,7 +174,7 @@ export class Trie {
         const solutions: Array<string> = [];
 
         // recursive DFS for find
-        const recurse = (current: TrieNode | undefined, index: number, word: string): void => {
+        const recurse = (index: number, word: string, current?: TrieNode): void => {
 
             // 1. BASE CASE
 
@@ -201,7 +201,7 @@ export class Trie {
             if (current.childNodes === 0) {
 
                 // increment index, recurse and pass undefined
-                recurse(undefined, index + 1, word);
+                recurse(index + 1, word, undefined);
 
             // else if index < pattern length - 1 (pattern processing in progress)
             } else if (index < pattern.length - 1) {
@@ -210,7 +210,7 @@ export class Trie {
                 const {childNode} = Trie.retrieveChildNode(pattern, index + 1, current);
 
                 // recurse and pass child node, next index and word
-                recurse(childNode, index + 1, word);
+                recurse(index + 1, word, childNode);
 
             // else
             } else {
@@ -218,7 +218,7 @@ export class Trie {
                 // for each child node in current node next (can be undefined)
                 for (let j = 0; j < current.next.length; j++)
                     // recurse and pass child node, next index and word
-                    recurse(current.next[j], index + 1, word);
+                    recurse(index + 1, word, current.next[j]);
             }
 
             // 4. POST
@@ -237,7 +237,7 @@ export class Trie {
         const initial = Trie.retrieveChildNode(pattern, 0, this.root as TrieNode);
 
         // call recursive function with value, index 0 and empty string
-        recurse(initial.childNode, 0, ``);
+        recurse(0, ``, initial.childNode);
 
         // return solutions
         return solutions;

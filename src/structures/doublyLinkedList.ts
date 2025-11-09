@@ -7,15 +7,15 @@
 import type {matcherSignature} from "../interfaces.ts";
 
 /**
- * list node (doubly linked).
- * @typeParam T data type stored in the node.
+ * List node (doubly linked).
+ * @typeParam T Data type stored in the node.
  * @interface
  */
 interface Node<T> {
     // pointer to previous node
-    prev: Node<T> | undefined;
+    prev?: Node<T>;
     // pointer to next node
-    next: Node<T> | undefined;
+    next?: Node<T>;
     // store value
     value: T;
 }
@@ -23,15 +23,15 @@ interface Node<T> {
 /**
  * Doubly linked list implementation over generic type.
  * @class
- * @typeParam T data type stored in list nodes.
+ * @typeParam T Data type stored in list nodes.
  * @remarks
  * - Lists are node based structures and are completely generic (no limitation on node values size).
  */
 export class DoublyLinkedList<T> {
     // pointer to head node
-    private head: Node<T> | undefined;
+    private head?: Node<T>;
     // pointer to tail node
-    private tail: Node<T> | undefined;
+    private tail?: Node<T>;
     // total number of nodes
     public length: number;
     // declare internal node matcher function as public for combined use with other data structures

@@ -15,7 +15,7 @@ import type {comparatorSignature, formatterSignature, matcherSignature, SampleOb
 /**
  * Binary heap implementation over generic type.
  * @class
- * @typeParam T data type stored in heap elements.
+ * @typeParam T Data type stored in heap elements.
  * @remarks
  * - Heaps rely on arraylists, thus the T type has to have a max size.
  */

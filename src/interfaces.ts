@@ -48,7 +48,7 @@ export interface NetworkRequest {
 // ##############################################################
 
 /**
- * sample object signature for object storage in data structures.
+ * Sample object signature for object storage in data structures.
  * @category Object signatures
  * @interface
  */
@@ -57,7 +57,7 @@ export interface SampleObject {
 }
 
 /**
- * cell coords for recursion algorithm.
+ * Cell coords for recursion algorithm.
  * @category Object signatures
  * @interface
  */
@@ -71,19 +71,19 @@ export interface coords {
 // ##############################################################
 
 /**
- * formatting function signature.
+ * Formatting function signature.
  * @category Function signatures
- * @typeParam T data type to format into a buffer.
+ * @typeParam T Data type to format into a buffer.
  * @useDeclaredType
  * @remarks
  * - Max length allowed for storage is use case specific and must be consistent across background array constructor and formatter functions.
  */
-export type formatterSignature<T> = (v: T | undefined)=> Buffer;
+export type formatterSignature<T> = (v?: T)=> Buffer;
 
 /**
- * unformatting function signature.
+ * Unformatting function signature.
  * @category Function signatures
- * @typeParam T data type to read from a buffer.
+ * @typeParam T Data type to read from a buffer.
  * @useDeclaredType
  * @remarks
  * - Max length allowed for storage is use case specific and must be consistent across background array constructor and formatter functions.
@@ -91,9 +91,9 @@ export type formatterSignature<T> = (v: T | undefined)=> Buffer;
 export type unformatterSignature<T> = (b: Buffer)=> T;
 
 /**
- * node comparison function signature.
+ * Node comparison function signature.
  * @category Function signatures
- * @typeParam T data type stored in the nodes.
+ * @typeParam T Data type stored in the nodes.
  * @useDeclaredType
  * @remarks
  * - Used to compare nodes for ordering.
@@ -101,9 +101,9 @@ export type unformatterSignature<T> = (b: Buffer)=> T;
 export type comparatorSignature<T> = (a: T, b: T)=> 1 | -1 | 0;
 
 /**
- * node matching function signature.
+ * Node matching function signature.
  * @category Function signatures
- * @typeParam T data type stored in the nodes.
+ * @typeParam T Data type stored in the nodes.
  * @useDeclaredType
  * @remarks
  * - Used to match nodes values for update and deletion.
@@ -127,16 +127,16 @@ export type QueueType = StringQueue | ObjectQueue | OtherObjectQueue;
 // ##############################################################
 
 /**
- * depth first traversal types.
+ * Depth first traversal types.
  * @category Tree structures
  * @useDeclaredType
  */
 export type depthTraversalType = `PRE` | `IN` | `POST`;
 
 /**
- * binary node (doubly linked).
+ * Binary node (doubly linked).
  * @category Tree structures
- * @typeParam T data type stored in the node.
+ * @typeParam T Data type stored in the node.
  * @interface
  */
 export interface BinaryNode<T> {
@@ -148,15 +148,15 @@ export interface BinaryNode<T> {
 }
 
 /**
- * function signatures for node visit.
+ * Function signatures for node visit.
  * @category Tree structures
- * @typeParam T data type stored in the node.
+ * @typeParam T Data type stored in the node.
  * @useDeclaredType
  */
 export type visitNodeSignature<T> = (node: BinaryNode<T>)=> unknown;
 
 /**
- * trie node.
+ * Trie node.
  * @category Tree structures
  * @interface
  */
@@ -176,15 +176,15 @@ export interface TrieNode {
 // ##############################################################
 
 /**
- * rename for clarity's sake.
+ * Rename for clarity's sake.
  * @category Graph structures
- * @typeParam T data type stored in the vertex.
+ * @typeParam T Data type stored in the vertex.
  * @useDeclaredType
  */
 export type Vertices<T> = Array<T>;
 
 /**
- * graph edge in an adjacency list.
+ * Graph edge in an adjacency list.
  * @category Graph structures
  * @interface
  */
@@ -216,7 +216,7 @@ export type AdjacencyMatrix = Array<Array<number>>;
 export type AdjacencyList = Array<Array<GraphEdge>>;
 
 /**
- * vertex in a line graph.
+ * Vertex in a line graph.
  * @category Graph structures
  * @interface
  */
@@ -227,7 +227,7 @@ export interface LineGraphVertex {
 }
 
 /**
- * vertex by distance.
+ * Vertex by distance.
  * @category Graph structures
  * @interface
  * @remarks

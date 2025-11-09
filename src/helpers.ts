@@ -43,7 +43,7 @@ import type {
 // ##############################################################
 
 /**
- * shuffle array elements.
+ * Shuffle array elements.
  * @category Utils
  */
 export const shuffle = (a: Array<unknown>): Array<unknown> => {
@@ -63,13 +63,13 @@ export const shuffle = (a: Array<unknown>): Array<unknown> => {
 };
 
 /**
- * pick a random number between 2 values.
+ * Pick a random number between 2 values.
  * @category Utils
  */
 export const rnd = (lb: number, ub: number): number => lb + Math.round(Math.random() * (ub - lb));
 
 /**
- * output a single random character (unicode basic latin).
+ * Output a single random character (unicode basic latin).
  * @category Utils
  */
 export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
@@ -79,10 +79,10 @@ export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
 // ##############################################################
 
 /**
- * store object w/ number prop between 0 and 65535.
+ * Store object w/ number prop between 0 and 65535.
  * @category Formatters
  */
-export const formatSampleObject: formatterSignature<SampleObject> = (v: SampleObject | undefined): Buffer => {
+export const formatSampleObject: formatterSignature<SampleObject> = (v?: SampleObject): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(2);
     // read value to persist (zero if value is removed)
@@ -100,7 +100,7 @@ export const formatSampleObject: formatterSignature<SampleObject> = (v: SampleOb
 };
 
 /**
- * read object w/ number prop between 0 and 65535.
+ * Read object w/ number prop between 0 and 65535.
  * @category Formatters
  */
 export const unformatSampleObject: unformatterSignature<SampleObject> = (b: Buffer): SampleObject => {
@@ -111,10 +111,10 @@ export const unformatSampleObject: unformatterSignature<SampleObject> = (b: Buff
 };
 
 /**
- * store a number between 0 and 65535.
+ * Store a number between 0 and 65535.
  * @category Formatters
  */
-export const formatNumber: formatterSignature<number> = (v: number | undefined): Buffer => {
+export const formatNumber: formatterSignature<number> = (v?: number): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(2);
     // read value to persist (zero if value is removed)
@@ -133,7 +133,7 @@ export const formatNumber: formatterSignature<number> = (v: number | undefined):
 };
 
 /**
- * read a number between 0 and 65535.
+ * Read a number between 0 and 65535.
  * @category Formatters
  */
 export const unformatNumber: unformatterSignature<number> = (b: Buffer): number => {
@@ -144,10 +144,10 @@ export const unformatNumber: unformatterSignature<number> = (b: Buffer): number 
 };
 
 /**
- * store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
+ * Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
  * @category Formatters
  */
-export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> = (v: GraphVertexByDistance | undefined): Buffer => {
+export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> = (v?: GraphVertexByDistance): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(6);
     // read value to persist (zero if value is removed)
@@ -169,7 +169,7 @@ export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> =
 };
 
 /**
- * read vertex index and distance.
+ * Read vertex index and distance.
  * @category Formatters
  */
 export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistance> = (b: Buffer): GraphVertexByDistance => {
@@ -184,7 +184,7 @@ export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistanc
 // ##############################################################
 
 /**
- * sample objects comparator function.
+ * Sample objects comparator function.
  * @category Comparators
  */
 export const compareSampleObjects: comparatorSignature<SampleObject> = (a: SampleObject, b: SampleObject): 0 | 1 | -1 => {
@@ -199,13 +199,13 @@ export const compareSampleObjects: comparatorSignature<SampleObject> = (a: Sampl
 };
 
 /**
- * numbers comparator function.
+ * Numbers comparator function.
  * @category Comparators
  */
 export const compareNumbers = (a: number, b: number): 0 | 1 | -1 => (a > b ? 1 : a < b ? -1 : 0);
 
 /**
- * compare vertices by distance and not by adjacency.
+ * Compare vertices by distance and not by adjacency.
  * @category Comparators
  */
 export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: GraphVertexByDistance): 0 | 1 | -1 => {
@@ -226,21 +226,21 @@ export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: Gra
 // ##############################################################
 
 /**
- * sample objects matcher function.
+ * Sample objects matcher function.
  * @category Matchers
  * @remarks
- * - return true if stringified values are equal.
+ * - Return true if stringified values are equal.
  */
 export const objectsMatch: matcherSignature<unknown> = (a: unknown, b: unknown): boolean => JSON.stringify(a) === JSON.stringify(b);
 
 /**
- * string values matcher function.
+ * String values matcher function.
  * @category Matchers
  */
 export const stringsMatch: matcherSignature<string> = (a: string, b: string): boolean => a === b;
 
 /**
- * numeric values matcher function.
+ * Numeric values matcher function.
  * @category Matchers
  */
 export const numbersMatch: matcherSignature<number> = (a: number, b: number): boolean => a === b;
@@ -250,7 +250,7 @@ export const numbersMatch: matcherSignature<number> = (a: number, b: number): bo
 // ##############################################################
 
 /**
- * measure function execution time.
+ * Measure function execution time.
  * @category Benchmarks
  */
 export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: number; result: unknown} => {
@@ -263,7 +263,7 @@ export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: nu
 };
 
 /**
- * enqueue / dequeue values.
+ * Enqueue / dequeue values.
  * @category Benchmarks
  */
 export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<SampleObject>): void => {
@@ -280,7 +280,7 @@ export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<SampleOb
 };
 
 /**
- * push / pop values.
+ * Push / pop values.
  * @category Benchmarks
  */
 export const benchmarkStack = (q: StackType, arr: Array<string> | Array<SampleObject>): void => {
