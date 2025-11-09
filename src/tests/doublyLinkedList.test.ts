@@ -10,7 +10,7 @@ import console from "node:console";
 // import modules
 import {describe, it, expect} from "@jest/globals";
 import {DoublyLinkedList} from "../structures/doublyLinkedList.ts";
-import {timeExecution, getRandomChar, stringsMatch} from "../helpers.ts";
+import {timeExecution, getRandomChar, stringsMatch, createArray} from "../helpers.ts";
 
 // !!! FINSH AND REDESIGN TESTS !!!
 
@@ -22,9 +22,9 @@ try {
     // doubly linked list basic operations
     describe(`===== DOUBLY LINKED LIST =====`, () => {
         // benchmark prepend
-        describe.each(inputSizes)(`input: pool of %i unicode basic latin characters`, (x: number): void => {
+        describe.each(inputSizes)(`input: set of %i unicode basic latin characters`, (x: number): void => {
             // input : pool of characters
-            const input = new Array(x).fill(null).map(() => getRandomChar());
+            const input = createArray(x, () => getRandomChar()) as Array<string>;
             // run all tests on the same list ...
             const sampleList = new DoublyLinkedList<string>(stringsMatch);
 
@@ -35,7 +35,7 @@ try {
             const benchmarkPrepend = function(i: Array<string>, l: DoublyLinkedList<string>) {i.forEach(c => {l.prepend(c);});};
             ({time} = timeExecution(benchmarkPrepend.bind(null, input, sampleList)));
 
-            it(`prepend ${ String(x) } characters, execution time is ${ String(time) }ms`, (): void => {
+            it(`prepend ${ String(x) } characters in ${ String(time) }ms`, (): void => {
                 expect(true).toBe(true);
             });
 
@@ -43,7 +43,7 @@ try {
             const benchmarkAppend = function(i: Array<string>, l: DoublyLinkedList<string>) {i.forEach(c => {l.append(c);});};
             ({time} = timeExecution(benchmarkAppend.bind(null, input, sampleList)));
 
-            it(`append ${ String(x) } characters, execution time is ${ String(time) }ms`, (): void => {
+            it(`append ${ String(x) } characters in ${ String(time) }ms`, (): void => {
                 expect(true).toBe(true);
             });
 
@@ -51,20 +51,15 @@ try {
             const benchmarkRemoveByIndex = function(i: Array<string>, l: DoublyLinkedList<string>) {i.forEach(() => {l.removeAt(0);});};
             ({time} = timeExecution(benchmarkRemoveByIndex.bind(null, input, sampleList)));
 
-            it(`removed ${ String(x) } characters by index, execution time is ${ String(time) }ms`, (): void => {
+            it(`removed ${ String(x) } characters by index in ${ String(time) }ms`, (): void => {
                 expect(true).toBe(true);
             });
-
-            // console.log(`insert`);
-            // let a = 0;
-            // input.forEach((x, i) => { sampleList.insert(x, ++a + i); });
-            // console.log(`values: ${ printList(sampleList) }`);
 
             // define function
             const benchmarkRemoveByValue = function(i: Array<string>, l: DoublyLinkedList<string>) {i.forEach(c => {l.remove(c);});};
             ({time} = timeExecution(benchmarkRemoveByValue.bind(null, input, sampleList)));
 
-            it(`removed ${ String(x) } characters by value, execution time is ${ String(time) }ms`, (): void => {
+            it(`removed ${ String(x) } characters by value in ${ String(time) }ms`, (): void => {
                 expect(true).toBe(true);
             });
         });

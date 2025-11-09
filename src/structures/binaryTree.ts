@@ -3,6 +3,8 @@
  * @module
  */
 
+/* eslint-disable no-param-reassign */
+
 // import primitives
 import console from "node:console";
 
@@ -10,7 +12,7 @@ import console from "node:console";
 import {Queue} from "./singlyLinkedList.ts";
 
 // import types
-import type {BinaryNode, comparatorSignature, visitNodeSignature, depthTraversalType, matcherSignature} from "../interfaces.ts";
+import type {BinaryNode, comparator, visitor, traversalType, matcher} from "../interfaces.ts";
 
 /**
  * Binary search tree implementation over generic type.
@@ -24,12 +26,12 @@ export class BinarySearchTree<T> {
     // declare internal tree structure
     private tree: BinaryNode<T> | null;
     // declare internal node matcher function
-    public match: matcherSignature<T>;
+    public match: matcher<T>;
     // declare internal node comparator function
-    private compare: comparatorSignature<T>;
+    private compare: comparator<T>;
 
     // do not pass a default value for matchers and comparators since it would "abstract" the current use case ...
-    constructor(m: matcherSignature<T>, c: comparatorSignature<T>) {
+    constructor(m: matcher<T>, c: comparator<T>) {
         // initialize empty tree
         this.tree = null;
         // initialize matcher function
@@ -42,15 +44,20 @@ export class BinarySearchTree<T> {
     // #                     TREE MANAGEMENT                        #
     // ##############################################################
 
-    private isLessThanOrEqual(a: T, b: T): boolean {return [ -1, 0 ].includes(this.compare(a, b));}
-    private isGreaterThan(a: T, b: T): boolean {return this.compare(a, b) === 1;}
+    private isLessThanOrEqual(a: T, b: T): boolean {
+        return [ -1, 0 ].includes(this.compare(a, b));
+    }
+
+    private isGreaterThan(a: T, b: T): boolean {
+        return this.compare(a, b) === 1;
+    }
 
     // ##############################################################
     // #                     TREE TRAVERSALS                        #
     // ##############################################################
 
     // depth first traversal O(n) - visit each node and run a function on the node
-    public traverseDepth(visitNode: visitNodeSignature<T>, type: depthTraversalType): void {
+    public traverseDepth(visitNode: visitor<T>, type: traversalType): void {
         // return if tree is empty
         if (this.tree === null)
             return;
@@ -89,7 +96,7 @@ export class BinarySearchTree<T> {
     }
 
     // breadth first traversal O(n) - visit each node and run a function on the node
-    public traverseBreadth(visitNode: visitNodeSignature<T>): void {
+    public traverseBreadth(visitNode: visitor<T>): void {
         // return if tree is empty
         if (this.tree === null)
             return;
@@ -410,8 +417,6 @@ export class BinarySearchTree<T> {
 
         // log node value ...
         console.log(`${ spacing }${ prefix }${ JSON.stringify(currentNode.value) }`);
-
-        // eslint-disable-next-line no-param-reassign
         spacing += `    `;
 
         // recursively print the left and right subtrees

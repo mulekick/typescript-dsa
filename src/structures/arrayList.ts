@@ -8,7 +8,7 @@ import {BarebonesArray} from "./array.ts";
 import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers.ts";
 
 // import types
-import type {SampleObject, formatterSignature, matcherSignature, unformatterSignature} from "../interfaces.ts";
+import type {sampleObject, formatter, matcher, unformatter} from "../interfaces.ts";
 
 /**
  * ArrayList implementation over generic type.
@@ -27,20 +27,20 @@ export class ArrayList<T> {
     // max element length in bytes
     private MAX_ELEMENT_LENGTH: number;
     // formatting function
-    private format: formatterSignature<T>;
+    private format: formatter<T>;
     // unformatting function
-    private unformat: unformatterSignature<T>;
+    private unformat: unformatter<T>;
     // declare internal node matcher function as public for combined use with other data structures
-    public match: matcherSignature<T>;
+    public match: matcher<T>;
 
     // do not pass a default value for formatters, matchers and comparators since it would "abstract" the current use case ...
-    constructor(size: number, maxElementLength: number, f: formatterSignature<T>, u: unformatterSignature<T>, m: matcherSignature<T>) {
+    constructor(f: formatter<T>, u: unformatter<T>, m: matcher<T>, size: number = 1, maxElementLength: number = 1) {
         // init length
         this.length = 0;
         // init size
-        this.size = size || 1;
+        this.size = size;
         // init max element length
-        this.MAX_ELEMENT_LENGTH = maxElementLength || 1;
+        this.MAX_ELEMENT_LENGTH = maxElementLength;
         // init background array
         this.array = new BarebonesArray(this.size, this.MAX_ELEMENT_LENGTH);
         // init formatters
@@ -71,10 +71,14 @@ export class ArrayList<T> {
     // ##############################################################
 
     // append item to array O(1) -> copy a constant number of bytes
-    public append(item: T): void {this.insertAt(item, this.length);}
+    public append(item: T): void {
+        this.insertAt(item, this.length);
+    }
 
     // prepend item to array O(n) -> copy a variable number of bytes
-    public prepend(item: T): void {this.insertAt(item, 0);}
+    public prepend(item: T): void {
+        this.insertAt(item, 0);
+    }
 
     // insert before element at index idx O(n) -> copy a variable number of bytes
     // O(1) when pushing new last element ...
@@ -168,26 +172,26 @@ export class ArrayList<T> {
  * ArrayList based object stack.
  * @class
  */
-export class ObjectStack extends ArrayList<SampleObject> {
+export class ObjectStack extends ArrayList<sampleObject> {
     // constructor
     constructor() {
         // store a number between 0 and 65535 on 2 bytes
-        super(1, 2, formatSampleObject, unformatSampleObject, objectsMatch);
+        super(formatSampleObject, unformatSampleObject, objectsMatch, 1, 2);
     }
 
     // O(1) : push value (if no resize)
-    push(o: SampleObject): void {
+    push(o: sampleObject): void {
         this.append(o);
     }
 
     // O(1) : pop value
-    pop(): SampleObject | undefined {
+    pop(): sampleObject | undefined {
         // read value and return
         return this.removeAt(this.length - 1);
     }
 
     // O(1) : get value
-    peek(index: number): SampleObject | undefined {
+    peek(index: number): sampleObject | undefined {
         // read value and return
         return this.get(index);
     }

@@ -10,19 +10,20 @@
  * - Sample data used to initialize a graph.
  */
 
-/* eslint-disable no-continue, @stylistic/no-multi-spaces */
+/* eslint-disable no-continue, @stylistic/no-multi-spaces, no-param-reassign */
 
 // import modules
 import {Graph} from "./structures/graph.ts";
+import {createArray} from "./helpers.ts";
 
 // import types
 import type {
     Vertices,
     AdjacencyList,
     AdjacencyMatrix,
-    GraphEdge,
+    Edge,
     coords,
-    matcherSignature
+    matcher
 } from "./interfaces.ts";
 
 // ##############################################################
@@ -35,8 +36,7 @@ import type {
  */
 export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList => {
     // init result = adjacency list of length matrix.length, fill with empty arrays
-    const result: AdjacencyList = new Array(matrix.length).fill(null)
-        .map(() => []);
+    const result = createArray(matrix.length, () => []) as AdjacencyList;
     // for i = 0 to matrix.length
     for (let i = 0; i < matrix.length; i++) {
         // for j = 0 to matrix[i].length
@@ -56,11 +56,11 @@ export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList =>
  * Translate adjacency list to adjacency matrix.
  * @category Helpers
  */
-export const translateListToMatrix = (list: AdjacencyList): AdjacencyMatrix => new Array(list.length).fill(null)
-    .map((_, vertex) => list[vertex].reduce((r, x) => {
+export const translateListToMatrix = (list: AdjacencyList) => createArray(list.length, (_, vertex) => list[vertex as number]
+    .reduce((r, x) => {
         r[x.edge] = x.weight;
         return r;
-    }, new Array<number>(list.length).fill(Graph.INFINITY)));
+    }, createArray(list.length, () => Graph.INFINITY))) as AdjacencyMatrix;
 
 /**
  * Reconstruct path to vertex v from previous array.
@@ -90,7 +90,7 @@ export const reorder = (previous: Array<number | undefined>, initial: number, fi
  * Return vertices sequence from edges path.
  * @category Helpers
  */
-export const sequence = (path: Array<number>, edges: AdjacencyList): Array<GraphEdge> => {
+export const sequence = (path: Array<number>, edges: AdjacencyList): Array<Edge> => {
     // init result
     const result = [ {edge: path[0], weight: 0} ];
     // loop over path's vertices
@@ -111,15 +111,14 @@ export const sequence = (path: Array<number>, edges: AdjacencyList): Array<Graph
  * Reduce edge sequence to vertices sequence.
  * @category Helpers
  */
-export const reduceToVerticesList = (vertices: Vertices<string>, edges: Array<GraphEdge>): Array<string> => edges.map(x => vertices[x.edge]);
+export const reduceToVerticesList = (vertices: Vertices<string>, edges: Array<Edge>): Array<string> => edges.map(x => vertices[x.edge]);
 
 /**
  * Reduce edge sequence to sum of edges weights.
  * @category Helpers
  */
-export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.reduce((r, x) => {
+export const reduceToTotalDistance = (edges: Array<Edge>): number => edges.reduce((r, x) => {
     // add current edge weight and return
-    // eslint-disable-next-line no-param-reassign
     r += x.weight;
     return r;
 }, 0);
@@ -132,7 +131,7 @@ export const reduceToTotalDistance = (edges: Array<GraphEdge>): number => edges.
  * Cell coords matcher function.
  * @category Mazes
  */
-export const coordsMatch: matcherSignature<coords> = (a: coords, b: coords): boolean => a.x === b.x && a.y === b.y;
+export const coordsMatch: matcher<coords> = (a: coords, b: coords): boolean => a.x === b.x && a.y === b.y;
 
 /**
  * Visit the 4 adjacent cells top, left, bottom, right.
@@ -154,8 +153,7 @@ export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string)
     // --- KEEP TRACK OF CREATED VERTICES ---
 
     // init created = array of array of maze.length x maze[0].length number, fill with -1
-    const created = new Array(maze.length).fill(null)
-        .map(() => new Array(maze[0].length).fill(-1) as Array<number>);
+    const created = createArray(maze.length, () => createArray(maze[0].length, () => -1)) as Array<Array<number>>;
 
     // ----- COUNT VERTICES TO CREATE -------
 
@@ -178,8 +176,7 @@ export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string)
     // init vertices = new array
     const vertices: Array<coords> = [];
     // init matrix = new array of arrays of count length, fill with 0
-    const matrix: AdjacencyMatrix = new Array(count).fill(null)
-        .map(() => new Array(count).fill(Graph.INFINITY) as Array<number>);
+    const matrix = createArray(count, () => createArray(count, () => Graph.INFINITY)) as AdjacencyMatrix;
 
     // -- CREATE VERTICES, POPULATE MATRIX --
 

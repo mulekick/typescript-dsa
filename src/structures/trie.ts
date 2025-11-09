@@ -3,6 +3,11 @@
  * @module
  */
 
+/* eslint-disable no-param-reassign */
+
+// import modules
+import {createArray} from "../helpers.ts";
+
 // import types
 import type {TrieNode} from "../interfaces.ts";
 
@@ -31,7 +36,7 @@ export class Trie {
     private static createNode(chr: string): TrieNode {
         return {
             value: chr,
-            next: new Array(Trie.NODES_ARRAY_LENGTH).fill(null).map(() => undefined),
+            next: createArray(Trie.NODES_ARRAY_LENGTH, () => undefined) as Array<TrieNode | undefined>,
             childNodes: 0,
             isWord: false
         };
@@ -52,7 +57,10 @@ export class Trie {
 
     constructor() {
         // init root node
-        const rootNode = {next: new Array(Trie.NODES_ARRAY_LENGTH).fill(null).map(() => undefined), nodes: 0};
+        const rootNode = {
+            next: createArray(Trie.NODES_ARRAY_LENGTH, () => undefined) as Array<undefined>,
+            nodes: 0
+        };
         // set root node
         this.root = rootNode as Partial<TrieNode>;
     }
@@ -186,7 +194,6 @@ export class Trie {
             // 2. PRE
 
             // push current node character into word
-            // eslint-disable-next-line no-param-reassign
             word += current.value;
 
             // if current node is end of word and index >= pattern length - 1
@@ -224,7 +231,6 @@ export class Trie {
             // 4. POST
 
             // pop current node character from word
-            // eslint-disable-next-line no-param-reassign
             word = word.substring(0, word.length - 1);
 
             // 5. RETURN

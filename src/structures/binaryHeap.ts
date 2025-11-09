@@ -3,14 +3,14 @@
  * @module
  */
 
-/* eslint-disable @typescript-eslint/class-methods-use-this */
+/* eslint-disable @typescript-eslint/max-params */
 
 // import modules
 import {ArrayList} from "./arrayList.ts";
 import {compareSampleObjects, formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers.ts";
 
 // import types
-import type {comparatorSignature, formatterSignature, matcherSignature, SampleObject, unformatterSignature} from "../interfaces.ts";
+import type {comparator, formatter, matcher, sampleObject, unformatter} from "../interfaces.ts";
 
 /**
  * Binary heap implementation over generic type.
@@ -24,15 +24,14 @@ export class BinaryHeap<T> extends ArrayList<T> {
     // min / max heap indicator
     private isMaxHeap: boolean;
     // declare internal node comparator function
-    private compare: comparatorSignature<T>;
+    private compare: comparator<T>;
 
     // do not pass a default value for matchers and comparators since it would "abstract" the current use case ...
-    // eslint-disable-next-line @typescript-eslint/max-params
-    constructor(isMaxHeap: boolean, maxElementLength: number, f: formatterSignature<T>, u: unformatterSignature<T>, m: matcherSignature<T>, c: comparatorSignature<T>) {
+    constructor(f: formatter<T>, u: unformatter<T>, m: matcher<T>, c: comparator<T>, maxElementLength: number = 1, isMaxHeap: boolean = false) {
         // initialize background arraylist
-        super(1, maxElementLength || 1, f, u, m);
+        super(f, u, m, 1, maxElementLength);
         // initialize max heap indicator
-        this.isMaxHeap = isMaxHeap || false;
+        this.isMaxHeap = isMaxHeap;
         // initialize comparator function
         this.compare = c;
     }
@@ -42,14 +41,30 @@ export class BinaryHeap<T> extends ArrayList<T> {
     // ##############################################################
 
     // nodes index getters O(1)
-    private getParentNode(index: number): number {return Math.floor((index - 1) / 2);}
-    private getLeftChildNode(index: number): number {return index * 2 + 1;}
-    private getRightChildNode(index: number): number {return index * 2 + 2;}
+    private static getParentNode(index: number): number {
+        return Math.floor((index - 1) / 2);
+    }
+
+    private static getLeftChildNode(index: number): number {
+        return index * 2 + 1;
+    }
+
+    private static getRightChildNode(index: number): number {
+        return index * 2 + 2;
+    }
 
     // compare nodes values O(1)
-    private isGreaterThanOrEqual(a: T, b: T): boolean {return [ 0, this.isMaxHeap ? 1 : -1 ].includes(this.compare(a, b));}
-    private isGreaterThan(a: T, b: T): boolean {return this.compare(a, b) === (this.isMaxHeap ? 1 : -1);}
-    private isLessThanOrEqual(a: T, b: T): boolean {return [ 0, this.isMaxHeap ? -1 : 1 ].includes(this.compare(a, b));}
+    private isGreaterThanOrEqual(a: T, b: T): boolean {
+        return [ 0, this.isMaxHeap ? 1 : -1 ].includes(this.compare(a, b));
+    }
+
+    private isGreaterThan(a: T, b: T): boolean {
+        return this.compare(a, b) === (this.isMaxHeap ? 1 : -1);
+    }
+
+    private isLessThanOrEqual(a: T, b: T): boolean {
+        return [ 0, this.isMaxHeap ? -1 : 1 ].includes(this.compare(a, b));
+    }
 
     // swap nodes values O(1)
     private swapNodesValues(idx1: number, idx2: number): void {
@@ -68,7 +83,7 @@ export class BinaryHeap<T> extends ArrayList<T> {
         // set current node = node at index
         let currentNode = idx;
         // set parent node = current node parent
-        let parentNode = this.getParentNode(currentNode);
+        let parentNode = BinaryHeap.getParentNode(currentNode);
         // while current node !== root node and current node value > parent node value (type assertions ok since indexes are checked first ...)
         while (currentNode > 0 && this.isGreaterThan(this.get(currentNode) as T, this.get(parentNode) as T)) {
             // swap current node value with parent node value
@@ -76,7 +91,7 @@ export class BinaryHeap<T> extends ArrayList<T> {
             // set current node = parent node
             currentNode = parentNode;
             // set parent node = current node parent
-            parentNode = this.getParentNode(currentNode);
+            parentNode = BinaryHeap.getParentNode(currentNode);
         // end while
         }
     }
@@ -86,9 +101,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
         // set current node = node at index
         let currentNode = idx;
         // set left = current node left child
-        let left = this.getLeftChildNode(currentNode);
+        let left = BinaryHeap.getLeftChildNode(currentNode);
         // set right = current node right child
-        let right = this.getRightChildNode(currentNode);
+        let right = BinaryHeap.getRightChildNode(currentNode);
         // while current node has at least one child (skip the greater than zero test ...)
         while (left < this.length || right < this.length) {
             // type assertions ok since indexes are checked first ...
@@ -111,9 +126,9 @@ export class BinaryHeap<T> extends ArrayList<T> {
                 currentNode = left;
             }
             // set left = current node left child
-            left = this.getLeftChildNode(currentNode);
+            left = BinaryHeap.getLeftChildNode(currentNode);
             // set right = current node right child
-            right = this.getRightChildNode(currentNode);
+            right = BinaryHeap.getRightChildNode(currentNode);
         // end while
         }
 
@@ -129,7 +144,7 @@ export class BinaryHeap<T> extends ArrayList<T> {
         if (currentNode >= this.length)
             return true;
         // read left and right child nodes
-        const [ left, right ] = [ this.getLeftChildNode(currentNode), this.getRightChildNode(currentNode) ];
+        const [ left, right ] = [ BinaryHeap.getLeftChildNode(currentNode), BinaryHeap.getRightChildNode(currentNode) ];
         // left child not null and left child value > current node value
         if (left < this.length && this.isGreaterThan(this.get(left) as T, this.get(currentNode) as T))
             return false;
@@ -137,7 +152,7 @@ export class BinaryHeap<T> extends ArrayList<T> {
         if (right < this.length && this.isGreaterThan(this.get(right) as T, this.get(currentNode) as T))
             return false;
         // validate child nodes recursively ...
-        return this.verifyHeap(this.getLeftChildNode(currentNode)) && this.verifyHeap(this.getRightChildNode(currentNode));
+        return this.verifyHeap(BinaryHeap.getLeftChildNode(currentNode)) && this.verifyHeap(BinaryHeap.getRightChildNode(currentNode));
     }
 
     // ##############################################################
@@ -220,10 +235,10 @@ export class BinaryHeap<T> extends ArrayList<T> {
  * Min heap implementation.
  * @class
  */
-export class MinHeap extends BinaryHeap<SampleObject> { constructor() {super(false, 2, formatSampleObject, unformatSampleObject, objectsMatch, compareSampleObjects);} }
+export class MinHeap extends BinaryHeap<sampleObject> { constructor() {super(formatSampleObject, unformatSampleObject, objectsMatch, compareSampleObjects, 2, false);} }
 
 /**
  * Max heap implementation.
  * @class
  */
-export class MaxHeap extends BinaryHeap<SampleObject> { constructor() {super(true, 2, formatSampleObject, unformatSampleObject, objectsMatch, compareSampleObjects);} }
+export class MaxHeap extends BinaryHeap<sampleObject> { constructor() {super(formatSampleObject, unformatSampleObject, objectsMatch, compareSampleObjects, 2, true);} }

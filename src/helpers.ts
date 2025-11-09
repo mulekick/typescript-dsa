@@ -30,12 +30,12 @@ import {Graph} from "./structures/graph.ts";
 import type {
     QueueType,
     StackType,
-    SampleObject,
-    comparatorSignature,
-    matcherSignature,
-    GraphVertexByDistance,
-    formatterSignature,
-    unformatterSignature
+    sampleObject,
+    comparator,
+    matcher,
+    VertexByDistance,
+    formatter,
+    unformatter
 } from "./interfaces.ts";
 
 // ##############################################################
@@ -74,6 +74,12 @@ export const rnd = (lb: number, ub: number): number => lb + Math.round(Math.rand
  */
 export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
 
+/**
+ * Populate a new array.
+ * @category Benchmarks
+ */
+export const createArray = (len: number, fn: (...args: Array<unknown>)=> unknown): Array<unknown> => new Array(len).fill(undefined).map(fn);
+
 // ##############################################################
 // #                         FORMATTERS                         #
 // ##############################################################
@@ -82,7 +88,7 @@ export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
  * Store object w/ number prop between 0 and 65535.
  * @category Formatters
  */
-export const formatSampleObject: formatterSignature<SampleObject> = (v?: SampleObject): Buffer => {
+export const formatSampleObject: formatter<sampleObject> = (v?: sampleObject): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(2);
     // read value to persist (zero if value is removed)
@@ -103,7 +109,7 @@ export const formatSampleObject: formatterSignature<SampleObject> = (v?: SampleO
  * Read object w/ number prop between 0 and 65535.
  * @category Formatters
  */
-export const unformatSampleObject: unformatterSignature<SampleObject> = (b: Buffer): SampleObject => {
+export const unformatSampleObject: unformatter<sampleObject> = (b: Buffer): sampleObject => {
     // read system endianness and value
     const value = endianness() === `LE` ? b.readUInt16LE(0) : b.readUInt16BE(0);
     // return
@@ -114,11 +120,11 @@ export const unformatSampleObject: unformatterSignature<SampleObject> = (b: Buff
  * Store a number between 0 and 65535.
  * @category Formatters
  */
-export const formatNumber: formatterSignature<number> = (v?: number): Buffer => {
+export const formatNumber: formatter<number> = (v: number = 0): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(2);
     // read value to persist (zero if value is removed)
-    const value = v || 0;
+    const value = v;
     // throw if value is too high
     if (value > 65535)
         throw new RangeError(`failed to write: value exceeds 65535`);
@@ -136,7 +142,7 @@ export const formatNumber: formatterSignature<number> = (v?: number): Buffer => 
  * Read a number between 0 and 65535.
  * @category Formatters
  */
-export const unformatNumber: unformatterSignature<number> = (b: Buffer): number => {
+export const unformatNumber: unformatter<number> = (b: Buffer): number => {
     // read system endianness and value
     const value = endianness() === `LE` ? b.readUInt16LE(0) : b.readUInt16BE(0);
     // return
@@ -147,11 +153,11 @@ export const unformatNumber: unformatterSignature<number> = (b: Buffer): number 
  * Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
  * @category Formatters
  */
-export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> = (v?: GraphVertexByDistance): Buffer => {
+export const formatVertexByDistance: formatter<VertexByDistance> = (v: VertexByDistance = {index: 0, distance: 0}): Buffer => {
     // allocate memory
     const formatted = Buffer.alloc(6);
     // read value to persist (zero if value is removed)
-    const {index, distance} = v || {index: 0, distance: 0};
+    const {index, distance} = v;
     // throw if value is too high
     if (index > Graph.MAX_VERTICES || distance > Graph.INFINITY)
         throw new RangeError(`failed to write: invalid vertex / distance`);
@@ -172,7 +178,7 @@ export const formatVertexByDistance: formatterSignature<GraphVertexByDistance> =
  * Read vertex index and distance.
  * @category Formatters
  */
-export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistance> = (b: Buffer): GraphVertexByDistance => {
+export const unformatVertexByDistance: unformatter<VertexByDistance> = (b: Buffer): VertexByDistance => {
     // read system endianness and value
     const [ index, distance ] = endianness() === `LE` ? [ b.readUInt16LE(0), b.readUInt32LE(2) ] : [ b.readUInt16BE(0), b.readUInt32BE(2) ];
     // return
@@ -187,7 +193,7 @@ export const unformatVertexByDistance: unformatterSignature<GraphVertexByDistanc
  * Sample objects comparator function.
  * @category Comparators
  */
-export const compareSampleObjects: comparatorSignature<SampleObject> = (a: SampleObject, b: SampleObject): 0 | 1 | -1 => {
+export const compareSampleObjects: comparator<sampleObject> = (a: sampleObject, b: sampleObject): 0 | 1 | -1 => {
     // a greater than b
     if (a.prop > b.prop)
         return 1;
@@ -208,7 +214,7 @@ export const compareNumbers = (a: number, b: number): 0 | 1 | -1 => (a > b ? 1 :
  * Compare vertices by distance and not by adjacency.
  * @category Comparators
  */
-export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: GraphVertexByDistance): 0 | 1 | -1 => {
+export const compareVertexDistanceFromOrigin = (a: VertexByDistance, b: VertexByDistance): 0 | 1 | -1 => {
     // distance origin to a > distance origin to b
     if (a.distance > b.distance)
         // return 1
@@ -231,19 +237,19 @@ export const compareVertexDistanceFromOrigin = (a: GraphVertexByDistance, b: Gra
  * @remarks
  * - Return true if stringified values are equal.
  */
-export const objectsMatch: matcherSignature<unknown> = (a: unknown, b: unknown): boolean => JSON.stringify(a) === JSON.stringify(b);
+export const objectsMatch: matcher<unknown> = (a: unknown, b: unknown): boolean => JSON.stringify(a) === JSON.stringify(b);
 
 /**
  * String values matcher function.
  * @category Matchers
  */
-export const stringsMatch: matcherSignature<string> = (a: string, b: string): boolean => a === b;
+export const stringsMatch: matcher<string> = (a: string, b: string): boolean => a === b;
 
 /**
  * Numeric values matcher function.
  * @category Matchers
  */
-export const numbersMatch: matcherSignature<number> = (a: number, b: number): boolean => a === b;
+export const numbersMatch: matcher<number> = (a: number, b: number): boolean => a === b;
 
 // ##############################################################
 // #                         BENCHMARKS                         #
@@ -266,13 +272,13 @@ export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: nu
  * Enqueue / dequeue values.
  * @category Benchmarks
  */
-export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<SampleObject>): void => {
-    arr.forEach((x: string | SampleObject, i: number) => {
+export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<sampleObject>): void => {
+    arr.forEach((x: string | sampleObject, i: number) => {
         // enqueue
         if (q instanceof StringQueue)
             q.enqueue(x as string);
         else
-            q.enqueue(x as SampleObject);
+            q.enqueue(x as sampleObject);
         // dequeue on every other iteration
         if (i % 2 === 1)
             q.dequeue();
@@ -283,11 +289,11 @@ export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<SampleOb
  * Push / pop values.
  * @category Benchmarks
  */
-export const benchmarkStack = (q: StackType, arr: Array<string> | Array<SampleObject>): void => {
-    arr.forEach((x: string | SampleObject, i: number) => {
+export const benchmarkStack = (q: StackType, arr: Array<string> | Array<sampleObject>): void => {
+    arr.forEach((x: string | sampleObject, i: number) => {
         // push
         if (q instanceof ObjectStack)
-            q.push(x as SampleObject);
+            q.push(x as sampleObject);
         else
             q.push(x as string);
         // pop on every other iteration

@@ -3,23 +3,13 @@
  * @module
  */
 
+/* eslint-disable @typescript-eslint/no-shadow */
+
 // import modules
 import {stringsMatch} from "../helpers.ts";
 
 // import types
-import type {matcherSignature} from "../interfaces.ts";
-
-/**
- * List node (singly linked).
- * @typeParam T Data type stored in the node.
- * @interface
- */
-interface Node<T> {
-    // pointer to next node
-    next?: Node<T>;
-    // store value
-    value: T;
-}
+import type {Node, matcher} from "../interfaces.ts";
 
 /**
  * Singly linked list implementation over generic type.
@@ -36,10 +26,10 @@ export class SinglyLinkedList<T> {
     // reference to tail node
     private tail?: Node<T>;
     // declare internal node matcher function as public for combined use with other data structures
-    public match: matcherSignature<T>;
+    public match: matcher<T>;
 
     // do not pass a default value for matchers and comparators since it would "abstract" the current use case ...
-    constructor(m: matcherSignature<T>) {
+    constructor(m: matcher<T>) {
         // init length
         this.length = 0;
         // init head node

@@ -16,14 +16,13 @@
  * - Types used by graphs data structures.
 */
 
-// import primitives
-import {Buffer} from "node:buffer";
-
-// import modules
-import {StringStack, StringQueue} from "./structures/singlyLinkedList.ts";
-import {ObjectStack} from "./structures/arrayList.ts";
-import {ObjectQueue} from "./structures/ringBuffer.ts";
-import {OtherObjectQueue} from "./structures/deque.ts";
+// import types
+import type {Buffer} from "node:buffer";
+import type {StringStack, StringQueue} from "./structures/singlyLinkedList.ts";
+import type {ObjectStack} from "./structures/arrayList.ts";
+import type {ObjectQueue} from "./structures/ringBuffer.ts";
+import type {OtherObjectQueue} from "./structures/deque.ts";
+import type {Graph} from "./structures/graph.ts";
 
 // ##############################################################
 // #                        ASYNC QUEUE                         #
@@ -52,7 +51,7 @@ export interface NetworkRequest {
  * @category Object signatures
  * @interface
  */
-export interface SampleObject {
+export interface sampleObject {
     prop: number;
 }
 
@@ -64,6 +63,22 @@ export interface SampleObject {
 export interface coords {
     y: number;
     x: number;
+}
+
+/**
+ * Type used for maze description.
+ * @category Graph structures
+ * @interface
+ * @remarks
+ * - Used for tests
+ */
+export interface mazeObject {
+    level: string;
+    maze: Array<string>;
+    wall: string;
+    length: number;
+    start: coords;
+    exit: coords | string;
 }
 
 // ##############################################################
@@ -78,7 +93,7 @@ export interface coords {
  * @remarks
  * - Max length allowed for storage is use case specific and must be consistent across background array constructor and formatter functions.
  */
-export type formatterSignature<T> = (v?: T)=> Buffer;
+export type formatter<T> = (v?: T)=> Buffer;
 
 /**
  * Unformatting function signature.
@@ -88,7 +103,7 @@ export type formatterSignature<T> = (v?: T)=> Buffer;
  * @remarks
  * - Max length allowed for storage is use case specific and must be consistent across background array constructor and formatter functions.
  */
-export type unformatterSignature<T> = (b: Buffer)=> T;
+export type unformatter<T> = (b: Buffer)=> T;
 
 /**
  * Node comparison function signature.
@@ -98,7 +113,7 @@ export type unformatterSignature<T> = (b: Buffer)=> T;
  * @remarks
  * - Used to compare nodes for ordering.
  */
-export type comparatorSignature<T> = (a: T, b: T)=> 1 | -1 | 0;
+export type comparator<T> = (a: T, b: T)=> 1 | -1 | 0;
 
 /**
  * Node matching function signature.
@@ -108,7 +123,7 @@ export type comparatorSignature<T> = (a: T, b: T)=> 1 | -1 | 0;
  * @remarks
  * - Used to match nodes values for update and deletion.
  */
-export type matcherSignature<T> = (a: T, b: T)=> boolean;
+export type matcher<T> = (a: T, b: T)=> boolean;
 
 // ##############################################################
 // #                   NODE BASED STRUCTURES                    #
@@ -123,15 +138,32 @@ export type StackType = StringStack | ObjectStack;
 export type QueueType = StringQueue | ObjectQueue | OtherObjectQueue;
 
 // ##############################################################
-// #                      TREE STRUCTURES                       #
+// #                  LIST / TREE STRUCTURES                    #
 // ##############################################################
+
+/**
+ * List node (doubly linked).
+ * @typeParam T Data type stored in the node.
+ * @interface
+ * @remarks
+ * - We use the same node structure for singly and doubly linked lists.
+ * - The `prev` property is undefined when used with singly linked lists.
+ */
+export interface Node<T> {
+    // pointer to previous node
+    prev?: Node<T>;
+    // pointer to next node
+    next?: Node<T>;
+    // store value
+    value: T;
+}
 
 /**
  * Depth first traversal types.
  * @category Tree structures
  * @useDeclaredType
  */
-export type depthTraversalType = `PRE` | `IN` | `POST`;
+export type traversalType = `PRE` | `IN` | `POST`;
 
 /**
  * Binary node (doubly linked).
@@ -153,7 +185,7 @@ export interface BinaryNode<T> {
  * @typeParam T Data type stored in the node.
  * @useDeclaredType
  */
-export type visitNodeSignature<T> = (node: BinaryNode<T>)=> unknown;
+export type visitor<T> = (node: BinaryNode<T>)=> unknown;
 
 /**
  * Trie node.
@@ -188,7 +220,7 @@ export type Vertices<T> = Array<T>;
  * @category Graph structures
  * @interface
  */
-export interface GraphEdge {
+export interface Edge {
     // connected vertex
     edge: number;
     // edge weight
@@ -213,7 +245,7 @@ export type AdjacencyMatrix = Array<Array<number>>;
  * - It is assessed that all the graphs are weighted.
  * - Unweighted graphs are represented as weighted graphs with all edges weights equal to 1.
  */
-export type AdjacencyList = Array<Array<GraphEdge>>;
+export type AdjacencyList = Array<Array<Edge>>;
 
 /**
  * Vertex in a line graph.
@@ -231,9 +263,23 @@ export interface LineGraphVertex {
  * @category Graph structures
  * @interface
  * @remarks
- * - Used to store vertices distance to origin in a min heap for Dijkstra's shortest path
+ * - Used to store vertices distance to origin in a min heap for Dijkstra's shortest path.
  */
-export interface GraphVertexByDistance {
+export interface VertexByDistance {
     index: number;
     distance: number;
+}
+
+/**
+ * Graph properties.
+ * @category Graph structures
+ * @interface
+ * @remarks
+ * - Used for tests
+ */
+export interface GraphProperties<T> {
+    connected: boolean;
+    edges: number;
+    components: Array<Array<T>>;
+    lineGraph: Graph<LineGraphVertex>;
 }

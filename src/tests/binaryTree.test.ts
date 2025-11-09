@@ -11,7 +11,7 @@ import {BinarySearchTree} from "../structures/binaryTree.ts";
 import {rnd, timeExecution, shuffle, numbersMatch, compareNumbers} from "../helpers.ts";
 
 // import types
-import type {depthTraversalType} from "../interfaces.ts";
+import type {traversalType} from "../interfaces.ts";
 
 try {
 
@@ -43,7 +43,7 @@ try {
                 throw new Error(`broken tree implementation.`);
             // check tree consistency
             if (i > 0 && i % TREE_CONSISTENCY_CHECK_INTERVAL === 0) {
-                it(`binary tree is still valid after ${ String(i) } nodes removals, ${ String(nodes - i) } nodes remaining.`, (): void => {
+                it(`binary tree still valid after ${ String(i) } nodes removals, ${ String(nodes - i) } nodes remaining.`, (): void => {
                     // variation ...
                     expect(tree.verifyTree()).toBe(true);
                 });
@@ -58,7 +58,7 @@ try {
             // define function
             const {time} = timeExecution(benchmarkInsertion.bind(null, nodesCount, MAX_NODE_VALUE, insertedValues, sampleBinaryTree));
 
-            it(`inserted ${ String(nodesCount) } nodes, execution time is ${ String(time) }ms`, (): void => {
+            it(`inserted ${ String(nodesCount) } nodes in ${ String(time) }ms`, (): void => {
                 expect(true).toBe(true);
             });
         });
@@ -69,7 +69,7 @@ try {
             // @ts-expect-error function w/ no argument
             const {time, result} = timeExecution(sampleBinaryTree.verifyTree.bind(sampleBinaryTree));
 
-            it(`verified tree integrity, execution time is ${ String(time) }ms`, (): void => {
+            it(`verified tree integrity in ${ String(time) }ms`, (): void => {
                 // variation ...
                 expect(result).toBe(true);
             });
@@ -78,7 +78,7 @@ try {
         // benchmark depth first tree traversals
         describe.each([ `PRE`, `IN`, `POST` ])(`perform a depth first %s traversal of the tree`, (x: string): void => {
             // define function
-            const {time} = timeExecution(sampleBinaryTree.traverseDepth.bind(sampleBinaryTree, () => null, x as depthTraversalType));
+            const {time} = timeExecution(sampleBinaryTree.traverseDepth.bind(sampleBinaryTree, () => null, x as traversalType));
 
             it(`${ x }:\t${ String(nodesCount) } nodes traversed in ${ String(time) }ms`, (): void => {
                 expect(true).toBe(true);

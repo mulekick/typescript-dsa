@@ -8,7 +8,7 @@ import {BarebonesArray} from "./array.ts";
 import {formatSampleObject, objectsMatch, unformatSampleObject} from "../helpers.ts";
 
 // import types
-import type {SampleObject, formatterSignature, matcherSignature, unformatterSignature} from "../interfaces.ts";
+import type {sampleObject, formatter, matcher, unformatter} from "../interfaces.ts";
 
 /**
  * Ringbuffer implementation over generic type.
@@ -31,20 +31,20 @@ export class RingBuffer<T> {
     // max element length in bytes
     private MAX_ELEMENT_LENGTH: number;
     // formatting function
-    private format: formatterSignature<T>;
+    private format: formatter<T>;
     // unformatting function
-    private unformat: unformatterSignature<T>;
+    private unformat: unformatter<T>;
     // declare internal node matcher function as public for combined use with other data structures
-    public match: matcherSignature<T>;
+    public match: matcher<T>;
 
     // do not pass a default value for formatters, matchers and comparators since it would "abstract" the current use case ...
-    constructor(size: number, maxElementLength: number, f: formatterSignature<T>, u: unformatterSignature<T>, m: matcherSignature<T>) {
+    constructor(f: formatter<T>, u: unformatter<T>, m: matcher<T>, size: number = 1, maxElementLength: number = 1) {
         // init length
         this.length = 0;
         // init size
-        this.size = size || 1;
+        this.size = size;
         // init max element length
-        this.MAX_ELEMENT_LENGTH = maxElementLength || 1;
+        this.MAX_ELEMENT_LENGTH = maxElementLength;
         // init background array
         this.array = new BarebonesArray(this.size, this.MAX_ELEMENT_LENGTH);
         // init formatters
@@ -154,26 +154,26 @@ export class RingBuffer<T> {
  * Ringbuffer based object queue.
  * @class
  */
-export class ObjectQueue extends RingBuffer<SampleObject> {
+export class ObjectQueue extends RingBuffer<sampleObject> {
     // constructor
     constructor() {
         // store a number between 0 and 65535 on 2 bytes
-        super(1, 2, formatSampleObject, unformatSampleObject, objectsMatch);
+        super(formatSampleObject, unformatSampleObject, objectsMatch, 1, 2);
     }
 
     // O(1) : enqueue value (if no resize)
-    enqueue(o: SampleObject): void {
+    enqueue(o: sampleObject): void {
         this.push(o);
     }
 
     // O(1) : dequeue value
-    dequeue(): SampleObject | undefined {
+    dequeue(): sampleObject | undefined {
         // read value and return
         return this.shift();
     }
 
     // O(1) : get value
-    peek(index: number): SampleObject | undefined {
+    peek(index: number): sampleObject | undefined {
         // read value and return
         return this.get(index);
     }

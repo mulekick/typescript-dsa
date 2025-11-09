@@ -3,6 +3,9 @@
  * @module
  */
 
+// import modules
+import {createArray} from "../helpers.ts";
+
 // import types
 import type {coords} from "../interfaces.ts";
 
@@ -16,7 +19,7 @@ export const mazeSolver = (maze: Array<string>, wall: string, start: coords, exi
     const solution: Array<coords> = [];
 
     // map of visited cells <-- dynamic programming trick
-    const visited: Array<Array<boolean>> = new Array(maze.length).fill(undefined).map(() => new Array(maze[0].length).fill(false) as Array<boolean>);
+    const visited = createArray(maze.length, () => createArray(maze[0].length, () => false)) as Array<Array<boolean>>;
 
     // recursive cell visit function
     const visitCell = (cell: coords): boolean => {

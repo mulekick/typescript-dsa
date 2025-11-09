@@ -15,10 +15,10 @@ import {randomUUID} from "node:crypto";
 
 // import modules
 import {Queue} from "./structures/singlyLinkedList.ts";
-import {rnd} from "./helpers.ts";
+import {createArray, rnd} from "./helpers.ts";
 
 // import types
-import type {matcherSignature, NetworkRequest} from "./interfaces.ts";
+import type {matcher, NetworkRequest} from "./interfaces.ts";
 
 /**
  * Create queue for a specific type.
@@ -28,7 +28,7 @@ class RequestQueue extends Queue<NetworkRequest> {}
 /**
  * Create the relevant matcher function.
  */
-const requestsMatch: matcherSignature<NetworkRequest> = (a: NetworkRequest, b: NetworkRequest): boolean => a.uuid === b.uuid;
+const requestsMatch: matcher<NetworkRequest> = (a: NetworkRequest, b: NetworkRequest): boolean => a.uuid === b.uuid;
 
 try {
 
@@ -39,13 +39,14 @@ try {
     const requestQueue = new RequestQueue(requestsMatch);
 
     // requests results map (use uuid as key)
-    const resultsMap = new Map<string, string>();
+    const resultsMap = new Map<string, {num: number; title: string}>();
 
     // requests dequeuing / processing ...
     const f = (index: number, promisesArray: Array<Promise<void> | undefined>, request?: NetworkRequest): Promise<void> => new Promise((resolve, reject) => {
 
         // log
-        console.log(`assign request ${ String(request?.uuid) } to slot ${ String(index) } ...`);
+        // console.log(`assign request ${ String(request?.uuid) } to slot ${ String(index) } ...`);
+        console.log(`request ${ String(request?.num) } (${ String(request?.uuid) }) assigned to slot ${ String(index) }.`);
 
         // 1. BASE CASE
         // - no more requests to perform
@@ -64,7 +65,7 @@ try {
             // simulate network conditions
             await new Promise(delay => {setTimeout(delay, rnd(1e3, 2.5e3));});
             // process result in some way ...
-            resultsMap.set(uuid, `\t${ String(num) }\t${ json.title }`);
+            resultsMap.set(uuid, {num, title: json.title});
             // resolve
             resolve();
             // the promise is resolved at this stage, dequeue a new request
@@ -95,13 +96,11 @@ try {
         });
     }
 
-    // declare promises array
-    const concurrentRequests: Array<Promise<void> | null> = new Array(MAX_CONCURRENT_REQUESTS).fill(null)
-        // queue the first batch of requests
-        .map((_, i, a) => f(i, a, requestQueue.dequeue()));
+    // declare promises array, queue first batch of requests
+    const concurrentRequests = createArray(MAX_CONCURRENT_REQUESTS, (_, i, a) => f(i as number, a as typeof concurrentRequests, requestQueue.dequeue())) as Array<Promise<void> | undefined>;
 
     // start requests execution ...
-    void Promise.all(concurrentRequests);
+    void Promise.all(concurrentRequests as Array<Promise<void>>);
 
     // start requests execution ...
     setInterval(() => {
@@ -110,10 +109,12 @@ try {
         console.log(`completed requests :`);
         Array.from(resultsMap.entries()).forEach(([ k, v ]) => {
             // consume result ...
-            console.log(`${ k }: ${ v }`);
+            console.log(`request ${ String(v.num) } (${ k }) returned "${ v.title }".`);
+
             // remove from the map
             resultsMap.delete(k);
         });
+        console.log(`==========`);
     }, 2.5e3);
 
 } catch (err: unknown) {

@@ -3,22 +3,10 @@
  * @module
  */
 
-// import types
-import type {matcherSignature} from "../interfaces.ts";
+/* eslint-disable @typescript-eslint/no-shadow */
 
-/**
- * List node (doubly linked).
- * @typeParam T Data type stored in the node.
- * @interface
- */
-interface Node<T> {
-    // pointer to previous node
-    prev?: Node<T>;
-    // pointer to next node
-    next?: Node<T>;
-    // store value
-    value: T;
-}
+// import types
+import type {Node, matcher} from "../interfaces.ts";
 
 /**
  * Doubly linked list implementation over generic type.
@@ -35,10 +23,10 @@ export class DoublyLinkedList<T> {
     // total number of nodes
     public length: number;
     // declare internal node matcher function as public for combined use with other data structures
-    public match: matcherSignature<T>;
+    public match: matcher<T>;
 
     // do not pass a default value for matchers and comparators since it would "abstract" the current use case ...
-    constructor(m: matcherSignature<T>) {
+    constructor(m: matcher<T>) {
         // init length
         this.length = 0;
         // init head node

@@ -3,8 +3,6 @@
  * @module
  */
 
-/* eslint-disable no-warning-comments */
-
 // import primitives
 import console from "node:console";
 

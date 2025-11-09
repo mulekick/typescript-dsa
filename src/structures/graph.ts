@@ -3,6 +3,8 @@
  * @module
  */
 
+/* eslint-disable no-param-reassign */
+
 // import modules
 import {Queue} from "./singlyLinkedList.ts";
 import {BinaryHeap} from "./binaryHeap.ts";
@@ -15,17 +17,18 @@ import {
     reorder,
     sequence,
     formatVertexByDistance,
-    unformatVertexByDistance
+    unformatVertexByDistance,
+    createArray
 } from "../helpers.ts";
 
 // import types
 import type {
     Vertices,
     AdjacencyList,
-    GraphVertexByDistance,
-    matcherSignature,
+    VertexByDistance,
+    matcher,
     AdjacencyMatrix,
-    GraphEdge,
+    Edge,
     LineGraphVertex
 } from "../interfaces.ts";
 
@@ -44,8 +47,12 @@ export class Graph<T> {
 
     // define vertices maximum index - max value that fits in 2 bytes
     public static MAX_VERTICES: number = 65535;
-    // define infinite distance (absence of edge) - max value that fits in 4 bytes since
+    // define infinite distance (absence of edge) - max value that fits in 4 bytes
     public static INFINITY: number = 4294967295;
+    // store type predicate as a static method
+    private static isMatrix = function(edges: AdjacencyList | AdjacencyMatrix): edges is AdjacencyMatrix {
+        return typeof (edges as AdjacencyMatrix)[0][0] === `number`;
+    };
 
     // ##############################################################
     // #                       GRAPH VARIABLES                      #
@@ -58,20 +65,21 @@ export class Graph<T> {
     // reuse the same min heap for each traversal
     private queue: Queue<number>;
     // reuse the same min heap for each traversal
-    private heap: BinaryHeap<GraphVertexByDistance>;
+    private heap: BinaryHeap<VertexByDistance>;
     // declare internal vertice matcher function
-    public match: matcherSignature<T>;
+    public match: matcher<T>;
 
     // do not pass a default value for matchers and comparators since it would "abstract" the current use case ...
-    constructor(vertices: Vertices<T>, edges: AdjacencyList | AdjacencyMatrix, m: matcherSignature<T>) {
+    constructor(vertices: Vertices<T>, edges: AdjacencyList | AdjacencyMatrix, m: matcher<T>) {
         // init vertices
         this.vertices = vertices;
         // init edges
-        this.edges = edges.length && edges[0].length ? typeof edges[0][0] === `number` ? translateMatrixToList(edges as AdjacencyMatrix) : edges as AdjacencyList : [];
+        // this.edges = edges.length && edges[0].length ? typeof edges[0][0] === `number` ? translateMatrixToList(edges as AdjacencyMatrix) : edges as AdjacencyList : [];
+        this.edges = edges.length && edges[0].length ? Graph.isMatrix(edges) ? translateMatrixToList(edges) : edges : [];
         // init vertices queue
         this.queue = new Queue<number>(numbersMatch);
         // init vertices min heap (matcher declared for compliance since no remove by value operation is performed on the min heap)
-        this.heap = new BinaryHeap(false, 6, formatVertexByDistance, unformatVertexByDistance, objectsMatch, compareVertexDistanceFromOrigin);
+        this.heap = new BinaryHeap(formatVertexByDistance, unformatVertexByDistance, objectsMatch, compareVertexDistanceFromOrigin, 6, false);
         // initialize matcher function
         this.match = m;
     }
@@ -120,8 +128,7 @@ export class Graph<T> {
             getComponent(v, v);
 
         // init components list
-        const result: Array<Array<T>> = new Array(this.vertices.length).fill(null)
-            .map(() => []);
+        const result = createArray(this.vertices.length, () => []) as Array<Array<T>>;
 
         // reconstruct components from array
         for (let v = 0; v < this.vertices.length; v++)
@@ -133,9 +140,9 @@ export class Graph<T> {
 
     // extract vertices indegrees and outdegrees
     public get degrees(): Array<[T, {ind: number; out: number}]> {
+
         // store degrees by vertices ...
-        const degrees: Array<[T, {ind: number; out: number}]> = new Array(this.vertices.length).fill(null)
-            .map((_, i) => [ this.vertices[i], {ind: 0, out: 0} ]);
+        const degrees = createArray(this.vertices.length, (_, i) => [ this.vertices[i as number], {ind: 0, out: 0} ]) as Array<[T, {ind: number; out: number}]>;
 
         // count vertice degrees ...
         for (let vertex = 0; vertex < this.vertices.length; vertex++) {
@@ -153,7 +160,6 @@ export class Graph<T> {
 
     // return graph edges count
     public get edgesCount(): number {
-        // eslint-disable-next-line no-param-reassign
         return this.degrees.reduce((r, x) => (r += x[1].ind + x[1].out), 0) / 2;
     }
 
@@ -173,8 +179,7 @@ export class Graph<T> {
         // init adjacency matrix for the original graph
         const original = translateListToMatrix(this.edges);
         // init edges to line graph vertices mappings matrix
-        const mappings: AdjacencyMatrix = new Array(this.edges.length).fill(null)
-            .map(() => new Array<number>(this.vertices.length).fill(Graph.INFINITY));
+        const mappings = createArray(this.edges.length, () => createArray(this.vertices.length, () => Graph.INFINITY)) as AdjacencyMatrix;
         // create vertices array for the line graph
         const edges: Array<LineGraphVertex> = [];
 
@@ -195,8 +200,7 @@ export class Graph<T> {
 
         // init adjacency matrix for the line graph
         // (ie. length equals number of edges)
-        const lineg: AdjacencyMatrix = new Array(edges.length).fill(null)
-            .map(() => new Array(edges.length).fill(Graph.INFINITY) as Array<number>);
+        const lineg = createArray(edges.length, () => createArray(edges.length, () => Graph.INFINITY)) as AdjacencyMatrix;
 
         // loop over line graph vertices
         for (let vertex = 0; vertex < edges.length; vertex++) {
@@ -233,7 +237,7 @@ export class Graph<T> {
     // ##############################################################
 
     // perform DFS on adjacency list
-    public depthFirstSearch(from: T, to: T): Array<GraphEdge> | undefined {
+    public depthFirstSearch(from: T, to: T): Array<Edge> | undefined {
 
         // read source and sink indexes in vertices array
         const [ initial, final ] = [ this.vertices.findIndex(this.match.bind(null, from)), this.vertices.findIndex(this.match.bind(null, to)) ];
@@ -245,7 +249,8 @@ export class Graph<T> {
         // init result = []
         const result: Array<number> = [];
         // set visited = new array(vertices.length) boolean
-        const visited = new Array(this.vertices.length).fill(false) as Array<boolean>;
+        const visited = createArray(this.vertices.length, () => false) as Array<boolean>;
+
         // recursive processing of vertex v
         const traverse = (current: number): boolean => {
             // 1. BASE CASE
@@ -269,7 +274,6 @@ export class Graph<T> {
                 if (r)
                     return true;
                 // perform a recursive call and aggregate returned value into the accumulator
-                // eslint-disable-next-line no-param-reassign
                 r ||= traverse(x.edge);
                 // return
                 return r;
@@ -297,7 +301,7 @@ export class Graph<T> {
     }
 
     // perform BFS on adjacency list
-    public breadthFirstSearch(from: T, to: T): Array<GraphEdge> | undefined {
+    public breadthFirstSearch(from: T, to: T): Array<Edge> | undefined {
 
         // read source and sink indexes in vertices array
         const [ initial, final ] = [ this.vertices.findIndex(this.match.bind(null, from)), this.vertices.findIndex(this.match.bind(null, to)) ];
@@ -307,9 +311,9 @@ export class Graph<T> {
             return undefined;
 
         // set visited = new array(vertices.length) boolean
-        const visited = new Array(this.vertices.length).fill(false) as Array<boolean>;
+        const visited = createArray(this.vertices.length, () => false) as Array<boolean>;
         // set previous = new array(vertices.length) number
-        const previous = new Array(this.vertices.length).fill(undefined) as Array<number | undefined>;
+        const previous = createArray(this.vertices.length, () => undefined) as Array<number | undefined>;
 
         // enqueue index from
         this.queue.enqueue(initial);
@@ -349,7 +353,7 @@ export class Graph<T> {
 
     // when using a queue to traverse the graph, nodes are processed according to their degree of adjacence from the origin node
     // when using a min heap w/ update to traverse the graph, nodes are processed closest first according to their distance from the origin node
-    public DijkstraShortestPath(from: T, to: T): Array<GraphEdge> | undefined {
+    public DijkstraShortestPath(from: T, to: T): Array<Edge> | undefined {
 
         // read source and sink indexes in vertices array
         const [ initial, final ] = [ this.vertices.findIndex(this.match.bind(null, from)), this.vertices.findIndex(this.match.bind(null, to)) ];
@@ -359,9 +363,9 @@ export class Graph<T> {
             return undefined;
 
         // set previous = new array(edges.length) number
-        const previous = new Array(this.vertices.length).fill(undefined) as Array<number | undefined>;
+        const previous = createArray(this.vertices.length, () => undefined) as Array<number | undefined>;
         // set distances = new array(list.length) number or undefined
-        const distances = new Array(this.vertices.length).fill(Graph.INFINITY) as Array<number>;
+        const distances = createArray(this.vertices.length, () => Graph.INFINITY) as Array<number>;
 
         // set distance[initial] = 0
         distances[initial] = 0;
