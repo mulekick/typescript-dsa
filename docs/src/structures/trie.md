@@ -12,7 +12,7 @@ Trie (retrieval tree) data structure.
 
 ### Trie
 
-Defined in: [src/structures/trie.ts:22](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/trie.ts#L22)
+Defined in: [src/structures/trie.ts:22](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/trie.ts#L22)
 
 Trie implementation.
 
@@ -22,8 +22,8 @@ Data type stored in heap elements.
 
 #### Remarks
 
-- Every method is O(1) since the tree height is limited by the longest word length.
-- This class was not made generic since autocomplete is the only use case identified.
+* Every method is O(1) since the tree height is limited by the longest word length.
+* This class was not made generic since autocomplete is the only use case identified.
 
 #### Constructors
 
@@ -33,7 +33,7 @@ Data type stored in heap elements.
 new Trie(): Trie;
 ```
 
-Defined in: [src/structures/trie.ts:58](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/trie.ts#L58)
+Defined in: [src/structures/trie.ts:58](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/trie.ts#L58)
 
 ###### Returns
 
@@ -47,7 +47,7 @@ Defined in: [src/structures/trie.ts:58](https://github.com/mulekick/typescript-d
 insert(word): void;
 ```
 
-Defined in: [src/structures/trie.ts:69](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/trie.ts#L69)
+Defined in: [src/structures/trie.ts:69](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/trie.ts#L69)
 
 ###### Parameters
 
@@ -65,7 +65,7 @@ Defined in: [src/structures/trie.ts:69](https://github.com/mulekick/typescript-d
 delete(word): void;
 ```
 
-Defined in: [src/structures/trie.ts:124](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/trie.ts#L124)
+Defined in: [src/structures/trie.ts:124](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/trie.ts#L124)
 
 ###### Parameters
 
@@ -83,7 +83,7 @@ Defined in: [src/structures/trie.ts:124](https://github.com/mulekick/typescript-
 find(pattern): string[];
 ```
 
-Defined in: [src/structures/trie.ts:179](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/trie.ts#L179)
+Defined in: [src/structures/trie.ts:179](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/trie.ts#L179)
 
 ###### Parameters
 
@@ -93,4 +93,4 @@ Defined in: [src/structures/trie.ts:179](https://github.com/mulekick/typescript-
 
 ###### Returns
 
-`string`[]
+`string`\[]

@@ -12,13 +12,13 @@ Binary tree data structure.
 
 ### BinarySearchTree
 
-Defined in: [src/structures/binaryTree.ts:24](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L24)
+Defined in: [src/structures/binaryTree.ts:24](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L24)
 
 Binary search tree implementation over generic type.
 
 #### Remarks
 
-- Trees are node based structures and are completely generic (no limitation on node values size).
+* Trees are node based structures and are completely generic (no limitation on node values size).
 
 #### Type Parameters
 
@@ -34,24 +34,24 @@ Binary search tree implementation over generic type.
 new BinarySearchTree<T>(m, c): BinarySearchTree<T>;
 ```
 
-Defined in: [src/structures/binaryTree.ts:34](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L34)
+Defined in: [src/structures/binaryTree.ts:34](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L34)
 
 ###### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `m` | [`matcher`](../interfaces.md#matcher)\<`T`\> |
-| `c` | [`comparator`](../interfaces.md#comparator)\<`T`\> |
+| `m` | [`matcher`](../interfaces.md#matcher)<`T`> |
+| `c` | [`comparator`](../interfaces.md#comparator)<`T`> |
 
 ###### Returns
 
-[`BinarySearchTree`](#binarysearchtree)\<`T`\>
+[`BinarySearchTree`](#binarysearchtree)<`T`>
 
 #### Properties
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)\<`T`\> | [src/structures/binaryTree.ts:29](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L29) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/binaryTree.ts:29](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L29) |
 
 #### Methods
 
@@ -61,13 +61,13 @@ Defined in: [src/structures/binaryTree.ts:34](https://github.com/mulekick/typesc
 traverseDepth(visitNode, type): void;
 ```
 
-Defined in: [src/structures/binaryTree.ts:60](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L60)
+Defined in: [src/structures/binaryTree.ts:60](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L60)
 
 ###### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `visitNode` | [`visitor`](../interfaces.md#visitor)\<`T`\> |
+| `visitNode` | [`visitor`](../interfaces.md#visitor)<`T`> |
 | `type` | [`traversalType`](../interfaces.md#traversaltype) |
 
 ###### Returns
@@ -80,13 +80,13 @@ Defined in: [src/structures/binaryTree.ts:60](https://github.com/mulekick/typesc
 traverseBreadth(visitNode): void;
 ```
 
-Defined in: [src/structures/binaryTree.ts:99](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L99)
+Defined in: [src/structures/binaryTree.ts:99](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L99)
 
 ###### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `visitNode` | [`visitor`](../interfaces.md#visitor)\<`T`\> |
+| `visitNode` | [`visitor`](../interfaces.md#visitor)<`T`> |
 
 ###### Returns
 
@@ -98,13 +98,13 @@ Defined in: [src/structures/binaryTree.ts:99](https://github.com/mulekick/typesc
 verifyTree(currentNode): boolean;
 ```
 
-Defined in: [src/structures/binaryTree.ts:125](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L125)
+Defined in: [src/structures/binaryTree.ts:125](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L125)
 
 ###### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `currentNode` | [`BinaryNode`](../interfaces.md#binarynode)\<`T`\> \| `null` |
+| `currentNode` | [`BinaryNode`](../interfaces.md#binarynode)<`T`> | `null` |
 
 ###### Returns
 
@@ -116,7 +116,7 @@ Defined in: [src/structures/binaryTree.ts:125](https://github.com/mulekick/types
 insert(value): void;
 ```
 
-Defined in: [src/structures/binaryTree.ts:144](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L144)
+Defined in: [src/structures/binaryTree.ts:144](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L144)
 
 ###### Parameters
 
@@ -134,7 +134,7 @@ Defined in: [src/structures/binaryTree.ts:144](https://github.com/mulekick/types
 remove(value): T | undefined;
 ```
 
-Defined in: [src/structures/binaryTree.ts:200](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L200)
+Defined in: [src/structures/binaryTree.ts:200](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L200)
 
 ###### Parameters
 
@@ -144,7 +144,7 @@ Defined in: [src/structures/binaryTree.ts:200](https://github.com/mulekick/types
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ##### find()
 
@@ -152,7 +152,7 @@ Defined in: [src/structures/binaryTree.ts:200](https://github.com/mulekick/types
 find(value): boolean;
 ```
 
-Defined in: [src/structures/binaryTree.ts:398](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L398)
+Defined in: [src/structures/binaryTree.ts:398](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L398)
 
 ###### Parameters
 
@@ -173,14 +173,14 @@ dump(
    spacing): void;
 ```
 
-Defined in: [src/structures/binaryTree.ts:408](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/binaryTree.ts#L408)
+Defined in: [src/structures/binaryTree.ts:408](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/binaryTree.ts#L408)
 
 ###### Parameters
 
 | Parameter | Type | Default value |
 | ------ | ------ | ------ |
-| `currentNode` | [`BinaryNode`](../interfaces.md#binarynode)\<`T`\> \| `null` | `...` |
-| `left` | `boolean` \| `null` | `null` |
+| `currentNode` | [`BinaryNode`](../interfaces.md#binarynode)<`T`> | `null` | `...` |
+| `left` | `boolean` | `null` | `null` |
 | `spacing` | `string` | `...` |
 
 ###### Returns

@@ -8,9 +8,15 @@
 
 Graph-specific helper functions.
 
+## Table of contents
+
+* [Data](#data)
+* [Helpers](#helpers)
+* [Mazes](#mazes)
+
 ## Data
 
-- Sample data used to initialize a graph.
+* Sample data used to initialize a graph.
 
 ### cities
 
@@ -18,7 +24,7 @@ Graph-specific helper functions.
 const cities: Vertices<string>;
 ```
 
-Defined in: [src/graphs.ts:240](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L240)
+Defined in: [src/graphs.ts:240](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L240)
 
 Cities in Nepal (40).
 
@@ -30,13 +36,13 @@ Cities in Nepal (40).
 const distances: AdjacencyMatrix;
 ```
 
-Defined in: [src/graphs.ts:287](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L287)
+Defined in: [src/graphs.ts:287](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L287)
 
-Traveling distances between cities (40 * 40).
+Traveling distances between cities (40 \* 40).
 
 ## Helpers
 
-- Generic helper functions.
+* Generic helper functions.
 
 ### translateMatrixToList()
 
@@ -44,7 +50,7 @@ Traveling distances between cities (40 * 40).
 function translateMatrixToList(matrix): AdjacencyList;
 ```
 
-Defined in: [src/graphs.ts:37](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L37)
+Defined in: [src/graphs.ts:37](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L37)
 
 Translate adjacency matrix to adjacency list.
 
@@ -66,7 +72,7 @@ Translate adjacency matrix to adjacency list.
 function translateListToMatrix(list): AdjacencyMatrix;
 ```
 
-Defined in: [src/graphs.ts:59](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L59)
+Defined in: [src/graphs.ts:59](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L59)
 
 Translate adjacency list to adjacency matrix.
 
@@ -91,7 +97,7 @@ function reorder(
    final): number[];
 ```
 
-Defined in: [src/graphs.ts:71](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L71)
+Defined in: [src/graphs.ts:71](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L71)
 
 Reconstruct path to vertex v from previous array.
 
@@ -99,17 +105,17 @@ Reconstruct path to vertex v from previous array.
 
 | Parameter | Type |
 | ------ | ------ |
-| `previous` | (`number` \| `undefined`)[] |
+| `previous` | (`number` | `undefined`)\[] |
 | `initial` | `number` |
 | `final` | `number` |
 
 #### Returns
 
-`number`[]
+`number`\[]
 
 #### Remarks
 
-- Pass array and vertices <start> and <v> indices
+* Pass array and vertices <start> and <v> indices
 
 ***
 
@@ -119,7 +125,7 @@ Reconstruct path to vertex v from previous array.
 function sequence(path, edges): Edge[];
 ```
 
-Defined in: [src/graphs.ts:93](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L93)
+Defined in: [src/graphs.ts:93](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L93)
 
 Return vertices sequence from edges path.
 
@@ -127,12 +133,12 @@ Return vertices sequence from edges path.
 
 | Parameter | Type |
 | ------ | ------ |
-| `path` | `number`[] |
+| `path` | `number`\[] |
 | `edges` | [`AdjacencyList`](interfaces.md#adjacencylist) |
 
 #### Returns
 
-[`Edge`](interfaces.md#edge)[]
+[`Edge`](interfaces.md#edge)\[]
 
 ***
 
@@ -142,7 +148,7 @@ Return vertices sequence from edges path.
 function reduceToVerticesList(vertices, edges): string[];
 ```
 
-Defined in: [src/graphs.ts:114](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L114)
+Defined in: [src/graphs.ts:114](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L114)
 
 Reduce edge sequence to vertices sequence.
 
@@ -150,12 +156,12 @@ Reduce edge sequence to vertices sequence.
 
 | Parameter | Type |
 | ------ | ------ |
-| `vertices` | [`Vertices`](interfaces.md#vertices)\<`string`\> |
-| `edges` | [`Edge`](interfaces.md#edge)[] |
+| `vertices` | [`Vertices`](interfaces.md#vertices)<`string`> |
+| `edges` | [`Edge`](interfaces.md#edge)\[] |
 
 #### Returns
 
-`string`[]
+`string`\[]
 
 ***
 
@@ -165,7 +171,7 @@ Reduce edge sequence to vertices sequence.
 function reduceToTotalDistance(edges): number;
 ```
 
-Defined in: [src/graphs.ts:120](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L120)
+Defined in: [src/graphs.ts:120](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L120)
 
 Reduce edge sequence to sum of edges weights.
 
@@ -173,7 +179,7 @@ Reduce edge sequence to sum of edges weights.
 
 | Parameter | Type |
 | ------ | ------ |
-| `edges` | [`Edge`](interfaces.md#edge)[] |
+| `edges` | [`Edge`](interfaces.md#edge)\[] |
 
 #### Returns
 
@@ -181,7 +187,7 @@ Reduce edge sequence to sum of edges weights.
 
 ## Mazes
 
-- Functions used to represent mazes as graphs.
+* Functions used to represent mazes as graphs.
 
 ### coordsMatch
 
@@ -189,7 +195,7 @@ Reduce edge sequence to sum of edges weights.
 const coordsMatch: matcher<coords>;
 ```
 
-Defined in: [src/graphs.ts:134](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L134)
+Defined in: [src/graphs.ts:134](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L134)
 
 Cell coords matcher function.
 
@@ -201,7 +207,7 @@ Cell coords matcher function.
 function readDirections(cell): [coords, coords, coords, coords];
 ```
 
-Defined in: [src/graphs.ts:140](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L140)
+Defined in: [src/graphs.ts:140](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L140)
 
 Visit the 4 adjacent cells top, left, bottom, right.
 
@@ -213,7 +219,7 @@ Visit the 4 adjacent cells top, left, bottom, right.
 
 #### Returns
 
-\[[`coords`](interfaces.md#coords), [`coords`](interfaces.md#coords), [`coords`](interfaces.md#coords), [`coords`](interfaces.md#coords)\]
+\[[`coords`](interfaces.md#coords), [`coords`](interfaces.md#coords), [`coords`](interfaces.md#coords), [`coords`](interfaces.md#coords)]
 
 ***
 
@@ -223,7 +229,7 @@ Visit the 4 adjacent cells top, left, bottom, right.
 function createUnweightedGraphFromMaze(maze, wall): [coords[], AdjacencyMatrix];
 ```
 
-Defined in: [src/graphs.ts:151](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/graphs.ts#L151)
+Defined in: [src/graphs.ts:151](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/graphs.ts#L151)
 
 Create unweighted graph from maze string representation.
 
@@ -231,9 +237,9 @@ Create unweighted graph from maze string representation.
 
 | Parameter | Type |
 | ------ | ------ |
-| `maze` | `string`[] |
+| `maze` | `string`\[] |
 | `wall` | `string` |
 
 #### Returns
 
-\[[`coords`](interfaces.md#coords)[], [`AdjacencyMatrix`](interfaces.md#adjacencymatrix)\]
+\[[`coords`](interfaces.md#coords)\[], [`AdjacencyMatrix`](interfaces.md#adjacencymatrix)]

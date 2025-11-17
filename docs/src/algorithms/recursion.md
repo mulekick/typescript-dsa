@@ -20,7 +20,7 @@ function mazeSolver(
    exit): coords[];
 ```
 
-Defined in: [src/algorithms/recursion.ts:17](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/algorithms/recursion.ts#L17)
+Defined in: [src/algorithms/recursion.ts:17](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/recursion.ts#L17)
 
 Find the path from entrance to exit in a maze.
 
@@ -28,15 +28,15 @@ Find the path from entrance to exit in a maze.
 
 | Parameter | Type |
 | ------ | ------ |
-| `maze` | `string`[] |
+| `maze` | `string`\[] |
 | `wall` | `string` |
 | `start` | [`coords`](../interfaces.md#coords) |
 | `exit` | `string` |
 
 #### Returns
 
-[`coords`](../interfaces.md#coords)[]
+[`coords`](../interfaces.md#coords)\[]
 
 #### Remarks
 
-- Use a dynamic programming trick to progress from O(n) to O(1) AT EACH RECURSIVE CALL.
+* Use a dynamic programming trick to progress from O(n) to O(1) AT EACH RECURSIVE CALL.

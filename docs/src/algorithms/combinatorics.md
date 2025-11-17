@@ -8,10 +8,15 @@
 
 Combinatorics algorithms.
 
+## Table of contents
+
+* [Remarks](#remarks)
+* [Functions](#functions)
+
 ## Remarks
 
-- Try to design a backpack optimization algorithm where each iteam has a volume and a value ?
-- Try to design a coin change algorithm where each coin quantity is limited ?
+* Try to design a backpack optimization algorithm where each iteam has a volume and a value ?
+* Try to design a coin change algorithm where each coin quantity is limited ?
 
 ## Functions
 
@@ -26,7 +31,7 @@ function combine<T>(
    current?): T[][];
 ```
 
-Defined in: [src/algorithms/combinatorics.ts:17](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/algorithms/combinatorics.ts#L17)
+Defined in: [src/algorithms/combinatorics.ts:17](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/combinatorics.ts#L17)
 
 Find unique combinations.
 
@@ -40,20 +45,20 @@ Find unique combinations.
 
 | Parameter | Type |
 | ------ | ------ |
-| `combination` | `T`[] |
-| `combinations` | `T`[][] |
-| `set` | `T`[] |
+| `combination` | `T`\[] |
+| `combinations` | `T`\[]\[] |
+| `set` | `T`\[] |
 | `desired` | `number` |
 | `current?` | `number` |
 
 #### Returns
 
-`T`[][]
+`T`\[]\[]
 
 #### Remarks
 
-- Use a backtracking algorithm to find all possible unique combinations of N elements from a set
-- Of course, if desired combination length N equals set length, the entire set will be returned.
+* Use a backtracking algorithm to find all possible unique combinations of N elements from a set
+* Of course, if desired combination length N equals set length, the entire set will be returned.
 
 ***
 
@@ -63,7 +68,7 @@ Find unique combinations.
 function coinChange(coins, value): number[];
 ```
 
-Defined in: [src/algorithms/combinatorics.ts:57](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/algorithms/combinatorics.ts#L57)
+Defined in: [src/algorithms/combinatorics.ts:57](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/combinatorics.ts#L57)
 
 Coin change problem.
 
@@ -71,14 +76,14 @@ Coin change problem.
 
 | Parameter | Type |
 | ------ | ------ |
-| `coins` | `number`[] |
+| `coins` | `number`\[] |
 | `value` | `number` |
 
 #### Returns
 
-`number`[]
+`number`\[]
 
 #### Remarks
 
-- Use a backtracking algorithm to solve the coin change problem.
-- This function can be made generic as long as there is a way to sum the values of the elements.
+* Use a backtracking algorithm to solve the coin change problem.
+* This function can be made generic as long as there is a way to sum the values of the elements.

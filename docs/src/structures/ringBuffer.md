@@ -12,13 +12,13 @@ Ringbuffer based data structures.
 
 ### RingBuffer
 
-Defined in: [src/structures/ringBuffer.ts:19](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L19)
+Defined in: [src/structures/ringBuffer.ts:19](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L19)
 
 Ringbuffer implementation over generic type.
 
 #### Extended by
 
-- [`ObjectQueue`](#objectqueue)
+* [`ObjectQueue`](#objectqueue)
 
 #### Type Parameters
 
@@ -39,28 +39,28 @@ new RingBuffer<T>(
 maxElementLength): RingBuffer<T>;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:41](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L41)
+Defined in: [src/structures/ringBuffer.ts:41](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L41)
 
 ###### Parameters
 
 | Parameter | Type | Default value |
 | ------ | ------ | ------ |
-| `f` | [`formatter`](../interfaces.md#formatter)\<`T`\> | `undefined` |
-| `u` | [`unformatter`](../interfaces.md#unformatter)\<`T`\> | `undefined` |
-| `m` | [`matcher`](../interfaces.md#matcher)\<`T`\> | `undefined` |
+| `f` | [`formatter`](../interfaces.md#formatter)<`T`> | `undefined` |
+| `u` | [`unformatter`](../interfaces.md#unformatter)<`T`> | `undefined` |
+| `m` | [`matcher`](../interfaces.md#matcher)<`T`> | `undefined` |
 | `size` | `number` | `1` |
 | `maxElementLength` | `number` | `1` |
 
 ###### Returns
 
-[`RingBuffer`](#ringbuffer)\<`T`\>
+[`RingBuffer`](#ringbuffer)<`T`>
 
 #### Properties
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="length"></a> `length` | `public` | `number` | [src/structures/ringBuffer.ts:28](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L28) |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)\<`T`\> | [src/structures/ringBuffer.ts:38](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L38) |
+| <a id="length"></a> `length` | `public` | `number` | [src/structures/ringBuffer.ts:28](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L28) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/ringBuffer.ts:38](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L38) |
 
 #### Methods
 
@@ -70,7 +70,7 @@ Defined in: [src/structures/ringBuffer.ts:41](https://github.com/mulekick/typesc
 push(item): void;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:98](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L98)
+Defined in: [src/structures/ringBuffer.ts:98](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L98)
 
 ###### Parameters
 
@@ -88,11 +88,11 @@ Defined in: [src/structures/ringBuffer.ts:98](https://github.com/mulekick/typesc
 shift(): T | undefined;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:119](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L119)
+Defined in: [src/structures/ringBuffer.ts:119](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L119)
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ##### get()
 
@@ -100,7 +100,7 @@ Defined in: [src/structures/ringBuffer.ts:119](https://github.com/mulekick/types
 get(idx): T | undefined;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L142)
+Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L142)
 
 ###### Parameters
 
@@ -110,19 +110,19 @@ Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/types
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ***
 
 ### ObjectQueue
 
-Defined in: [src/structures/ringBuffer.ts:157](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L157)
+Defined in: [src/structures/ringBuffer.ts:157](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L157)
 
 Ringbuffer based object queue.
 
 #### Extends
 
-- [`RingBuffer`](#ringbuffer)\<[`sampleObject`](../interfaces.md#sampleobject)\>
+* [`RingBuffer`](#ringbuffer)<[`sampleObject`](../interfaces.md#sampleobject)>
 
 #### Constructors
 
@@ -132,7 +132,7 @@ Ringbuffer based object queue.
 new ObjectQueue(): ObjectQueue;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:159](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L159)
+Defined in: [src/structures/ringBuffer.ts:159](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L159)
 
 ###### Returns
 
@@ -146,8 +146,8 @@ Defined in: [src/structures/ringBuffer.ts:159](https://github.com/mulekick/types
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-1"></a> `length` | `public` | `number` | [`RingBuffer`](#ringbuffer).[`length`](#length) | [src/structures/ringBuffer.ts:28](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L28) |
-| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)\<[`sampleObject`](../interfaces.md#sampleobject)\> | [`RingBuffer`](#ringbuffer).[`match`](#match) | [src/structures/ringBuffer.ts:38](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L38) |
+| <a id="length-1"></a> `length` | `public` | `number` | [`RingBuffer`](#ringbuffer).[`length`](#length) | [src/structures/ringBuffer.ts:28](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L28) |
+| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<[`sampleObject`](../interfaces.md#sampleobject)> | [`RingBuffer`](#ringbuffer).[`match`](#match) | [src/structures/ringBuffer.ts:38](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L38) |
 
 #### Methods
 
@@ -157,7 +157,7 @@ Defined in: [src/structures/ringBuffer.ts:159](https://github.com/mulekick/types
 push(item): void;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:98](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L98)
+Defined in: [src/structures/ringBuffer.ts:98](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L98)
 
 ###### Parameters
 
@@ -179,11 +179,11 @@ Defined in: [src/structures/ringBuffer.ts:98](https://github.com/mulekick/typesc
 shift(): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:119](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L119)
+Defined in: [src/structures/ringBuffer.ts:119](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L119)
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ###### Inherited from
 
@@ -195,7 +195,7 @@ Defined in: [src/structures/ringBuffer.ts:119](https://github.com/mulekick/types
 get(idx): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L142)
+Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L142)
 
 ###### Parameters
 
@@ -205,7 +205,7 @@ Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/types
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ###### Inherited from
 
@@ -217,7 +217,7 @@ Defined in: [src/structures/ringBuffer.ts:142](https://github.com/mulekick/types
 enqueue(o): void;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:165](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L165)
+Defined in: [src/structures/ringBuffer.ts:165](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L165)
 
 ###### Parameters
 
@@ -235,11 +235,11 @@ Defined in: [src/structures/ringBuffer.ts:165](https://github.com/mulekick/types
 dequeue(): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:170](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L170)
+Defined in: [src/structures/ringBuffer.ts:170](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L170)
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ##### peek()
 
@@ -247,7 +247,7 @@ Defined in: [src/structures/ringBuffer.ts:170](https://github.com/mulekick/types
 peek(index): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/ringBuffer.ts:176](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/ringBuffer.ts#L176)
+Defined in: [src/structures/ringBuffer.ts:176](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/ringBuffer.ts#L176)
 
 ###### Parameters
 
@@ -257,4 +257,4 @@ Defined in: [src/structures/ringBuffer.ts:176](https://github.com/mulekick/types
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`

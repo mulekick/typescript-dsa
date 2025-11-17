@@ -8,26 +8,31 @@
 
 Deque based data structures.
 
+## Table of contents
+
+* [Remarks](#remarks)
+* [Classes](#classes)
+
 ## Remarks
 
-- Deque is a ringbuffer based double ended queue.
+* Deque is a ringbuffer based double ended queue.
 
 ## Classes
 
 ### Deque
 
-Defined in: [src/structures/deque.ts:24](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L24)
+Defined in: [src/structures/deque.ts:24](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L24)
 
 Deque implementation over generic type.
 
 #### Remarks
 
-- Deques are array based structures and can't be made truly generic.
+* Deques are array based structures and can't be made truly generic.
 
 #### Extended by
 
-- [`OtherObjectQueue`](#otherobjectqueue)
-- [`DequeArray`](#dequearray)
+* [`OtherObjectQueue`](#otherobjectqueue)
+* [`DequeArray`](#dequearray)
 
 #### Type Parameters
 
@@ -48,28 +53,28 @@ new Deque<T>(
 maxElementLength): Deque<T>;
 ```
 
-Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L48)
+Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L48)
 
 ###### Parameters
 
 | Parameter | Type | Default value |
 | ------ | ------ | ------ |
-| `f` | [`formatter`](../interfaces.md#formatter)\<`T`\> | `undefined` |
-| `u` | [`unformatter`](../interfaces.md#unformatter)\<`T`\> | `undefined` |
-| `m` | [`matcher`](../interfaces.md#matcher)\<`T`\> | `undefined` |
+| `f` | [`formatter`](../interfaces.md#formatter)<`T`> | `undefined` |
+| `u` | [`unformatter`](../interfaces.md#unformatter)<`T`> | `undefined` |
+| `m` | [`matcher`](../interfaces.md#matcher)<`T`> | `undefined` |
 | `size` | `number` | `1` |
 | `maxElementLength` | `number` | `1` |
 
 ###### Returns
 
-[`Deque`](#deque)\<`T`\>
+[`Deque`](#deque)<`T`>
 
 #### Properties
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="length"></a> `length` | `public` | `number` | [src/structures/deque.ts:35](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L35) |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)\<`T`\> | [src/structures/deque.ts:45](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L45) |
+| <a id="length"></a> `length` | `public` | `number` | [src/structures/deque.ts:35](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L35) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/deque.ts:45](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L45) |
 
 #### Methods
 
@@ -79,7 +84,7 @@ Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-
 flush(): void;
 ```
 
-Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L117)
+Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L117)
 
 ###### Returns
 
@@ -91,7 +96,7 @@ Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript
 append(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L133)
+Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L133)
 
 ###### Parameters
 
@@ -109,7 +114,7 @@ Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript
 prepend(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L136)
+Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L136)
 
 ###### Parameters
 
@@ -127,7 +132,7 @@ Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript
 insertAt(item, index): void;
 ```
 
-Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L140)
+Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L140)
 
 ###### Parameters
 
@@ -146,7 +151,7 @@ Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript
 removeAt(index): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L197)
+Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L197)
 
 ###### Parameters
 
@@ -156,7 +161,7 @@ Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ##### remove()
 
@@ -164,7 +169,7 @@ Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L255)
+Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L255)
 
 ###### Parameters
 
@@ -174,7 +179,7 @@ Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ##### get()
 
@@ -182,7 +187,7 @@ Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript
 get(index): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L272)
+Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L272)
 
 ###### Parameters
 
@@ -192,7 +197,7 @@ Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ##### set()
 
@@ -200,7 +205,7 @@ Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript
 set(index, item?): void;
 ```
 
-Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L284)
+Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L284)
 
 ###### Parameters
 
@@ -217,13 +222,13 @@ Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript
 
 ### OtherObjectQueue
 
-Defined in: [src/structures/deque.ts:299](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L299)
+Defined in: [src/structures/deque.ts:299](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L299)
 
 Deque based object queue.
 
 #### Extends
 
-- [`Deque`](#deque)\<[`sampleObject`](../interfaces.md#sampleobject)\>
+* [`Deque`](#deque)<[`sampleObject`](../interfaces.md#sampleobject)>
 
 #### Constructors
 
@@ -233,7 +238,7 @@ Deque based object queue.
 new OtherObjectQueue(): OtherObjectQueue;
 ```
 
-Defined in: [src/structures/deque.ts:301](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L301)
+Defined in: [src/structures/deque.ts:301](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L301)
 
 ###### Returns
 
@@ -247,8 +252,8 @@ Defined in: [src/structures/deque.ts:301](https://github.com/mulekick/typescript
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-1"></a> `length` | `public` | `number` | [`Deque`](#deque).[`length`](#length) | [src/structures/deque.ts:35](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L35) |
-| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)\<[`sampleObject`](../interfaces.md#sampleobject)\> | [`Deque`](#deque).[`match`](#match) | [src/structures/deque.ts:45](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L45) |
+| <a id="length-1"></a> `length` | `public` | `number` | [`Deque`](#deque).[`length`](#length) | [src/structures/deque.ts:35](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L35) |
+| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<[`sampleObject`](../interfaces.md#sampleobject)> | [`Deque`](#deque).[`match`](#match) | [src/structures/deque.ts:45](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L45) |
 
 #### Methods
 
@@ -258,7 +263,7 @@ Defined in: [src/structures/deque.ts:301](https://github.com/mulekick/typescript
 flush(): void;
 ```
 
-Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L117)
+Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L117)
 
 ###### Returns
 
@@ -274,7 +279,7 @@ Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript
 append(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L133)
+Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L133)
 
 ###### Parameters
 
@@ -296,7 +301,7 @@ Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript
 prepend(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L136)
+Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L136)
 
 ###### Parameters
 
@@ -318,7 +323,7 @@ Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript
 insertAt(item, index): void;
 ```
 
-Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L140)
+Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L140)
 
 ###### Parameters
 
@@ -341,7 +346,7 @@ Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript
 removeAt(index): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L197)
+Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L197)
 
 ###### Parameters
 
@@ -351,7 +356,7 @@ Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ###### Inherited from
 
@@ -363,7 +368,7 @@ Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript
 remove(item): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L255)
+Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L255)
 
 ###### Parameters
 
@@ -373,7 +378,7 @@ Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ###### Inherited from
 
@@ -385,7 +390,7 @@ Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript
 get(index): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L272)
+Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L272)
 
 ###### Parameters
 
@@ -395,7 +400,7 @@ Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ###### Inherited from
 
@@ -407,7 +412,7 @@ Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript
 set(index, item?): void;
 ```
 
-Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L284)
+Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L284)
 
 ###### Parameters
 
@@ -430,7 +435,7 @@ Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript
 enqueue(o): void;
 ```
 
-Defined in: [src/structures/deque.ts:307](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L307)
+Defined in: [src/structures/deque.ts:307](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L307)
 
 ###### Parameters
 
@@ -448,11 +453,11 @@ Defined in: [src/structures/deque.ts:307](https://github.com/mulekick/typescript
 dequeue(): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:312](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L312)
+Defined in: [src/structures/deque.ts:312](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L312)
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ##### peek()
 
@@ -460,7 +465,7 @@ Defined in: [src/structures/deque.ts:312](https://github.com/mulekick/typescript
 peek(index): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:318](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L318)
+Defined in: [src/structures/deque.ts:318](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L318)
 
 ###### Parameters
 
@@ -470,23 +475,23 @@ Defined in: [src/structures/deque.ts:318](https://github.com/mulekick/typescript
 
 ###### Returns
 
-[`sampleObject`](../interfaces.md#sampleobject) \| `undefined`
+[`sampleObject`](../interfaces.md#sampleobject) | `undefined`
 
 ***
 
 ### DequeArray
 
-Defined in: [src/structures/deque.ts:330](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L330)
+Defined in: [src/structures/deque.ts:330](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L330)
 
 Deque based JS array-like implementation.
 
 #### Remarks
 
-- Maps native JS array methods to deque methods.
+* Maps native JS array methods to deque methods.
 
 #### Extends
 
-- [`Deque`](#deque)\<`T`\>
+* [`Deque`](#deque)<`T`>
 
 #### Type Parameters
 
@@ -507,21 +512,21 @@ new DequeArray<T>(
 maxElementLength): DequeArray<T>;
 ```
 
-Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L48)
+Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L48)
 
 ###### Parameters
 
 | Parameter | Type | Default value |
 | ------ | ------ | ------ |
-| `f` | [`formatter`](../interfaces.md#formatter)\<`T`\> | `undefined` |
-| `u` | [`unformatter`](../interfaces.md#unformatter)\<`T`\> | `undefined` |
-| `m` | [`matcher`](../interfaces.md#matcher)\<`T`\> | `undefined` |
+| `f` | [`formatter`](../interfaces.md#formatter)<`T`> | `undefined` |
+| `u` | [`unformatter`](../interfaces.md#unformatter)<`T`> | `undefined` |
+| `m` | [`matcher`](../interfaces.md#matcher)<`T`> | `undefined` |
 | `size` | `number` | `1` |
 | `maxElementLength` | `number` | `1` |
 
 ###### Returns
 
-[`DequeArray`](#dequearray)\<`T`\>
+[`DequeArray`](#dequearray)<`T`>
 
 ###### Inherited from
 
@@ -531,8 +536,8 @@ Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-2"></a> `length` | `public` | `number` | [`Deque`](#deque).[`length`](#length) | [src/structures/deque.ts:35](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L35) |
-| <a id="match-2"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)\<`T`\> | [`Deque`](#deque).[`match`](#match) | [src/structures/deque.ts:45](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L45) |
+| <a id="length-2"></a> `length` | `public` | `number` | [`Deque`](#deque).[`length`](#length) | [src/structures/deque.ts:35](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L35) |
+| <a id="match-2"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [`Deque`](#deque).[`match`](#match) | [src/structures/deque.ts:45](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L45) |
 
 #### Methods
 
@@ -542,7 +547,7 @@ Defined in: [src/structures/deque.ts:48](https://github.com/mulekick/typescript-
 flush(): void;
 ```
 
-Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L117)
+Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L117)
 
 ###### Returns
 
@@ -558,7 +563,7 @@ Defined in: [src/structures/deque.ts:117](https://github.com/mulekick/typescript
 append(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L133)
+Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L133)
 
 ###### Parameters
 
@@ -580,7 +585,7 @@ Defined in: [src/structures/deque.ts:133](https://github.com/mulekick/typescript
 prepend(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L136)
+Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L136)
 
 ###### Parameters
 
@@ -602,7 +607,7 @@ Defined in: [src/structures/deque.ts:136](https://github.com/mulekick/typescript
 insertAt(item, index): void;
 ```
 
-Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L140)
+Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L140)
 
 ###### Parameters
 
@@ -625,7 +630,7 @@ Defined in: [src/structures/deque.ts:140](https://github.com/mulekick/typescript
 removeAt(index): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L197)
+Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L197)
 
 ###### Parameters
 
@@ -635,7 +640,7 @@ Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ###### Inherited from
 
@@ -647,7 +652,7 @@ Defined in: [src/structures/deque.ts:197](https://github.com/mulekick/typescript
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L255)
+Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L255)
 
 ###### Parameters
 
@@ -657,7 +662,7 @@ Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ###### Inherited from
 
@@ -669,7 +674,7 @@ Defined in: [src/structures/deque.ts:255](https://github.com/mulekick/typescript
 get(index): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L272)
+Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L272)
 
 ###### Parameters
 
@@ -679,7 +684,7 @@ Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ###### Inherited from
 
@@ -691,7 +696,7 @@ Defined in: [src/structures/deque.ts:272](https://github.com/mulekick/typescript
 set(index, item?): void;
 ```
 
-Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L284)
+Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L284)
 
 ###### Parameters
 
@@ -714,7 +719,7 @@ Defined in: [src/structures/deque.ts:284](https://github.com/mulekick/typescript
 push(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:331](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L331)
+Defined in: [src/structures/deque.ts:331](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L331)
 
 ###### Parameters
 
@@ -732,11 +737,11 @@ Defined in: [src/structures/deque.ts:331](https://github.com/mulekick/typescript
 pop(): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:332](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L332)
+Defined in: [src/structures/deque.ts:332](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L332)
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
 
 ##### unshift()
 
@@ -744,7 +749,7 @@ Defined in: [src/structures/deque.ts:332](https://github.com/mulekick/typescript
 unshift(item): void;
 ```
 
-Defined in: [src/structures/deque.ts:333](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L333)
+Defined in: [src/structures/deque.ts:333](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L333)
 
 ###### Parameters
 
@@ -762,8 +767,8 @@ Defined in: [src/structures/deque.ts:333](https://github.com/mulekick/typescript
 shift(): T | undefined;
 ```
 
-Defined in: [src/structures/deque.ts:334](https://github.com/mulekick/typescript-dsa/blob/6d728e5f12bef4b045fc86c7d2941b670a02d8d1/src/structures/deque.ts#L334)
+Defined in: [src/structures/deque.ts:334](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/deque.ts#L334)
 
 ###### Returns
 
-`T` \| `undefined`
+`T` | `undefined`
