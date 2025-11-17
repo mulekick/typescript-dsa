@@ -8,29 +8,15 @@
 
 Array search and sort algorithms.
 
-## Functions
+## Table of contents
 
-### sampleLinearfunction()
+* [1. Search algorithms](#1-search-algorithms)
+* [2. Sort algorithms](#2-sort-algorithms)
+* [Other](#other)
 
-```ts
-function sampleLinearfunction(i): void;
-```
+## 1. Search algorithms
 
-Defined in: [src/algorithms/array.ts:12](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L12)
-
-A function with a linear time complexity.
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `i` | `string` |
-
-#### Returns
-
-`void`
-
-***
+* Search algorithms for arrays.
 
 ### linearSearch()
 
@@ -38,7 +24,7 @@ A function with a linear time complexity.
 function linearSearch(haystack, needle): boolean;
 ```
 
-Defined in: [src/algorithms/array.ts:30](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L30)
+Defined in: [src/algorithms/array.ts:35](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L35)
 
 Linear search.
 
@@ -65,7 +51,7 @@ Linear search.
 function binarySearch(haystack, needle): boolean;
 ```
 
-Defined in: [src/algorithms/array.ts:47](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L47)
+Defined in: [src/algorithms/array.ts:53](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L53)
 
 Binary search.
 
@@ -93,7 +79,7 @@ Binary search.
 function twoCrystalBalls(breaks): number;
 ```
 
-Defined in: [src/algorithms/array.ts:81](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L81)
+Defined in: [src/algorithms/array.ts:88](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L88)
 
 Two crystal balls search.
 
@@ -112,7 +98,9 @@ Two crystal balls search.
 * Time complexity O(sqrt(n))
 * It is assessed that breaks is sorted
 
-***
+## 2. Sort algorithms
+
+* Sort algorithms for arrays.
 
 ### bubbleSort()
 
@@ -120,7 +108,7 @@ Two crystal balls search.
 function bubbleSort(a): number[];
 ```
 
-Defined in: [src/algorithms/array.ts:115](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L115)
+Defined in: [src/algorithms/array.ts:123](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L123)
 
 Bubble sort.
 
@@ -149,7 +137,7 @@ function weakSortSubarray(
    end): number;
 ```
 
-Defined in: [src/algorithms/array.ts:139](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L139)
+Defined in: [src/algorithms/array.ts:148](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L148)
 
 Perform weak sorting, mutate array, return final pivot index.
 
@@ -180,7 +168,7 @@ function weakSort(
    end): number[];
 ```
 
-Defined in: [src/algorithms/array.ts:174](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L174)
+Defined in: [src/algorithms/array.ts:184](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L184)
 
 Weak sort array recursively.
 
@@ -208,7 +196,7 @@ Weak sort array recursively.
 function quickSort(arr): number[];
 ```
 
-Defined in: [src/algorithms/array.ts:210](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L210)
+Defined in: [src/algorithms/array.ts:221](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L221)
 
 Quick sort.
 
@@ -226,3 +214,25 @@ Quick sort.
 
 * Time complexity O(n \* log(n))
 * Weak sort array from 0 to array length
+
+## Other
+
+### sampleLinearfunction()
+
+```ts
+function sampleLinearfunction(i): void;
+```
+
+Defined in: [src/algorithms/array.ts:16](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/array.ts#L16)
+
+A function with a linear time complexity.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `i` | `string` |
+
+#### Returns
+
+`void`

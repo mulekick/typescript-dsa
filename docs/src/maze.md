@@ -21,7 +21,7 @@ Mazes examples (represented as string arrays).
 const simpleMaze: string[];
 ```
 
-Defined in: [src/maze.ts:12](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L12)
+Defined in: [src/maze.ts:12](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L12)
 
 ***
 
@@ -31,7 +31,7 @@ Defined in: [src/maze.ts:12](https://github.com/mulekick/typescript-dsa/blob/237
 const simpleMazeStartingCoords: coords;
 ```
 
-Defined in: [src/maze.ts:21](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L21)
+Defined in: [src/maze.ts:21](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L21)
 
 ***
 
@@ -41,7 +41,7 @@ Defined in: [src/maze.ts:21](https://github.com/mulekick/typescript-dsa/blob/237
 const simpleMazeExitCoords: coords;
 ```
 
-Defined in: [src/maze.ts:22](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L22)
+Defined in: [src/maze.ts:22](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L22)
 
 ***
 
@@ -51,7 +51,7 @@ Defined in: [src/maze.ts:22](https://github.com/mulekick/typescript-dsa/blob/237
 const midLevelMaze: string[];
 ```
 
-Defined in: [src/maze.ts:25](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L25)
+Defined in: [src/maze.ts:25](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L25)
 
 ***
 
@@ -61,7 +61,7 @@ Defined in: [src/maze.ts:25](https://github.com/mulekick/typescript-dsa/blob/237
 const midLevelMazeStartingCoords: coords;
 ```
 
-Defined in: [src/maze.ts:50](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L50)
+Defined in: [src/maze.ts:50](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L50)
 
 ***
 
@@ -71,7 +71,7 @@ Defined in: [src/maze.ts:50](https://github.com/mulekick/typescript-dsa/blob/237
 const midLevelMazeExitCoords: coords;
 ```
 
-Defined in: [src/maze.ts:51](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L51)
+Defined in: [src/maze.ts:51](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L51)
 
 ***
 
@@ -81,7 +81,7 @@ Defined in: [src/maze.ts:51](https://github.com/mulekick/typescript-dsa/blob/237
 const advancedMaze: string[];
 ```
 
-Defined in: [src/maze.ts:54](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L54)
+Defined in: [src/maze.ts:54](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L54)
 
 ***
 
@@ -91,7 +91,7 @@ Defined in: [src/maze.ts:54](https://github.com/mulekick/typescript-dsa/blob/237
 const advancedMazeStartingCoords: coords;
 ```
 
-Defined in: [src/maze.ts:109](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L109)
+Defined in: [src/maze.ts:109](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L109)
 
 ***
 
@@ -101,7 +101,7 @@ Defined in: [src/maze.ts:109](https://github.com/mulekick/typescript-dsa/blob/23
 const advancedMazeExitCoords: coords;
 ```
 
-Defined in: [src/maze.ts:110](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L110)
+Defined in: [src/maze.ts:110](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L110)
 
 ***
 
@@ -111,7 +111,7 @@ Defined in: [src/maze.ts:110](https://github.com/mulekick/typescript-dsa/blob/23
 const hugeMaze: string[];
 ```
 
-Defined in: [src/maze.ts:113](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L113)
+Defined in: [src/maze.ts:113](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L113)
 
 ***
 
@@ -121,7 +121,7 @@ Defined in: [src/maze.ts:113](https://github.com/mulekick/typescript-dsa/blob/23
 const hugeMazeStartingCoords: coords;
 ```
 
-Defined in: [src/maze.ts:219](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L219)
+Defined in: [src/maze.ts:219](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L219)
 
 ***
 
@@ -131,7 +131,7 @@ Defined in: [src/maze.ts:219](https://github.com/mulekick/typescript-dsa/blob/23
 const hugeMazeExitCoords: coords;
 ```
 
-Defined in: [src/maze.ts:220](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L220)
+Defined in: [src/maze.ts:220](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L220)
 
 ## Functions
 
@@ -141,7 +141,7 @@ Defined in: [src/maze.ts:220](https://github.com/mulekick/typescript-dsa/blob/23
 function drawMazeSolution(maze, path): string;
 ```
 
-Defined in: [src/maze.ts:223](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/maze.ts#L223)
+Defined in: [src/maze.ts:223](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/maze.ts#L223)
 
 #### Parameters
 

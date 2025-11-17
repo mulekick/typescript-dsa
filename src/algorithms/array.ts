@@ -1,6 +1,10 @@
 /**
  * Array search and sort algorithms.
  * @module
+ * @categoryDescription 1. Search algorithms
+ * - Search algorithms for arrays.
+ * @categoryDescription 2. Sort algorithms
+ * - Sort algorithms for arrays.
  */
 
 // import primitives
@@ -24,6 +28,7 @@ export const sampleLinearfunction = (i: string): void => {
 
 /**
  * Linear search.
+ * @category 1. Search algorithms
  * @remarks
  * - Time complexity O(n)
  */
@@ -40,6 +45,7 @@ export const linearSearch = (haystack: Array<number>, needle: number): boolean =
 
 /**
  * Binary search.
+ * @category 1. Search algorithms
  * @remarks
  * - Time complexity O(log n)
  * - It is assessed that haystack is sorted
@@ -74,6 +80,7 @@ export const binarySearch = (haystack: Array<number>, needle: number): boolean =
 
 /**
  * Two crystal balls search.
+ * @category 1. Search algorithms
  * @remarks
  * - Time complexity O(sqrt(n))
  * - It is assessed that breaks is sorted
@@ -109,6 +116,7 @@ export const twoCrystalBalls = (breaks: Array<boolean>): number => {
 
 /**
  * Bubble sort.
+ * @category 2. Sort algorithms
  * @remarks
  * - Time complexity O(n²)
  */
@@ -133,6 +141,7 @@ export const bubbleSort = (a: Array<number>): Array<number> => {
 
 /**
  * Perform weak sorting, mutate array, return final pivot index.
+ * @category 2. Sort algorithms
  * @remarks
  * - Time complexity ?
  */
@@ -168,6 +177,7 @@ export const weakSortSubarray = (arr: Array<number>, start: number, end: number)
 
 /**
  * Weak sort array recursively.
+ * @category 2. Sort algorithms
  * @remarks
  * - Time complexity ?
  */
@@ -203,6 +213,7 @@ export const weakSort = (arr: Array<number>, start: number, end: number): Array<
 
 /**
  * Quick sort.
+ * @category 2. Sort algorithms
  * @remarks
  * - Time complexity O(n * log(n))
  * - Weak sort array from 0 to array length

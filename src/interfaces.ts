@@ -2,17 +2,17 @@
  * Shared types and interfaces.
  * @module
  * @showCategories
- * @categoryDescription Async queue
+ * @categoryDescription 1. Async queue
  * - Types used for the rate-limited async queue implementation.
- * @categoryDescription Object signatures
+ * @categoryDescription 2. Object signatures
  * - Types used with data structures that handle objects.
- * @categoryDescription Function signatures
+ * @categoryDescription 3. Function signatures
  * - Generic signatures types for data structures related functions.
- * @categoryDescription Node based structures
+ * @categoryDescription 4. Node based structures
  * - Types used by node based data structures (stacks and queues).
- * @categoryDescription Tree structures
+ * @categoryDescription 5. Tree structures
  * - Types used by tree data structures.
- * @categoryDescription Graph structures
+ * @categoryDescription 6. Graph structures
  * - Types used by graphs data structures.
 */
 
@@ -30,7 +30,7 @@ import type {Graph} from "./structures/graph.ts";
 
 /**
  * Network request object.
- * @category Async queue
+ * @category 1. Async queue
  * @interface
  */
 export interface NetworkRequest {
@@ -48,7 +48,7 @@ export interface NetworkRequest {
 
 /**
  * Sample object signature for object storage in data structures.
- * @category Object signatures
+ * @category 2. Object signatures
  * @interface
  */
 export interface sampleObject {
@@ -57,7 +57,7 @@ export interface sampleObject {
 
 /**
  * Cell coords for recursion algorithm.
- * @category Object signatures
+ * @category 2. Object signatures
  * @interface
  */
 export interface coords {
@@ -67,7 +67,7 @@ export interface coords {
 
 /**
  * Type used for maze description.
- * @category Graph structures
+ * @category 6. Graph structures
  * @interface
  * @remarks
  * - Used for tests
@@ -87,7 +87,7 @@ export interface mazeObject {
 
 /**
  * Formatting function signature.
- * @category Function signatures
+ * @category 3. Function signatures
  * @typeParam T Data type to format into a buffer.
  * @useDeclaredType
  * @remarks
@@ -97,7 +97,7 @@ export type formatter<T> = (v?: T)=> Buffer;
 
 /**
  * Unformatting function signature.
- * @category Function signatures
+ * @category 3. Function signatures
  * @typeParam T Data type to read from a buffer.
  * @useDeclaredType
  * @remarks
@@ -107,7 +107,7 @@ export type unformatter<T> = (b: Buffer)=> T;
 
 /**
  * Node comparison function signature.
- * @category Function signatures
+ * @category 3. Function signatures
  * @typeParam T Data type stored in the nodes.
  * @useDeclaredType
  * @remarks
@@ -117,7 +117,7 @@ export type comparator<T> = (a: T, b: T)=> 1 | -1 | 0;
 
 /**
  * Node matching function signature.
- * @category Function signatures
+ * @category 3. Function signatures
  * @typeParam T Data type stored in the nodes.
  * @useDeclaredType
  * @remarks
@@ -131,7 +131,7 @@ export type matcher<T> = (a: T, b: T)=> boolean;
 
 /**
  * Composing types for linked lists based structures benchmarks.
- * @category Node based structures
+ * @category 4. Node based structures
  * @useDeclaredType
  */
 export type StackType = StringStack | ObjectStack;
@@ -160,14 +160,14 @@ export interface Node<T> {
 
 /**
  * Depth first traversal types.
- * @category Tree structures
+ * @category 5. Tree structures
  * @useDeclaredType
  */
 export type traversalType = `PRE` | `IN` | `POST`;
 
 /**
  * Binary node (doubly linked).
- * @category Tree structures
+ * @category 5. Tree structures
  * @typeParam T Data type stored in the node.
  * @interface
  */
@@ -181,7 +181,7 @@ export interface BinaryNode<T> {
 
 /**
  * Function signatures for node visit.
- * @category Tree structures
+ * @category 5. Tree structures
  * @typeParam T Data type stored in the node.
  * @useDeclaredType
  */
@@ -189,7 +189,7 @@ export type visitor<T> = (node: BinaryNode<T>)=> unknown;
 
 /**
  * Trie node.
- * @category Tree structures
+ * @category 5. Tree structures
  * @interface
  */
 export interface TrieNode {
@@ -209,7 +209,7 @@ export interface TrieNode {
 
 /**
  * Rename for clarity's sake.
- * @category Graph structures
+ * @category 6. Graph structures
  * @typeParam T Data type stored in the vertex.
  * @useDeclaredType
  */
@@ -217,7 +217,7 @@ export type Vertices<T> = Array<T>;
 
 /**
  * Graph edge in an adjacency list.
- * @category Graph structures
+ * @category 6. Graph structures
  * @interface
  */
 export interface Edge {
@@ -229,7 +229,7 @@ export interface Edge {
 
 /**
  * Adjacency matrix.
- * @category Graph structures
+ * @category 6. Graph structures
  * @useDeclaredType
  * @remarks
  * - It is assessed that all the graphs are weighted.
@@ -239,7 +239,7 @@ export type AdjacencyMatrix = Array<Array<number>>;
 
 /**
  * Adjacency list.
- * @category Graph structures
+ * @category 6. Graph structures
  * @useDeclaredType
  * @remarks
  * - It is assessed that all the graphs are weighted.
@@ -249,7 +249,7 @@ export type AdjacencyList = Array<Array<Edge>>;
 
 /**
  * Vertex in a line graph.
- * @category Graph structures
+ * @category 6. Graph structures
  * @interface
  */
 export interface LineGraphVertex {
@@ -260,7 +260,7 @@ export interface LineGraphVertex {
 
 /**
  * Vertex by distance.
- * @category Graph structures
+ * @category 6. Graph structures
  * @interface
  * @remarks
  * - Used to store vertices distance to origin in a min heap for Dijkstra's shortest path.
@@ -272,7 +272,7 @@ export interface VertexByDistance {
 
 /**
  * Graph properties.
- * @category Graph structures
+ * @category 6. Graph structures
  * @interface
  * @remarks
  * - Used for tests

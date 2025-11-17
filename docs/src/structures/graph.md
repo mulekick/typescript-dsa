@@ -12,7 +12,7 @@ Graph data structure.
 
 ### Graph
 
-Defined in: [src/structures/graph.ts:42](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L42)
+Defined in: [src/structures/graph.ts:42](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L42)
 
 Graph implementation over generic type.
 
@@ -37,7 +37,7 @@ new Graph<T>(
 m): Graph<T>;
 ```
 
-Defined in: [src/structures/graph.ts:73](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L73)
+Defined in: [src/structures/graph.ts:73](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L73)
 
 ###### Parameters
 
@@ -55,9 +55,9 @@ Defined in: [src/structures/graph.ts:73](https://github.com/mulekick/typescript-
 
 | Property | Modifier | Type | Default value | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="max_vertices"></a> `MAX_VERTICES` | `static` | `number` | `65535` | [src/structures/graph.ts:49](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L49) |
-| <a id="infinity"></a> `INFINITY` | `static` | `number` | `4294967295` | [src/structures/graph.ts:51](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L51) |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | `undefined` | [src/structures/graph.ts:70](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L70) |
+| <a id="max_vertices"></a> `MAX_VERTICES` | `static` | `number` | `65535` | [src/structures/graph.ts:49](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L49) |
+| <a id="infinity"></a> `INFINITY` | `static` | `number` | `4294967295` | [src/structures/graph.ts:51](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L51) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | `undefined` | [src/structures/graph.ts:70](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L70) |
 
 #### Accessors
 
@@ -69,7 +69,7 @@ Defined in: [src/structures/graph.ts:73](https://github.com/mulekick/typescript-
 get components(): T[][];
 ```
 
-Defined in: [src/structures/graph.ts:92](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L92)
+Defined in: [src/structures/graph.ts:92](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L92)
 
 ###### Returns
 
@@ -86,7 +86,7 @@ get degrees(): [T, {
 }][];
 ```
 
-Defined in: [src/structures/graph.ts:142](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L142)
+Defined in: [src/structures/graph.ts:142](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L142)
 
 ###### Returns
 
@@ -103,7 +103,7 @@ Defined in: [src/structures/graph.ts:142](https://github.com/mulekick/typescript
 get edgesCount(): number;
 ```
 
-Defined in: [src/structures/graph.ts:162](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L162)
+Defined in: [src/structures/graph.ts:162](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L162)
 
 ###### Returns
 
@@ -117,7 +117,7 @@ Defined in: [src/structures/graph.ts:162](https://github.com/mulekick/typescript
 get isConnected(): boolean;
 ```
 
-Defined in: [src/structures/graph.ts:167](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L167)
+Defined in: [src/structures/graph.ts:167](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L167)
 
 ###### Returns
 
@@ -131,7 +131,7 @@ Defined in: [src/structures/graph.ts:167](https://github.com/mulekick/typescript
 get isComplete(): boolean;
 ```
 
-Defined in: [src/structures/graph.ts:173](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L173)
+Defined in: [src/structures/graph.ts:173](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L173)
 
 ###### Returns
 
@@ -145,7 +145,7 @@ Defined in: [src/structures/graph.ts:173](https://github.com/mulekick/typescript
 get lineGraph(): Graph<LineGraphVertex>;
 ```
 
-Defined in: [src/structures/graph.ts:178](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L178)
+Defined in: [src/structures/graph.ts:178](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L178)
 
 ###### Returns
 
@@ -159,7 +159,7 @@ Defined in: [src/structures/graph.ts:178](https://github.com/mulekick/typescript
 depthFirstSearch(from, to): Edge[] | undefined;
 ```
 
-Defined in: [src/structures/graph.ts:240](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L240)
+Defined in: [src/structures/graph.ts:240](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L240)
 
 ###### Parameters
 
@@ -178,7 +178,7 @@ Defined in: [src/structures/graph.ts:240](https://github.com/mulekick/typescript
 breadthFirstSearch(from, to): Edge[] | undefined;
 ```
 
-Defined in: [src/structures/graph.ts:304](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L304)
+Defined in: [src/structures/graph.ts:304](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L304)
 
 ###### Parameters
 
@@ -197,7 +197,7 @@ Defined in: [src/structures/graph.ts:304](https://github.com/mulekick/typescript
 DijkstraShortestPath(from, to): Edge[] | undefined;
 ```
 
-Defined in: [src/structures/graph.ts:356](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/graph.ts#L356)
+Defined in: [src/structures/graph.ts:356](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/graph.ts#L356)
 
 ###### Parameters
 

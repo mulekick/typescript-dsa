@@ -11,19 +11,258 @@ Shared helper functions.
 ## Table of contents
 
 * [Remarks](#remarks)
-* [Benchmarks](#benchmarks)
-* [Comparators](#comparators)
-* [Formatters](#formatters)
-* [Matchers](#matchers)
-* [Other](#other)
-* [Utils](#utils)
+* [1. Utils](#1-utils)
+* [2. Formatters](#2-formatters)
+* [3. Comparators](#3-comparators)
+* [4. Matchers](#4-matchers)
+* [5. Benchmarks](#5-benchmarks)
+* [6. Miscellaneous](#6-miscellaneous)
 
 ## Remarks
 
 * Comparators return 1 if a is greater, -1 if b is greater and 0 if a and b are equal.
 * Matchers return true if values match, false otherwise.
 
-## Benchmarks
+## 1. Utils
+
+* Generic utilities functions.
+
+### shuffle()
+
+```ts
+function shuffle(a): unknown[];
+```
+
+Defined in: [src/helpers.ts:51](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L51)
+
+Shuffle array elements.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `a` | `unknown`\[] |
+
+#### Returns
+
+`unknown`\[]
+
+***
+
+### rnd()
+
+```ts
+function rnd(lb, ub): number;
+```
+
+Defined in: [src/helpers.ts:71](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L71)
+
+Pick a random number between 2 values.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `lb` | `number` |
+| `ub` | `number` |
+
+#### Returns
+
+`number`
+
+***
+
+### getRandomChar()
+
+```ts
+function getRandomChar(): string;
+```
+
+Defined in: [src/helpers.ts:77](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L77)
+
+Output a single random character (unicode basic latin).
+
+#### Returns
+
+`string`
+
+## 2. Formatters
+
+* Format values for in-memory storage.
+
+### formatSampleObject
+
+```ts
+const formatSampleObject: formatter<sampleObject>;
+```
+
+Defined in: [src/helpers.ts:93](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L93)
+
+Store object w/ number prop between 0 and 65535.
+
+***
+
+### unformatSampleObject
+
+```ts
+const unformatSampleObject: unformatter<sampleObject>;
+```
+
+Defined in: [src/helpers.ts:114](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L114)
+
+Read object w/ number prop between 0 and 65535.
+
+***
+
+### formatNumber
+
+```ts
+const formatNumber: formatter<number>;
+```
+
+Defined in: [src/helpers.ts:125](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L125)
+
+Store a number between 0 and 65535.
+
+***
+
+### unformatNumber
+
+```ts
+const unformatNumber: unformatter<number>;
+```
+
+Defined in: [src/helpers.ts:147](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L147)
+
+Read a number between 0 and 65535.
+
+***
+
+### formatVertexByDistance
+
+```ts
+const formatVertexByDistance: formatter<VertexByDistance>;
+```
+
+Defined in: [src/helpers.ts:158](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L158)
+
+Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
+
+***
+
+### unformatVertexByDistance
+
+```ts
+const unformatVertexByDistance: unformatter<VertexByDistance>;
+```
+
+Defined in: [src/helpers.ts:183](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L183)
+
+Read vertex index and distance.
+
+## 3. Comparators
+
+* Custome comparison functions for values ordering.
+
+### compareSampleObjects
+
+```ts
+const compareSampleObjects: comparator<sampleObject>;
+```
+
+Defined in: [src/helpers.ts:198](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L198)
+
+Sample objects comparator function.
+
+***
+
+### compareNumbers()
+
+```ts
+function compareNumbers(a, b): -1 | 0 | 1;
+```
+
+Defined in: [src/helpers.ts:213](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L213)
+
+Numbers comparator function.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `a` | `number` |
+| `b` | `number` |
+
+#### Returns
+
+`-1` | `0` | `1`
+
+***
+
+### compareVertexDistanceFromOrigin()
+
+```ts
+function compareVertexDistanceFromOrigin(a, b): -1 | 0 | 1;
+```
+
+Defined in: [src/helpers.ts:219](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L219)
+
+Compare vertices by distance and not by adjacency.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `a` | [`VertexByDistance`](interfaces.md#vertexbydistance) |
+| `b` | [`VertexByDistance`](interfaces.md#vertexbydistance) |
+
+#### Returns
+
+`-1` | `0` | `1`
+
+## 4. Matchers
+
+* Custom equality functions for values matching.
+
+### objectsMatch
+
+```ts
+const objectsMatch: matcher<unknown>;
+```
+
+Defined in: [src/helpers.ts:242](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L242)
+
+Sample objects matcher function.
+
+#### Remarks
+
+* Return true if stringified values are equal.
+
+***
+
+### stringsMatch
+
+```ts
+const stringsMatch: matcher<string>;
+```
+
+Defined in: [src/helpers.ts:248](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L248)
+
+String values matcher function.
+
+***
+
+### numbersMatch
+
+```ts
+const numbersMatch: matcher<number>;
+```
+
+Defined in: [src/helpers.ts:254](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L254)
+
+Numeric values matcher function.
+
+## 5. Benchmarks
 
 * Generic benchmarking related functions.
 
@@ -33,7 +272,7 @@ Shared helper functions.
 function createArray(len, fn): unknown[];
 ```
 
-Defined in: [src/helpers.ts:81](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L81)
+Defined in: [src/helpers.ts:83](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L83)
 
 Populate a new array.
 
@@ -59,7 +298,7 @@ function timeExecution(f): {
 };
 ```
 
-Defined in: [src/helpers.ts:262](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L262)
+Defined in: [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L264)
 
 Measure function execution time.
 
@@ -80,8 +319,8 @@ Measure function execution time.
 
 | Name | Type | Defined in |
 | ------ | ------ | ------ |
-| `time` | `number` | [src/helpers.ts:262](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L262) |
-| `result` | `unknown` | [src/helpers.ts:262](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L262) |
+| `time` | `number` | [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L264) |
+| `result` | `unknown` | [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L264) |
 
 ***
 
@@ -91,7 +330,7 @@ Measure function execution time.
 function benchmarkQueue(q, arr): void;
 ```
 
-Defined in: [src/helpers.ts:275](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L275)
+Defined in: [src/helpers.ts:277](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L277)
 
 Enqueue / dequeue values.
 
@@ -114,7 +353,7 @@ Enqueue / dequeue values.
 function benchmarkStack(q, arr): void;
 ```
 
-Defined in: [src/helpers.ts:292](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L292)
+Defined in: [src/helpers.ts:294](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L294)
 
 Push / pop values.
 
@@ -129,183 +368,9 @@ Push / pop values.
 
 `void`
 
-## Comparators
+## 6. Miscellaneous
 
-* Custome comparison functions for values ordering.
-
-### compareSampleObjects
-
-```ts
-const compareSampleObjects: comparator<sampleObject>;
-```
-
-Defined in: [src/helpers.ts:196](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L196)
-
-Sample objects comparator function.
-
-***
-
-### compareNumbers()
-
-```ts
-function compareNumbers(a, b): -1 | 0 | 1;
-```
-
-Defined in: [src/helpers.ts:211](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L211)
-
-Numbers comparator function.
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `a` | `number` |
-| `b` | `number` |
-
-#### Returns
-
-`-1` | `0` | `1`
-
-***
-
-### compareVertexDistanceFromOrigin()
-
-```ts
-function compareVertexDistanceFromOrigin(a, b): -1 | 0 | 1;
-```
-
-Defined in: [src/helpers.ts:217](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L217)
-
-Compare vertices by distance and not by adjacency.
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `a` | [`VertexByDistance`](interfaces.md#vertexbydistance) |
-| `b` | [`VertexByDistance`](interfaces.md#vertexbydistance) |
-
-#### Returns
-
-`-1` | `0` | `1`
-
-## Formatters
-
-* Format values for in-memory storage.
-
-### formatSampleObject
-
-```ts
-const formatSampleObject: formatter<sampleObject>;
-```
-
-Defined in: [src/helpers.ts:91](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L91)
-
-Store object w/ number prop between 0 and 65535.
-
-***
-
-### unformatSampleObject
-
-```ts
-const unformatSampleObject: unformatter<sampleObject>;
-```
-
-Defined in: [src/helpers.ts:112](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L112)
-
-Read object w/ number prop between 0 and 65535.
-
-***
-
-### formatNumber
-
-```ts
-const formatNumber: formatter<number>;
-```
-
-Defined in: [src/helpers.ts:123](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L123)
-
-Store a number between 0 and 65535.
-
-***
-
-### unformatNumber
-
-```ts
-const unformatNumber: unformatter<number>;
-```
-
-Defined in: [src/helpers.ts:145](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L145)
-
-Read a number between 0 and 65535.
-
-***
-
-### formatVertexByDistance
-
-```ts
-const formatVertexByDistance: formatter<VertexByDistance>;
-```
-
-Defined in: [src/helpers.ts:156](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L156)
-
-Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
-
-***
-
-### unformatVertexByDistance
-
-```ts
-const unformatVertexByDistance: unformatter<VertexByDistance>;
-```
-
-Defined in: [src/helpers.ts:181](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L181)
-
-Read vertex index and distance.
-
-## Matchers
-
-* Custom equality functions for values matching.
-
-### objectsMatch
-
-```ts
-const objectsMatch: matcher<unknown>;
-```
-
-Defined in: [src/helpers.ts:240](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L240)
-
-Sample objects matcher function.
-
-#### Remarks
-
-* Return true if stringified values are equal.
-
-***
-
-### stringsMatch
-
-```ts
-const stringsMatch: matcher<string>;
-```
-
-Defined in: [src/helpers.ts:246](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L246)
-
-String values matcher function.
-
-***
-
-### numbersMatch
-
-```ts
-const numbersMatch: matcher<number>;
-```
-
-Defined in: [src/helpers.ts:252](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L252)
-
-Numeric values matcher function.
-
-## Other
+* Miscellaneous functions / variables and reexports.
 
 ### dict
 
@@ -454,66 +519,3 @@ Re-exports [hugeMazeExitCoords](maze.md#hugemazeexitcoords)
 ### ObjectStack
 
 Re-exports [ObjectStack](structures/arrayList.md#objectstack)
-
-## Utils
-
-* Generic utilities functions.
-
-### shuffle()
-
-```ts
-function shuffle(a): unknown[];
-```
-
-Defined in: [src/helpers.ts:49](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L49)
-
-Shuffle array elements.
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `a` | `unknown`\[] |
-
-#### Returns
-
-`unknown`\[]
-
-***
-
-### rnd()
-
-```ts
-function rnd(lb, ub): number;
-```
-
-Defined in: [src/helpers.ts:69](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L69)
-
-Pick a random number between 2 values.
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `lb` | `number` |
-| `ub` | `number` |
-
-#### Returns
-
-`number`
-
-***
-
-### getRandomChar()
-
-```ts
-function getRandomChar(): string;
-```
-
-Defined in: [src/helpers.ts:75](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/helpers.ts#L75)
-
-Output a single random character (unicode basic latin).
-
-#### Returns
-
-`string`

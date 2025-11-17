@@ -2,11 +2,11 @@
  * Graph-specific helper functions.
  * @module
  * @showCategories
- * @categoryDescription Helpers
+ * @categoryDescription 1. Helpers
  * - Generic helper functions.
- * @categoryDescription Mazes
+ * @categoryDescription 2. Mazes
  * - Functions used to represent mazes as graphs.
- * @categoryDescription Data
+ * @categoryDescription 3. Data
  * - Sample data used to initialize a graph.
  */
 
@@ -32,7 +32,7 @@ import type {
 
 /**
  * Translate adjacency matrix to adjacency list.
- * @category Helpers
+ * @category 1. Helpers
  */
 export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList => {
     // init result = adjacency list of length matrix.length, fill with empty arrays
@@ -54,7 +54,7 @@ export const translateMatrixToList = (matrix: AdjacencyMatrix): AdjacencyList =>
 
 /**
  * Translate adjacency list to adjacency matrix.
- * @category Helpers
+ * @category 1. Helpers
  */
 export const translateListToMatrix = (list: AdjacencyList) => createArray(list.length, (_, vertex) => list[vertex as number]
     .reduce((r, x) => {
@@ -64,7 +64,7 @@ export const translateListToMatrix = (list: AdjacencyList) => createArray(list.l
 
 /**
  * Reconstruct path to vertex v from previous array.
- * @category Helpers
+ * @category 1. Helpers
  * @remarks
  * - Pass array and vertices <start> and <v> indices
  */
@@ -88,7 +88,7 @@ export const reorder = (previous: Array<number | undefined>, initial: number, fi
 
 /**
  * Return vertices sequence from edges path.
- * @category Helpers
+ * @category 1. Helpers
  */
 export const sequence = (path: Array<number>, edges: AdjacencyList): Array<Edge> => {
     // init result
@@ -109,13 +109,13 @@ export const sequence = (path: Array<number>, edges: AdjacencyList): Array<Edge>
 
 /**
  * Reduce edge sequence to vertices sequence.
- * @category Helpers
+ * @category 1. Helpers
  */
 export const reduceToVerticesList = (vertices: Vertices<string>, edges: Array<Edge>): Array<string> => edges.map(x => vertices[x.edge]);
 
 /**
  * Reduce edge sequence to sum of edges weights.
- * @category Helpers
+ * @category 1. Helpers
  */
 export const reduceToTotalDistance = (edges: Array<Edge>): number => edges.reduce((r, x) => {
     // add current edge weight and return
@@ -129,13 +129,13 @@ export const reduceToTotalDistance = (edges: Array<Edge>): number => edges.reduc
 
 /**
  * Cell coords matcher function.
- * @category Mazes
+ * @category 2. Mazes
  */
 export const coordsMatch: matcher<coords> = (a: coords, b: coords): boolean => a.x === b.x && a.y === b.y;
 
 /**
  * Visit the 4 adjacent cells top, left, bottom, right.
- * @category Mazes
+ * @category 2. Mazes
  */
 export const readDirections = (cell: coords): [coords, coords, coords, coords] => [
     {x: cell.x, y: cell.y - 1},
@@ -146,7 +146,7 @@ export const readDirections = (cell: coords): [coords, coords, coords, coords] =
 
 /**
  * Create unweighted graph from maze string representation.
- * @category Mazes
+ * @category 2. Mazes
  */
 export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string): [Array<coords>, AdjacencyMatrix] => {
 
@@ -235,7 +235,7 @@ export const createUnweightedGraphFromMaze = (maze: Array<string>, wall: string)
 
 /**
  * Cities in Nepal (40).
- * @category Data
+ * @category 3. Data
  */
 export const cities: Vertices<string> = [
     `Baglung`,
@@ -282,7 +282,7 @@ export const cities: Vertices<string> = [
 
 /**
  * Traveling distances between cities (40 * 40).
- * @category Data
+ * @category 3. Data
  */
 export const distances: AdjacencyMatrix = [
     [ 0,    893,  454,  334,  604,  630,  331,  312,  679,  353,  660,  705,  650,  600,  303,  388,  871,  507,  181,  276,  740,  433,  480,  673,  271,  409,  389,  356,  739,  199,  554,  73,   511,  558,  442,  199,  890,  709,  341,  496 ],

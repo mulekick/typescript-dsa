@@ -2,16 +2,18 @@
  * Shared helper functions.
  * @module
  * @showCategories
- * @categoryDescription Utils
+ * @categoryDescription 1. Utils
  * - Generic utilities functions.
- * @categoryDescription Formatters
+ * @categoryDescription 2. Formatters
  * - Format values for in-memory storage.
- * @categoryDescription Comparators
+ * @categoryDescription 3. Comparators
  * - Custome comparison functions for values ordering.
- * @categoryDescription Matchers
+ * @categoryDescription 4. Matchers
  * - Custom equality functions for values matching.
- * @categoryDescription Benchmarks
+ * @categoryDescription 5. Benchmarks
  * - Generic benchmarking related functions.
+ * @categoryDescription 6. Miscellaneous
+ * - Miscellaneous functions / variables and reexports.
  * @remarks
  * - Comparators return 1 if a is greater, -1 if b is greater and 0 if a and b are equal.
  * - Matchers return true if values match, false otherwise.
@@ -44,7 +46,7 @@ import type {
 
 /**
  * Shuffle array elements.
- * @category Utils
+ * @category 1. Utils
  */
 export const shuffle = (a: Array<unknown>): Array<unknown> => {
     // array length
@@ -64,19 +66,19 @@ export const shuffle = (a: Array<unknown>): Array<unknown> => {
 
 /**
  * Pick a random number between 2 values.
- * @category Utils
+ * @category 1. Utils
  */
 export const rnd = (lb: number, ub: number): number => lb + Math.round(Math.random() * (ub - lb));
 
 /**
  * Output a single random character (unicode basic latin).
- * @category Utils
+ * @category 1. Utils
  */
 export const getRandomChar = (): string => String.fromCharCode(rnd(32, 128));
 
 /**
  * Populate a new array.
- * @category Benchmarks
+ * @category 5. Benchmarks
  */
 export const createArray = (len: number, fn: (...args: Array<unknown>)=> unknown): Array<unknown> => new Array(len).fill(undefined).map(fn);
 
@@ -86,7 +88,7 @@ export const createArray = (len: number, fn: (...args: Array<unknown>)=> unknown
 
 /**
  * Store object w/ number prop between 0 and 65535.
- * @category Formatters
+ * @category 2. Formatters
  */
 export const formatSampleObject: formatter<sampleObject> = (v?: sampleObject): Buffer => {
     // allocate memory
@@ -107,7 +109,7 @@ export const formatSampleObject: formatter<sampleObject> = (v?: sampleObject): B
 
 /**
  * Read object w/ number prop between 0 and 65535.
- * @category Formatters
+ * @category 2. Formatters
  */
 export const unformatSampleObject: unformatter<sampleObject> = (b: Buffer): sampleObject => {
     // read system endianness and value
@@ -118,7 +120,7 @@ export const unformatSampleObject: unformatter<sampleObject> = (b: Buffer): samp
 
 /**
  * Store a number between 0 and 65535.
- * @category Formatters
+ * @category 2. Formatters
  */
 export const formatNumber: formatter<number> = (v: number = 0): Buffer => {
     // allocate memory
@@ -140,7 +142,7 @@ export const formatNumber: formatter<number> = (v: number = 0): Buffer => {
 
 /**
  * Read a number between 0 and 65535.
- * @category Formatters
+ * @category 2. Formatters
  */
 export const unformatNumber: unformatter<number> = (b: Buffer): number => {
     // read system endianness and value
@@ -151,7 +153,7 @@ export const unformatNumber: unformatter<number> = (b: Buffer): number => {
 
 /**
  * Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
- * @category Formatters
+ * @category 2. Formatters
  */
 export const formatVertexByDistance: formatter<VertexByDistance> = (v: VertexByDistance = {index: 0, distance: 0}): Buffer => {
     // allocate memory
@@ -176,7 +178,7 @@ export const formatVertexByDistance: formatter<VertexByDistance> = (v: VertexByD
 
 /**
  * Read vertex index and distance.
- * @category Formatters
+ * @category 2. Formatters
  */
 export const unformatVertexByDistance: unformatter<VertexByDistance> = (b: Buffer): VertexByDistance => {
     // read system endianness and value
@@ -191,7 +193,7 @@ export const unformatVertexByDistance: unformatter<VertexByDistance> = (b: Buffe
 
 /**
  * Sample objects comparator function.
- * @category Comparators
+ * @category 3. Comparators
  */
 export const compareSampleObjects: comparator<sampleObject> = (a: sampleObject, b: sampleObject): 0 | 1 | -1 => {
     // a greater than b
@@ -206,13 +208,13 @@ export const compareSampleObjects: comparator<sampleObject> = (a: sampleObject, 
 
 /**
  * Numbers comparator function.
- * @category Comparators
+ * @category 3. Comparators
  */
 export const compareNumbers = (a: number, b: number): 0 | 1 | -1 => (a > b ? 1 : a < b ? -1 : 0);
 
 /**
  * Compare vertices by distance and not by adjacency.
- * @category Comparators
+ * @category 3. Comparators
  */
 export const compareVertexDistanceFromOrigin = (a: VertexByDistance, b: VertexByDistance): 0 | 1 | -1 => {
     // distance origin to a > distance origin to b
@@ -233,7 +235,7 @@ export const compareVertexDistanceFromOrigin = (a: VertexByDistance, b: VertexBy
 
 /**
  * Sample objects matcher function.
- * @category Matchers
+ * @category 4. Matchers
  * @remarks
  * - Return true if stringified values are equal.
  */
@@ -241,13 +243,13 @@ export const objectsMatch: matcher<unknown> = (a: unknown, b: unknown): boolean 
 
 /**
  * String values matcher function.
- * @category Matchers
+ * @category 4. Matchers
  */
 export const stringsMatch: matcher<string> = (a: string, b: string): boolean => a === b;
 
 /**
  * Numeric values matcher function.
- * @category Matchers
+ * @category 4. Matchers
  */
 export const numbersMatch: matcher<number> = (a: number, b: number): boolean => a === b;
 
@@ -257,7 +259,7 @@ export const numbersMatch: matcher<number> = (a: number, b: number): boolean => 
 
 /**
  * Measure function execution time.
- * @category Benchmarks
+ * @category 5. Benchmarks
  */
 export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: number; result: unknown} => {
     // init start time
@@ -270,7 +272,7 @@ export const timeExecution = (f: (...args: Array<unknown>)=> unknown): {time: nu
 
 /**
  * Enqueue / dequeue values.
- * @category Benchmarks
+ * @category 5. Benchmarks
  */
 export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<sampleObject>): void => {
     arr.forEach((x: string | sampleObject, i: number) => {
@@ -287,7 +289,7 @@ export const benchmarkQueue = (q: QueueType, arr: Array<string> | Array<sampleOb
 
 /**
  * Push / pop values.
- * @category Benchmarks
+ * @category 5. Benchmarks
  */
 export const benchmarkStack = (q: StackType, arr: Array<string> | Array<sampleObject>): void => {
     arr.forEach((x: string | sampleObject, i: number) => {
@@ -302,8 +304,16 @@ export const benchmarkStack = (q: StackType, arr: Array<string> | Array<sampleOb
     });
 };
 
-// exports
+/**
+ * Reexports for convenience.
+ * @category 6. Miscellaneous
+ */
 export {dict} from "./dict.ts";
+
+/**
+ * Reexports for convenience.
+ * @category 6. Miscellaneous
+ */
 export {
     translateMatrixToList,
     translateListToMatrix,
@@ -316,6 +326,11 @@ export {
     cities,
     distances
 } from "./graphs.ts";
+
+/**
+ * Reexports for convenience.
+ * @category 6. Miscellaneous
+ */
 export {
     drawMazeSolution,
     simpleMaze,
@@ -331,5 +346,9 @@ export {
     hugeMazeStartingCoords,
     hugeMazeExitCoords
 } from "./maze.ts";
-// modules dependency graph requires this for jest transpilation ...
+
+/**
+ * Modules dependency graph requires this for jest transpilation.
+ * @category 6. Miscellaneous
+ */
 export {ObjectStack};

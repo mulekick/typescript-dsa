@@ -12,7 +12,7 @@ Doubly linked list data structure.
 
 ### DoublyLinkedList
 
-Defined in: [src/structures/doublyLinkedList.ts:18](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L18)
+Defined in: [src/structures/doublyLinkedList.ts:18](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L18)
 
 Doubly linked list implementation over generic type.
 
@@ -34,7 +34,7 @@ Doubly linked list implementation over generic type.
 new DoublyLinkedList<T>(m): DoublyLinkedList<T>;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L29)
+Defined in: [src/structures/doublyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L29)
 
 ###### Parameters
 
@@ -50,8 +50,8 @@ Defined in: [src/structures/doublyLinkedList.ts:29](https://github.com/mulekick/
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="length"></a> `length` | `public` | `number` | [src/structures/doublyLinkedList.ts:24](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L24) |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/doublyLinkedList.ts:26](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L26) |
+| <a id="length"></a> `length` | `public` | `number` | [src/structures/doublyLinkedList.ts:24](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L24) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/doublyLinkedList.ts:26](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L26) |
 
 #### Methods
 
@@ -61,7 +61,7 @@ Defined in: [src/structures/doublyLinkedList.ts:29](https://github.com/mulekick/
 prepend(item): void;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:45](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L45)
+Defined in: [src/structures/doublyLinkedList.ts:45](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L45)
 
 ###### Parameters
 
@@ -79,7 +79,7 @@ Defined in: [src/structures/doublyLinkedList.ts:45](https://github.com/mulekick/
 append(item): void;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:69](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L69)
+Defined in: [src/structures/doublyLinkedList.ts:69](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L69)
 
 ###### Parameters
 
@@ -97,7 +97,7 @@ Defined in: [src/structures/doublyLinkedList.ts:69](https://github.com/mulekick/
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:93](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L93)
+Defined in: [src/structures/doublyLinkedList.ts:93](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L93)
 
 ###### Parameters
 
@@ -116,7 +116,7 @@ Defined in: [src/structures/doublyLinkedList.ts:93](https://github.com/mulekick/
 removeAt(idx): T | undefined;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:141](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L141)
+Defined in: [src/structures/doublyLinkedList.ts:141](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L141)
 
 ###### Parameters
 
@@ -134,7 +134,7 @@ Defined in: [src/structures/doublyLinkedList.ts:141](https://github.com/mulekick
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:188](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L188)
+Defined in: [src/structures/doublyLinkedList.ts:188](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L188)
 
 ###### Parameters
 
@@ -152,7 +152,7 @@ Defined in: [src/structures/doublyLinkedList.ts:188](https://github.com/mulekick
 flush(): void;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:209](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L209)
+Defined in: [src/structures/doublyLinkedList.ts:209](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L209)
 
 ###### Returns
 
@@ -164,7 +164,7 @@ Defined in: [src/structures/doublyLinkedList.ts:209](https://github.com/mulekick
 get(idx): T | undefined;
 ```
 
-Defined in: [src/structures/doublyLinkedList.ts:242](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/doublyLinkedList.ts#L242)
+Defined in: [src/structures/doublyLinkedList.ts:242](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/doublyLinkedList.ts#L242)
 
 ###### Parameters
 
