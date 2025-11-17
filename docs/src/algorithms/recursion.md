@@ -20,7 +20,7 @@ function mazeSolver(
    exit): coords[];
 ```
 
-Defined in: [src/algorithms/recursion.ts:17](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/recursion.ts#L17)
+Defined in: [src/algorithms/recursion.ts:17](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/algorithms/recursion.ts#L17)
 
 Find the path from entrance to exit in a maze.
 

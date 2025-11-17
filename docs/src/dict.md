@@ -16,4 +16,4 @@ Dictionary example.
 const dict: string[];
 ```
 
-Defined in: [src/dict.ts:8](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/dict.ts#L8)
+Defined in: [src/dict.ts:8](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/dict.ts#L8)

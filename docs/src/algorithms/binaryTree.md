@@ -16,7 +16,7 @@ Binary tree comparison function.
 function compareBinaryTrees(tree1, tree2): boolean;
 ```
 
-Defined in: [src/algorithms/binaryTree.ts:20](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/binaryTree.ts#L20)
+Defined in: [src/algorithms/binaryTree.ts:20](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/algorithms/binaryTree.ts#L20)
 
 Compare binary trees using DFS.
 

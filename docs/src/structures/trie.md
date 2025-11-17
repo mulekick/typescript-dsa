@@ -12,7 +12,7 @@ Trie (retrieval tree) data structure.
 
 ### Trie
 
-Defined in: [src/structures/trie.ts:22](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/trie.ts#L22)
+Defined in: [src/structures/trie.ts:22](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/structures/trie.ts#L22)
 
 Trie implementation.
 
@@ -33,7 +33,7 @@ Data type stored in heap elements.
 new Trie(): Trie;
 ```
 
-Defined in: [src/structures/trie.ts:58](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/trie.ts#L58)
+Defined in: [src/structures/trie.ts:58](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/structures/trie.ts#L58)
 
 ###### Returns
 
@@ -47,7 +47,7 @@ Defined in: [src/structures/trie.ts:58](https://github.com/mulekick/typescript-d
 insert(word): void;
 ```
 
-Defined in: [src/structures/trie.ts:69](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/trie.ts#L69)
+Defined in: [src/structures/trie.ts:69](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/structures/trie.ts#L69)
 
 ###### Parameters
 
@@ -65,7 +65,7 @@ Defined in: [src/structures/trie.ts:69](https://github.com/mulekick/typescript-d
 delete(word): void;
 ```
 
-Defined in: [src/structures/trie.ts:124](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/trie.ts#L124)
+Defined in: [src/structures/trie.ts:124](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/structures/trie.ts#L124)
 
 ###### Parameters
 
@@ -83,7 +83,7 @@ Defined in: [src/structures/trie.ts:124](https://github.com/mulekick/typescript-
 find(pattern): string[];
 ```
 
-Defined in: [src/structures/trie.ts:179](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/structures/trie.ts#L179)
+Defined in: [src/structures/trie.ts:179](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/structures/trie.ts#L179)
 
 ###### Parameters
 

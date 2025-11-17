@@ -33,7 +33,7 @@ Shared helper functions.
 function shuffle(a): unknown[];
 ```
 
-Defined in: [src/helpers.ts:51](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L51)
+Defined in: [src/helpers.ts:51](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L51)
 
 Shuffle array elements.
 
@@ -55,7 +55,7 @@ Shuffle array elements.
 function rnd(lb, ub): number;
 ```
 
-Defined in: [src/helpers.ts:71](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L71)
+Defined in: [src/helpers.ts:71](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L71)
 
 Pick a random number between 2 values.
 
@@ -78,7 +78,7 @@ Pick a random number between 2 values.
 function getRandomChar(): string;
 ```
 
-Defined in: [src/helpers.ts:77](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L77)
+Defined in: [src/helpers.ts:77](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L77)
 
 Output a single random character (unicode basic latin).
 
@@ -96,7 +96,7 @@ Output a single random character (unicode basic latin).
 const formatSampleObject: formatter<sampleObject>;
 ```
 
-Defined in: [src/helpers.ts:93](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L93)
+Defined in: [src/helpers.ts:93](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L93)
 
 Store object w/ number prop between 0 and 65535.
 
@@ -108,7 +108,7 @@ Store object w/ number prop between 0 and 65535.
 const unformatSampleObject: unformatter<sampleObject>;
 ```
 
-Defined in: [src/helpers.ts:114](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L114)
+Defined in: [src/helpers.ts:114](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L114)
 
 Read object w/ number prop between 0 and 65535.
 
@@ -120,7 +120,7 @@ Read object w/ number prop between 0 and 65535.
 const formatNumber: formatter<number>;
 ```
 
-Defined in: [src/helpers.ts:125](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L125)
+Defined in: [src/helpers.ts:125](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L125)
 
 Store a number between 0 and 65535.
 
@@ -132,7 +132,7 @@ Store a number between 0 and 65535.
 const unformatNumber: unformatter<number>;
 ```
 
-Defined in: [src/helpers.ts:147](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L147)
+Defined in: [src/helpers.ts:147](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L147)
 
 Read a number between 0 and 65535.
 
@@ -144,7 +144,7 @@ Read a number between 0 and 65535.
 const formatVertexByDistance: formatter<VertexByDistance>;
 ```
 
-Defined in: [src/helpers.ts:158](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L158)
+Defined in: [src/helpers.ts:158](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L158)
 
 Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 max).
 
@@ -156,7 +156,7 @@ Store vertex index on 2 bytes (65535 max), total weight on 4 bytes (4294967295 m
 const unformatVertexByDistance: unformatter<VertexByDistance>;
 ```
 
-Defined in: [src/helpers.ts:183](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L183)
+Defined in: [src/helpers.ts:183](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L183)
 
 Read vertex index and distance.
 
@@ -170,7 +170,7 @@ Read vertex index and distance.
 const compareSampleObjects: comparator<sampleObject>;
 ```
 
-Defined in: [src/helpers.ts:198](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L198)
+Defined in: [src/helpers.ts:198](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L198)
 
 Sample objects comparator function.
 
@@ -182,7 +182,7 @@ Sample objects comparator function.
 function compareNumbers(a, b): -1 | 0 | 1;
 ```
 
-Defined in: [src/helpers.ts:213](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L213)
+Defined in: [src/helpers.ts:213](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L213)
 
 Numbers comparator function.
 
@@ -205,7 +205,7 @@ Numbers comparator function.
 function compareVertexDistanceFromOrigin(a, b): -1 | 0 | 1;
 ```
 
-Defined in: [src/helpers.ts:219](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L219)
+Defined in: [src/helpers.ts:219](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L219)
 
 Compare vertices by distance and not by adjacency.
 
@@ -230,7 +230,7 @@ Compare vertices by distance and not by adjacency.
 const objectsMatch: matcher<unknown>;
 ```
 
-Defined in: [src/helpers.ts:242](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L242)
+Defined in: [src/helpers.ts:242](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L242)
 
 Sample objects matcher function.
 
@@ -246,7 +246,7 @@ Sample objects matcher function.
 const stringsMatch: matcher<string>;
 ```
 
-Defined in: [src/helpers.ts:248](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L248)
+Defined in: [src/helpers.ts:248](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L248)
 
 String values matcher function.
 
@@ -258,7 +258,7 @@ String values matcher function.
 const numbersMatch: matcher<number>;
 ```
 
-Defined in: [src/helpers.ts:254](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L254)
+Defined in: [src/helpers.ts:254](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L254)
 
 Numeric values matcher function.
 
@@ -272,7 +272,7 @@ Numeric values matcher function.
 function createArray(len, fn): unknown[];
 ```
 
-Defined in: [src/helpers.ts:83](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L83)
+Defined in: [src/helpers.ts:83](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L83)
 
 Populate a new array.
 
@@ -298,7 +298,7 @@ function timeExecution(f): {
 };
 ```
 
-Defined in: [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L264)
+Defined in: [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L264)
 
 Measure function execution time.
 
@@ -319,8 +319,8 @@ Measure function execution time.
 
 | Name | Type | Defined in |
 | ------ | ------ | ------ |
-| `time` | `number` | [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L264) |
-| `result` | `unknown` | [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L264) |
+| `time` | `number` | [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L264) |
+| `result` | `unknown` | [src/helpers.ts:264](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L264) |
 
 ***
 
@@ -330,7 +330,7 @@ Measure function execution time.
 function benchmarkQueue(q, arr): void;
 ```
 
-Defined in: [src/helpers.ts:277](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L277)
+Defined in: [src/helpers.ts:277](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L277)
 
 Enqueue / dequeue values.
 
@@ -353,7 +353,7 @@ Enqueue / dequeue values.
 function benchmarkStack(q, arr): void;
 ```
 
-Defined in: [src/helpers.ts:294](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/helpers.ts#L294)
+Defined in: [src/helpers.ts:294](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/helpers.ts#L294)
 
 Push / pop values.
 

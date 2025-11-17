@@ -31,7 +31,7 @@ function combine<T>(
    current?): T[][];
 ```
 
-Defined in: [src/algorithms/combinatorics.ts:17](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/combinatorics.ts#L17)
+Defined in: [src/algorithms/combinatorics.ts:17](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/algorithms/combinatorics.ts#L17)
 
 Find unique combinations.
 
@@ -68,7 +68,7 @@ Find unique combinations.
 function coinChange(coins, value): number[];
 ```
 
-Defined in: [src/algorithms/combinatorics.ts:57](https://github.com/mulekick/typescript-dsa/blob/9917118016564107da72ce9995b912d74c206684/src/algorithms/combinatorics.ts#L57)
+Defined in: [src/algorithms/combinatorics.ts:57](https://github.com/mulekick/typescript-dsa/blob/ca672e3f99dd25a6fa7a36991d6331ca8511e879/src/algorithms/combinatorics.ts#L57)
 
 Coin change problem.
 
