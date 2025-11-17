@@ -12,7 +12,7 @@ ArrayList based data structures.
 
 ### ArrayList
 
-Defined in: [src/structures/arrayList.ts:19](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L19)
+Defined in: [src/structures/arrayList.ts:19](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L19)
 
 ArrayList implementation over generic type.
 
@@ -40,7 +40,7 @@ new ArrayList<T>(
 maxElementLength): ArrayList<T>;
 ```
 
-Defined in: [src/structures/arrayList.ts:37](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L37)
+Defined in: [src/structures/arrayList.ts:37](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L37)
 
 ###### Parameters
 
@@ -60,8 +60,8 @@ Defined in: [src/structures/arrayList.ts:37](https://github.com/mulekick/typescr
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="length"></a> `length` | `public` | `number` | [src/structures/arrayList.ts:24](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L24) |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/arrayList.ts:34](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L34) |
+| <a id="length"></a> `length` | `public` | `number` | [src/structures/arrayList.ts:24](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L24) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/arrayList.ts:34](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L34) |
 
 #### Methods
 
@@ -71,7 +71,7 @@ Defined in: [src/structures/arrayList.ts:37](https://github.com/mulekick/typescr
 append(item): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:74](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L74)
+Defined in: [src/structures/arrayList.ts:74](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L74)
 
 ###### Parameters
 
@@ -89,7 +89,7 @@ Defined in: [src/structures/arrayList.ts:74](https://github.com/mulekick/typescr
 prepend(item): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:79](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L79)
+Defined in: [src/structures/arrayList.ts:79](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L79)
 
 ###### Parameters
 
@@ -107,7 +107,7 @@ Defined in: [src/structures/arrayList.ts:79](https://github.com/mulekick/typescr
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:85](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L85)
+Defined in: [src/structures/arrayList.ts:85](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L85)
 
 ###### Parameters
 
@@ -126,7 +126,7 @@ Defined in: [src/structures/arrayList.ts:85](https://github.com/mulekick/typescr
 removeAt(idx): T | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:112](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L112)
+Defined in: [src/structures/arrayList.ts:112](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L112)
 
 ###### Parameters
 
@@ -144,7 +144,7 @@ Defined in: [src/structures/arrayList.ts:112](https://github.com/mulekick/typesc
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:132](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L132)
+Defined in: [src/structures/arrayList.ts:132](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L132)
 
 ###### Parameters
 
@@ -162,7 +162,7 @@ Defined in: [src/structures/arrayList.ts:132](https://github.com/mulekick/typesc
 get(idx): T | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:151](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L151)
+Defined in: [src/structures/arrayList.ts:151](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L151)
 
 ###### Parameters
 
@@ -180,7 +180,7 @@ Defined in: [src/structures/arrayList.ts:151](https://github.com/mulekick/typesc
 set(item, idx): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:161](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L161)
+Defined in: [src/structures/arrayList.ts:161](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L161)
 
 ###### Parameters
 
@@ -197,7 +197,7 @@ Defined in: [src/structures/arrayList.ts:161](https://github.com/mulekick/typesc
 
 ### ObjectStack
 
-Defined in: [src/structures/arrayList.ts:175](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L175)
+Defined in: [src/structures/arrayList.ts:175](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L175)
 
 ArrayList based object stack.
 
@@ -213,7 +213,7 @@ ArrayList based object stack.
 new ObjectStack(): ObjectStack;
 ```
 
-Defined in: [src/structures/arrayList.ts:177](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L177)
+Defined in: [src/structures/arrayList.ts:177](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L177)
 
 ###### Returns
 
@@ -227,8 +227,8 @@ Defined in: [src/structures/arrayList.ts:177](https://github.com/mulekick/typesc
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-1"></a> `length` | `public` | `number` | [`ArrayList`](#arraylist).[`length`](#length) | [src/structures/arrayList.ts:24](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L24) |
-| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<[`sampleObject`](../interfaces.md#sampleobject)> | [`ArrayList`](#arraylist).[`match`](#match) | [src/structures/arrayList.ts:34](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L34) |
+| <a id="length-1"></a> `length` | `public` | `number` | [`ArrayList`](#arraylist).[`length`](#length) | [src/structures/arrayList.ts:24](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L24) |
+| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<[`sampleObject`](../interfaces.md#sampleobject)> | [`ArrayList`](#arraylist).[`match`](#match) | [src/structures/arrayList.ts:34](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L34) |
 
 #### Methods
 
@@ -238,7 +238,7 @@ Defined in: [src/structures/arrayList.ts:177](https://github.com/mulekick/typesc
 append(item): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:74](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L74)
+Defined in: [src/structures/arrayList.ts:74](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L74)
 
 ###### Parameters
 
@@ -260,7 +260,7 @@ Defined in: [src/structures/arrayList.ts:74](https://github.com/mulekick/typescr
 prepend(item): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:79](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L79)
+Defined in: [src/structures/arrayList.ts:79](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L79)
 
 ###### Parameters
 
@@ -282,7 +282,7 @@ Defined in: [src/structures/arrayList.ts:79](https://github.com/mulekick/typescr
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:85](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L85)
+Defined in: [src/structures/arrayList.ts:85](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L85)
 
 ###### Parameters
 
@@ -305,7 +305,7 @@ Defined in: [src/structures/arrayList.ts:85](https://github.com/mulekick/typescr
 removeAt(idx): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:112](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L112)
+Defined in: [src/structures/arrayList.ts:112](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L112)
 
 ###### Parameters
 
@@ -327,7 +327,7 @@ Defined in: [src/structures/arrayList.ts:112](https://github.com/mulekick/typesc
 remove(item): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:132](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L132)
+Defined in: [src/structures/arrayList.ts:132](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L132)
 
 ###### Parameters
 
@@ -349,7 +349,7 @@ Defined in: [src/structures/arrayList.ts:132](https://github.com/mulekick/typesc
 get(idx): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:151](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L151)
+Defined in: [src/structures/arrayList.ts:151](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L151)
 
 ###### Parameters
 
@@ -371,7 +371,7 @@ Defined in: [src/structures/arrayList.ts:151](https://github.com/mulekick/typesc
 set(item, idx): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:161](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L161)
+Defined in: [src/structures/arrayList.ts:161](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L161)
 
 ###### Parameters
 
@@ -394,7 +394,7 @@ Defined in: [src/structures/arrayList.ts:161](https://github.com/mulekick/typesc
 push(o): void;
 ```
 
-Defined in: [src/structures/arrayList.ts:183](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L183)
+Defined in: [src/structures/arrayList.ts:183](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L183)
 
 ###### Parameters
 
@@ -412,7 +412,7 @@ Defined in: [src/structures/arrayList.ts:183](https://github.com/mulekick/typesc
 pop(): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:188](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L188)
+Defined in: [src/structures/arrayList.ts:188](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L188)
 
 ###### Returns
 
@@ -424,7 +424,7 @@ Defined in: [src/structures/arrayList.ts:188](https://github.com/mulekick/typesc
 peek(index): sampleObject | undefined;
 ```
 
-Defined in: [src/structures/arrayList.ts:194](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/arrayList.ts#L194)
+Defined in: [src/structures/arrayList.ts:194](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/arrayList.ts#L194)
 
 ###### Parameters
 

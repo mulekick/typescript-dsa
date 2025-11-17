@@ -16,7 +16,7 @@ Array search and sort algorithms.
 function sampleLinearfunction(i): void;
 ```
 
-Defined in: [src/algorithms/array.ts:12](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L12)
+Defined in: [src/algorithms/array.ts:12](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L12)
 
 A function with a linear time complexity.
 
@@ -38,7 +38,7 @@ A function with a linear time complexity.
 function linearSearch(haystack, needle): boolean;
 ```
 
-Defined in: [src/algorithms/array.ts:30](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L30)
+Defined in: [src/algorithms/array.ts:30](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L30)
 
 Linear search.
 
@@ -65,7 +65,7 @@ Linear search.
 function binarySearch(haystack, needle): boolean;
 ```
 
-Defined in: [src/algorithms/array.ts:47](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L47)
+Defined in: [src/algorithms/array.ts:47](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L47)
 
 Binary search.
 
@@ -93,7 +93,7 @@ Binary search.
 function twoCrystalBalls(breaks): number;
 ```
 
-Defined in: [src/algorithms/array.ts:81](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L81)
+Defined in: [src/algorithms/array.ts:81](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L81)
 
 Two crystal balls search.
 
@@ -120,7 +120,7 @@ Two crystal balls search.
 function bubbleSort(a): number[];
 ```
 
-Defined in: [src/algorithms/array.ts:115](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L115)
+Defined in: [src/algorithms/array.ts:115](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L115)
 
 Bubble sort.
 
@@ -149,7 +149,7 @@ function weakSortSubarray(
    end): number;
 ```
 
-Defined in: [src/algorithms/array.ts:139](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L139)
+Defined in: [src/algorithms/array.ts:139](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L139)
 
 Perform weak sorting, mutate array, return final pivot index.
 
@@ -180,7 +180,7 @@ function weakSort(
    end): number[];
 ```
 
-Defined in: [src/algorithms/array.ts:174](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L174)
+Defined in: [src/algorithms/array.ts:174](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L174)
 
 Weak sort array recursively.
 
@@ -208,7 +208,7 @@ Weak sort array recursively.
 function quickSort(arr): number[];
 ```
 
-Defined in: [src/algorithms/array.ts:210](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/algorithms/array.ts#L210)
+Defined in: [src/algorithms/array.ts:210](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/algorithms/array.ts#L210)
 
 Quick sort.
 

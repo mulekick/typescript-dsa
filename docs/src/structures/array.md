@@ -12,7 +12,7 @@ In-memory array implementation.
 
 ### BarebonesArray
 
-Defined in: [src/structures/array.ts:13](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/array.ts#L13)
+Defined in: [src/structures/array.ts:13](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/array.ts#L13)
 
 Actual implementation of an array as a javascript class.
 
@@ -24,7 +24,7 @@ Actual implementation of an array as a javascript class.
 new BarebonesArray(arrayLength, bytesPerElement): BarebonesArray;
 ```
 
-Defined in: [src/structures/array.ts:21](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/array.ts#L21)
+Defined in: [src/structures/array.ts:21](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/array.ts#L21)
 
 ###### Parameters
 
@@ -47,7 +47,7 @@ Defined in: [src/structures/array.ts:21](https://github.com/mulekick/typescript-
 get length(): number;
 ```
 
-Defined in: [src/structures/array.ts:42](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/array.ts#L42)
+Defined in: [src/structures/array.ts:42](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/array.ts#L42)
 
 ###### Returns
 
@@ -61,7 +61,7 @@ Defined in: [src/structures/array.ts:42](https://github.com/mulekick/typescript-
 read(i, x): Buffer;
 ```
 
-Defined in: [src/structures/array.ts:33](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/array.ts#L33)
+Defined in: [src/structures/array.ts:33](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/array.ts#L33)
 
 ###### Parameters
 
@@ -80,7 +80,7 @@ Defined in: [src/structures/array.ts:33](https://github.com/mulekick/typescript-
 write(w, i): number;
 ```
 
-Defined in: [src/structures/array.ts:36](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/array.ts#L36)
+Defined in: [src/structures/array.ts:36](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/array.ts#L36)
 
 ###### Parameters
 
@@ -99,7 +99,7 @@ Defined in: [src/structures/array.ts:36](https://github.com/mulekick/typescript-
 dump(): string;
 ```
 
-Defined in: [src/structures/array.ts:39](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/array.ts#L39)
+Defined in: [src/structures/array.ts:39](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/array.ts#L39)
 
 ###### Returns
 

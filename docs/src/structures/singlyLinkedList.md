@@ -12,7 +12,7 @@ Singly linked list data structure.
 
 ### SinglyLinkedList
 
-Defined in: [src/structures/singlyLinkedList.ts:21](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L21)
+Defined in: [src/structures/singlyLinkedList.ts:21](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L21)
 
 Singly linked list implementation over generic type.
 
@@ -39,7 +39,7 @@ Singly linked list implementation over generic type.
 new SinglyLinkedList<T>(m): SinglyLinkedList<T>;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L32)
+Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L32)
 
 ###### Parameters
 
@@ -55,8 +55,8 @@ Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="length"></a> `length` | `public` | `number` | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L23) |
-| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L29) |
+| <a id="length"></a> `length` | `public` | `number` | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L23) |
+| <a id="match"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L29) |
 
 #### Methods
 
@@ -66,7 +66,7 @@ Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/
 prepend(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L48)
+Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L48)
 
 ###### Parameters
 
@@ -84,7 +84,7 @@ Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/
 append(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L68)
+Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L68)
 
 ###### Parameters
 
@@ -102,7 +102,7 @@ Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L89)
+Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L89)
 
 ###### Parameters
 
@@ -121,7 +121,7 @@ Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/
 removeAt(idx): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L128)
+Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L128)
 
 ###### Parameters
 
@@ -139,7 +139,7 @@ Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L177)
+Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L177)
 
 ###### Parameters
 
@@ -157,7 +157,7 @@ Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick
 flush(): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L198)
+Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L198)
 
 ###### Returns
 
@@ -169,7 +169,7 @@ Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick
 get(idx): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L231)
+Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L231)
 
 ###### Parameters
 
@@ -185,7 +185,7 @@ Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick
 
 ### Queue
 
-Defined in: [src/structures/singlyLinkedList.ts:245](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L245)
+Defined in: [src/structures/singlyLinkedList.ts:245](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L245)
 
 Singly linked list implementation over generic type.
 
@@ -215,7 +215,7 @@ Singly linked list implementation over generic type.
 new Queue<T>(m): Queue<T>;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L32)
+Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L32)
 
 ###### Parameters
 
@@ -235,8 +235,8 @@ Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-1"></a> `length` | `public` | `number` | [`SinglyLinkedList`](#singlylinkedlist).[`length`](#length) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L23) |
-| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [`SinglyLinkedList`](#singlylinkedlist).[`match`](#match) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L29) |
+| <a id="length-1"></a> `length` | `public` | `number` | [`SinglyLinkedList`](#singlylinkedlist).[`length`](#length) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L23) |
+| <a id="match-1"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [`SinglyLinkedList`](#singlylinkedlist).[`match`](#match) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L29) |
 
 #### Methods
 
@@ -246,7 +246,7 @@ Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/
 prepend(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L48)
+Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L48)
 
 ###### Parameters
 
@@ -268,7 +268,7 @@ Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/
 append(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L68)
+Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L68)
 
 ###### Parameters
 
@@ -290,7 +290,7 @@ Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L89)
+Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L89)
 
 ###### Parameters
 
@@ -313,7 +313,7 @@ Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/
 removeAt(idx): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L128)
+Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L128)
 
 ###### Parameters
 
@@ -335,7 +335,7 @@ Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L177)
+Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L177)
 
 ###### Parameters
 
@@ -357,7 +357,7 @@ Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick
 flush(): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L198)
+Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L198)
 
 ###### Returns
 
@@ -373,7 +373,7 @@ Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick
 get(idx): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L231)
+Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L231)
 
 ###### Parameters
 
@@ -395,7 +395,7 @@ Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick
 enqueue(data): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:247](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L247)
+Defined in: [src/structures/singlyLinkedList.ts:247](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L247)
 
 ###### Parameters
 
@@ -413,7 +413,7 @@ Defined in: [src/structures/singlyLinkedList.ts:247](https://github.com/mulekick
 dequeue(): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:253](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L253)
+Defined in: [src/structures/singlyLinkedList.ts:253](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L253)
 
 ###### Returns
 
@@ -425,7 +425,7 @@ Defined in: [src/structures/singlyLinkedList.ts:253](https://github.com/mulekick
 peek(): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:259](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L259)
+Defined in: [src/structures/singlyLinkedList.ts:259](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L259)
 
 ###### Returns
 
@@ -435,7 +435,7 @@ Defined in: [src/structures/singlyLinkedList.ts:259](https://github.com/mulekick
 
 ### Stack
 
-Defined in: [src/structures/singlyLinkedList.ts:265](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L265)
+Defined in: [src/structures/singlyLinkedList.ts:265](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L265)
 
 Singly linked list implementation over generic type.
 
@@ -465,7 +465,7 @@ Singly linked list implementation over generic type.
 new Stack<T>(m): Stack<T>;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L32)
+Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L32)
 
 ###### Parameters
 
@@ -485,8 +485,8 @@ Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-2"></a> `length` | `public` | `number` | [`SinglyLinkedList`](#singlylinkedlist).[`length`](#length) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L23) |
-| <a id="match-2"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [`SinglyLinkedList`](#singlylinkedlist).[`match`](#match) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L29) |
+| <a id="length-2"></a> `length` | `public` | `number` | [`SinglyLinkedList`](#singlylinkedlist).[`length`](#length) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L23) |
+| <a id="match-2"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`T`> | [`SinglyLinkedList`](#singlylinkedlist).[`match`](#match) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L29) |
 
 #### Methods
 
@@ -496,7 +496,7 @@ Defined in: [src/structures/singlyLinkedList.ts:32](https://github.com/mulekick/
 prepend(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L48)
+Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L48)
 
 ###### Parameters
 
@@ -518,7 +518,7 @@ Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/
 append(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L68)
+Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L68)
 
 ###### Parameters
 
@@ -540,7 +540,7 @@ Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L89)
+Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L89)
 
 ###### Parameters
 
@@ -563,7 +563,7 @@ Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/
 removeAt(idx): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L128)
+Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L128)
 
 ###### Parameters
 
@@ -585,7 +585,7 @@ Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick
 remove(item): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L177)
+Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L177)
 
 ###### Parameters
 
@@ -607,7 +607,7 @@ Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick
 flush(): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L198)
+Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L198)
 
 ###### Returns
 
@@ -623,7 +623,7 @@ Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick
 get(idx): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L231)
+Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L231)
 
 ###### Parameters
 
@@ -645,7 +645,7 @@ Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick
 push(data): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:268](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L268)
+Defined in: [src/structures/singlyLinkedList.ts:268](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L268)
 
 ###### Parameters
 
@@ -663,7 +663,7 @@ Defined in: [src/structures/singlyLinkedList.ts:268](https://github.com/mulekick
 pop(): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:274](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L274)
+Defined in: [src/structures/singlyLinkedList.ts:274](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L274)
 
 ###### Returns
 
@@ -675,7 +675,7 @@ Defined in: [src/structures/singlyLinkedList.ts:274](https://github.com/mulekick
 peek(): T | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:280](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L280)
+Defined in: [src/structures/singlyLinkedList.ts:280](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L280)
 
 ###### Returns
 
@@ -685,7 +685,7 @@ Defined in: [src/structures/singlyLinkedList.ts:280](https://github.com/mulekick
 
 ### StringQueue
 
-Defined in: [src/structures/singlyLinkedList.ts:290](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L290)
+Defined in: [src/structures/singlyLinkedList.ts:290](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L290)
 
 List-based string values queue.
 
@@ -701,7 +701,7 @@ List-based string values queue.
 new StringQueue(): StringQueue;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:290](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L290)
+Defined in: [src/structures/singlyLinkedList.ts:290](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L290)
 
 ###### Returns
 
@@ -715,8 +715,8 @@ Defined in: [src/structures/singlyLinkedList.ts:290](https://github.com/mulekick
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-3"></a> `length` | `public` | `number` | [`Queue`](#queue).[`length`](#length-1) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L23) |
-| <a id="match-3"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`string`> | [`Queue`](#queue).[`match`](#match-1) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L29) |
+| <a id="length-3"></a> `length` | `public` | `number` | [`Queue`](#queue).[`length`](#length-1) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L23) |
+| <a id="match-3"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`string`> | [`Queue`](#queue).[`match`](#match-1) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L29) |
 
 #### Methods
 
@@ -726,7 +726,7 @@ Defined in: [src/structures/singlyLinkedList.ts:290](https://github.com/mulekick
 prepend(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L48)
+Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L48)
 
 ###### Parameters
 
@@ -748,7 +748,7 @@ Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/
 append(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L68)
+Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L68)
 
 ###### Parameters
 
@@ -770,7 +770,7 @@ Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L89)
+Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L89)
 
 ###### Parameters
 
@@ -793,7 +793,7 @@ Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/
 removeAt(idx): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L128)
+Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L128)
 
 ###### Parameters
 
@@ -815,7 +815,7 @@ Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick
 remove(item): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L177)
+Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L177)
 
 ###### Parameters
 
@@ -837,7 +837,7 @@ Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick
 flush(): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L198)
+Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L198)
 
 ###### Returns
 
@@ -853,7 +853,7 @@ Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick
 get(idx): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L231)
+Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L231)
 
 ###### Parameters
 
@@ -875,7 +875,7 @@ Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick
 enqueue(data): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:247](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L247)
+Defined in: [src/structures/singlyLinkedList.ts:247](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L247)
 
 ###### Parameters
 
@@ -897,7 +897,7 @@ Defined in: [src/structures/singlyLinkedList.ts:247](https://github.com/mulekick
 dequeue(): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:253](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L253)
+Defined in: [src/structures/singlyLinkedList.ts:253](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L253)
 
 ###### Returns
 
@@ -913,7 +913,7 @@ Defined in: [src/structures/singlyLinkedList.ts:253](https://github.com/mulekick
 peek(): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:259](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L259)
+Defined in: [src/structures/singlyLinkedList.ts:259](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L259)
 
 ###### Returns
 
@@ -927,7 +927,7 @@ Defined in: [src/structures/singlyLinkedList.ts:259](https://github.com/mulekick
 
 ### StringStack
 
-Defined in: [src/structures/singlyLinkedList.ts:296](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L296)
+Defined in: [src/structures/singlyLinkedList.ts:296](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L296)
 
 List-based string values stack.
 
@@ -943,7 +943,7 @@ List-based string values stack.
 new StringStack(): StringStack;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:296](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L296)
+Defined in: [src/structures/singlyLinkedList.ts:296](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L296)
 
 ###### Returns
 
@@ -957,8 +957,8 @@ Defined in: [src/structures/singlyLinkedList.ts:296](https://github.com/mulekick
 
 | Property | Modifier | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="length-4"></a> `length` | `public` | `number` | [`Stack`](#stack).[`length`](#length-2) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L23) |
-| <a id="match-4"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`string`> | [`Stack`](#stack).[`match`](#match-2) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L29) |
+| <a id="length-4"></a> `length` | `public` | `number` | [`Stack`](#stack).[`length`](#length-2) | [src/structures/singlyLinkedList.ts:23](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L23) |
+| <a id="match-4"></a> `match` | `public` | [`matcher`](../interfaces.md#matcher)<`string`> | [`Stack`](#stack).[`match`](#match-2) | [src/structures/singlyLinkedList.ts:29](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L29) |
 
 #### Methods
 
@@ -968,7 +968,7 @@ Defined in: [src/structures/singlyLinkedList.ts:296](https://github.com/mulekick
 prepend(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L48)
+Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L48)
 
 ###### Parameters
 
@@ -990,7 +990,7 @@ Defined in: [src/structures/singlyLinkedList.ts:48](https://github.com/mulekick/
 append(item): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L68)
+Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L68)
 
 ###### Parameters
 
@@ -1012,7 +1012,7 @@ Defined in: [src/structures/singlyLinkedList.ts:68](https://github.com/mulekick/
 insertAt(item, idx): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L89)
+Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L89)
 
 ###### Parameters
 
@@ -1035,7 +1035,7 @@ Defined in: [src/structures/singlyLinkedList.ts:89](https://github.com/mulekick/
 removeAt(idx): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L128)
+Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L128)
 
 ###### Parameters
 
@@ -1057,7 +1057,7 @@ Defined in: [src/structures/singlyLinkedList.ts:128](https://github.com/mulekick
 remove(item): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L177)
+Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L177)
 
 ###### Parameters
 
@@ -1079,7 +1079,7 @@ Defined in: [src/structures/singlyLinkedList.ts:177](https://github.com/mulekick
 flush(): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L198)
+Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L198)
 
 ###### Returns
 
@@ -1095,7 +1095,7 @@ Defined in: [src/structures/singlyLinkedList.ts:198](https://github.com/mulekick
 get(idx): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L231)
+Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L231)
 
 ###### Parameters
 
@@ -1117,7 +1117,7 @@ Defined in: [src/structures/singlyLinkedList.ts:231](https://github.com/mulekick
 push(data): void;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:268](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L268)
+Defined in: [src/structures/singlyLinkedList.ts:268](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L268)
 
 ###### Parameters
 
@@ -1139,7 +1139,7 @@ Defined in: [src/structures/singlyLinkedList.ts:268](https://github.com/mulekick
 pop(): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:274](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L274)
+Defined in: [src/structures/singlyLinkedList.ts:274](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L274)
 
 ###### Returns
 
@@ -1155,7 +1155,7 @@ Defined in: [src/structures/singlyLinkedList.ts:274](https://github.com/mulekick
 peek(): string | undefined;
 ```
 
-Defined in: [src/structures/singlyLinkedList.ts:280](https://github.com/mulekick/typescript-dsa/blob/53ae8c7ac202fae34c71056dbf747df1a88ed4b5/src/structures/singlyLinkedList.ts#L280)
+Defined in: [src/structures/singlyLinkedList.ts:280](https://github.com/mulekick/typescript-dsa/blob/2372cd3c2425d5aeb4fa57d3f75ec111e98c4e99/src/structures/singlyLinkedList.ts#L280)
 
 ###### Returns
 
